@@ -1,0 +1,8 @@
+lsi: true
+auto: false
+permalink: /:categories/:title
+paginate: 5
+tag_dir: tag
+tag_title_prefix: "Tags &raquo; "
+related_tags: true
+baseurl: http://static.hardikr.com
