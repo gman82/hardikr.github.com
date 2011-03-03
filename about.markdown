@@ -40,6 +40,12 @@ awesome [add-ons][].
 Gopalakrishnan’s][] (my college professor) class notes. To download the
 notes, enter ‘slpnotes.pdf’ without the quotes on this [page][].
 
+{% highlight ruby %}
+def foo
+  puts 'foo'
+end
+{% endhighlight %}
+
   [NIT Trichy]: http://nitt.edu
   [startup]: http://blog.hardikr.com/work
   [programming]: http://blog.hardikr.com/programming

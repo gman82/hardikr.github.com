@@ -7,15 +7,15 @@ p, ul, ol, blockquote {margin-bottom: 24px;}
 img {-webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius: 3px;margin-bottom: 20px;}
 a img {display: block;}
 
-body {color: #4f4d4b;background: #f5f5f5;font-family: 'PT Sans', "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, Arial, Helvetica, sans-serif;font-size: 14px;line-height: 24px;-webkit-text-size-adjust: none;}
+body {color: #4f4d4b;background: #FFF;font-family: 'PT Sans', "Lucida Grande", Helvetica, "Lucida Sans Unicode", "Lucida Sans", Tahoma, Arial, sans-serif;font-size: 14px;line-height: 24px;-webkit-text-size-adjust: none;}
 
 /* = BOXES */
-.wrap {background: #FFF;margin: 20px 0;padding: 30px 20px;}
+.wrap {background: #FFF;margin: 0px;padding: 0px;}
 .payload {width: 100%;max-width: 960px;margin: 0 auto;overflow: hidden;}
 .side {margin-right: 0;float: right;width: 30.8%;}
 .main {margin-right: 3.8%;padding: 50px 0 0 0;float: left;width: 60%;}
-.footer {margin: 50px 0 0 0;color:#8c8c8c;font-size:13px;}
-	.footer-copynone {margin-right: 3.8%;padding: 0;float: left;width: 75%;}
+.footer {margin: 15px 0 0 0;color:#8c8c8c;font-size:13px;}
+	.footer-copynone {margin-right: 3.8%;padding-left: 119px;float: left;width: 75%;}
 	.footer-toplink {margin-right:0;float:right;width:20%;text-align:right;}
 
 /* = LOGO */
@@ -49,17 +49,25 @@ body {color: #4f4d4b;background: #f5f5f5;font-family: 'PT Sans', "Lucida Grande"
 
 /* = SIDE */
 	/* = BYLINE */
+	.side h2 {margin: 10px;}
 	#byline{}
 	#byline a, #byline a:link, #byline a:visited, #byline a:active {border: none;text-decoration: none;text-transform: uppercase;font-size: 13px;	color: #32677a;padding: 3px 5px;}
 	#byline a:hover {background: #f1f1f1;}
-	#byline a span {text-transform: capitalize;color: #4f4d4b;}
+	#byline a span {color: #4f4d4b;}
 	/* = NAVIGATION */
 	#navigation {margin: 20px 0 0 0;}
 	#navigation ul {margin: 0 0 0 5px;padding: 0;list-style: none;}
 	#navigation li {margin: 0;padding: 0;list-style: none;}
-	#navigation a, #navigation a:link, #navigation a:visited, #navigation a:active {border: none;color: #874554;font-weight: normal;text-decoration: none;text-transform: uppercase;font-size: 13px;padding: 3px 5px;}
-	#navigation a:hover {color: #d94567;background: #f1f1f1;}
-
+	#navigation a, #navigation a:link, #navigation a:visited, #navigation a:active {border: none;color: #BEBEBE;font-weight: normal;text-decoration: none;text-transform: lowercase;font-size: 13px;padding: 3px 5px;}
+	#navigation a:hover {color: black;}
+	#cc {
+	padding-top: 10px;
+	padding-left: 8px;
+	opacity: 0.4;
+	}
+	#cc:hover {
+	opacity: 1
+	}
 /* = GENERAL TYPOGRAPHY */
 span.fancy {font-family:Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif;font-style:italic;font-weight:normal;padding:0 5px;}
 
