@@ -61,7 +61,7 @@ body {color: #4f4d4b;background: #FFF;font-family: 'PT Sans', "Lucida Grande", H
 	#navigation a, #navigation a:link, #navigation a:visited, #navigation a:active {border: none;color: #BEBEBE;font-weight: normal;text-decoration: none;text-transform: lowercase;font-size: 13px;padding: 3px 5px;}
 	#navigation a:hover {color: black;}
 	#cc {
-	padding-top: 10px;
+	padding-top: 13px;
 	padding-left: 8px;
 	opacity: 0.4;
 	}
