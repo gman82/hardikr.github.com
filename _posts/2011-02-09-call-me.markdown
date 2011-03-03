@@ -1,0 +1,45 @@
+---
+layout: post
+title: Call Me, or How Becoiming a Verb is a Sign of Success
+tags: [startups,products]
+categories: [startups]
+---
+
+If you’ve ever noticed, many of the successful technologies that have
+emerged over the past century, have become verbs of their own right, or
+become the de-facto ‘direct object’ of an [intransitive verb][]. First
+we have some of the golden oldies,
+
+*"Call me"  
+"Fax me"  
+"E-mail me" / "Check my e-mail"  
+"Watching TV"  
+"Digg it"  *
+
+
+And today, some new players that have turned proper nouns into verbs.
+
+*"Chatting with .."  
+"Google it"  
+"Facebook me" / "Surfing Facebook"  
+"Tweet me" / "TweetUp"  
+"Dropbox the file"  
+"Instapaper it"  
+"Reddit it"  
+"Radbox it"  *
+
+Verbs have this strange force about them. There’s an inherent sense of
+authority/action about them that tends to catch on. A psycholinguist
+would definitely be in a better position to explain, if and why, verbs
+are words of power.
+
+Obviously, some technologies/products are almost incapable of becoming a
+verb, say the iPhone, and it obviously doesn’t make it any less of a
+success story. But, this is just something interesting to keep in mind
+while marketing your product !
+
+*Disclaimer: I write this as a marketing layman. So, don’t blame me
+if you market your startup as a verb and it doesn’t work out ;)*
+
+  [intransitive verb]: http://en.wikipedia.org/wiki/Verb#Valency
+

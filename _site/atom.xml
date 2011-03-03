@@ -2,9 +2,9 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>A Day Without Chocolate</title>
- <link href="http://blog.hardikr.com/atom.xml" rel="self"/>
- <link href="http://blog.hardikr.com/"/>
- <updated>2011-03-03T13:20:01+04:00</updated>
+ <link href="http://0.0.0.0:4000/atom.xml" rel="self"/>
+ <link href="http://0.0.0.0:4000/"/>
+ <updated>2011-03-03T17:09:17+04:00</updated>
  <id>http://blog.hardikr.com.com/</id>
  <author>
    <name>Hardik Ruparel</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Egypt, India</title>
-   <link href="http://blog.hardikr.com/india/egypt-india"/>
+   <link href="http://0.0.0.0:4000/india/egypt-india"/>
    <updated>2011-03-01T00:00:00+04:00</updated>
-   <id>http://blog.hardikr.com/india/egypt-india</id>
+   <id>http://0.0.0.0:4000/india/egypt-india</id>
    <content type="html">&lt;p&gt;Keeping in tune with my last post about &lt;a href='http://blog.hardikr.com/post/3196114018/call-me'&gt;verbs&lt;/a&gt;, &lt;em&gt;pulling off an ‘Egypt’&lt;/em&gt; seems like a acceptable phrase that India can aspire to. Let’s take a look at some of the causes of the Egyptian Revolution of 2011. Let’s stack up Egypt’s problems alongside India’s (with utmost respect towards Egypt, I know it was much worse off than India is now, but just for the sake or argument). According to Wikipedia,&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -50,6 +50,26 @@
 &lt;p&gt;So let’s see, what options do we have to set things right? I’m actually at a loss of words when I think about the arduous process to get anything done from the government of India.&lt;/p&gt;
 
 &lt;p&gt;Let’s pull of an Egypt.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Call Me, or How Becoiming a Verb is a Sign of Success</title>
+   <link href="http://0.0.0.0:4000/startups/call-me"/>
+   <updated>2011-02-09T00:00:00+04:00</updated>
+   <id>http://0.0.0.0:4000/startups/call-me</id>
+   <content type="html">&lt;p&gt;If you’ve ever noticed, many of the successful technologies that have emerged over the past century, have become verbs of their own right, or become the de-facto ‘direct object’ of an &lt;a href='http://en.wikipedia.org/wiki/Verb#Valency'&gt;intransitive verb&lt;/a&gt;. First we have some of the golden oldies,&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&amp;#8220;Call me&amp;#8221;&lt;br /&gt;&amp;#8220;Fax me&amp;#8221;&lt;br /&gt;&amp;#8220;E-mail me&amp;#8221; / &amp;#8220;Check my e-mail&amp;#8221;&lt;br /&gt;&amp;#8220;Watching TV&amp;#8221;&lt;br /&gt;&amp;#8220;Digg it&amp;#8221;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;And today, some new players that have turned proper nouns into verbs.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&amp;#8220;Chatting with ..&amp;#8221;&lt;br /&gt;&amp;#8220;Google it&amp;#8221;&lt;br /&gt;&amp;#8220;Facebook me&amp;#8221; / &amp;#8220;Surfing Facebook&amp;#8221;&lt;br /&gt;&amp;#8220;Tweet me&amp;#8221; / &amp;#8220;TweetUp&amp;#8221;&lt;br /&gt;&amp;#8220;Dropbox the file&amp;#8221;&lt;br /&gt;&amp;#8220;Instapaper it&amp;#8221;&lt;br /&gt;&amp;#8220;Reddit it&amp;#8221;&lt;br /&gt;&amp;#8220;Radbox it&amp;#8221;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Verbs have this strange force about them. There’s an inherent sense of authority/action about them that tends to catch on. A psycholinguist would definitely be in a better position to explain, if and why, verbs are words of power.&lt;/p&gt;
+
+&lt;p&gt;Obviously, some technologies/products are almost incapable of becoming a verb, say the iPhone, and it obviously doesn’t make it any less of a success story. But, this is just something interesting to keep in mind while marketing your product !&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Disclaimer: I write this as a marketing layman. So, don’t blame me if you market your startup as a verb and it doesn’t work out ;)&lt;/em&gt;&lt;/p&gt;</content>
  </entry>
  
  
