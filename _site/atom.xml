@@ -2,9 +2,9 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>Coffee Comrade</title>
- <link href="http://coffeecomrade.com/atom.xml" rel="self"/>
- <link href="http://coffeecomrade.com/"/>
- <updated>2011-03-03T13:12:39+04:00</updated>
+ <link href="http://blog.hardikr.com/atom.xml" rel="self"/>
+ <link href="http://blog.hardikr.com/"/>
+ <updated>2011-03-03T13:18:13+04:00</updated>
  <id>http://coffeecomrade.com/</id>
  <author>
    <name>Bryan Matthew Warren</name>
