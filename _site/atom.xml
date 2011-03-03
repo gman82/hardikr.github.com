@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
- <title>Coffee Comrade</title>
+ <title>A Day Without Chocolate</title>
  <link href="http://blog.hardikr.com/atom.xml" rel="self"/>
  <link href="http://blog.hardikr.com/"/>
- <updated>2011-03-03T13:18:13+04:00</updated>
- <id>http://coffeecomrade.com/</id>
+ <updated>2011-03-03T13:20:01+04:00</updated>
+ <id>http://blog.hardikr.com.com/</id>
  <author>
-   <name>Bryan Matthew Warren</name>
-   <email>bryanwarren@gmail.com</email>
+   <name>Hardik Ruparel</name>
+   <email>me@hardikr.com</email>
  </author>
 
  

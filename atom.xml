@@ -4,14 +4,14 @@ layout: nil
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
- <title>Coffee Comrade</title>
+ <title>A Day Without Chocolate</title>
  <link href="{{site.baseurl}}/atom.xml" rel="self"/>
  <link href="{{site.baseurl}}/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://coffeecomrade.com/</id>
+ <id>http://blog.hardikr.com.com/</id>
  <author>
-   <name>Bryan Matthew Warren</name>
-   <email>bryanwarren@gmail.com</email>
+   <name>Hardik Ruparel</name>
+   <email>me@hardikr.com</email>
  </author>
 
  {% for post in site.posts %}
