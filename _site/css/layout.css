@@ -29,7 +29,7 @@ body {color: #4f4d4b;background: #FFF;font-family: 'PT Sans', "Lucida Grande", H
 	.footer-toplink {margin-right:0;float:right;width:20%;text-align:right;}
 
 /* = LOGO */
-#logo h1 {width: 300px;height: 200px;display: block;background: #FFF url(http://coffeecomrade.com/img/coffee-comrade.png) no-repeat;margin-bottom: 20px;}
+#logo h1 {width: 300px;height: 200px;display: block;background: #FFF;margin-bottom: 20px;}
 	#logo h1 span {display: none;}
 	
 /* = POSTS */
@@ -99,7 +99,7 @@ hr{margin:24px 0 0 0;color:#DDD;background:#DDD;height:1px;border:none;}
 	.post h2, .post p, .post h3 {padding-left: 0;}
 	.wrap, .payload {width: 100%;margin-left: 0px;margin-right: 0px;padding-left: 0px;padding-right: 0px;}
 	.side, .main{width: auto;float: none;margin-left: 0px;margin-right: 0px;padding-left: 20px;padding-right: 20px;}
-	#logo h1 {width: 300px;height: 200px;display: block;background: #FFF url(../img/coffee-comrade-mobile.png) no-repeat;margin: 0 auto 20px auto;}
+	#logo h1 {width: 300px;height: 200px;display: block;background: #FFF; margin: 0 auto 20px auto;}
 	#byline, #navigation {text-align: center;}
 	#navigation li {margin: 0 10px 0 0;padding: 0;list-style: none;display: inline;}
 	.post-meta {padding: 0;}
