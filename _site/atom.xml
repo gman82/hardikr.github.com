@@ -2,9 +2,9 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>A Day Without Chocolate</title>
- <link href="http://0.0.0.0:4000/atom.xml" rel="self"/>
- <link href="http://0.0.0.0:4000/"/>
- <updated>2011-03-05T10:47:45+04:00</updated>
+ <link href="http://blog.hardikr.com/atom.xml" rel="self"/>
+ <link href="http://blog.hardikr.com/"/>
+ <updated>2011-03-07T01:36:31+04:00</updated>
  <id>http://blog.hardikr.com.com/</id>
  <author>
    <name>Hardik Ruparel</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Egypt, India</title>
-   <link href="http://0.0.0.0:4000/india/egypt-india"/>
+   <link href="http://blog.hardikr.com/india/egypt-india"/>
    <updated>2011-03-01T00:00:00+04:00</updated>
-   <id>http://0.0.0.0:4000/india/egypt-india</id>
+   <id>http://blog.hardikr.com/india/egypt-india</id>
    <content type="html">&lt;p&gt;Keeping in tune with my last post about &lt;a href='http://blog.hardikr.com/post/3196114018/call-me'&gt;verbs&lt;/a&gt;, &lt;em&gt;pulling off an ‘Egypt’&lt;/em&gt; seems like a acceptable phrase that India can aspire to. Let’s take a look at some of the causes of the Egyptian Revolution of 2011. Let’s stack up Egypt’s problems alongside India’s (with utmost respect towards Egypt, I know it was much worse off than India is now, but just for the sake or argument). According to Wikipedia,&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -54,9 +54,9 @@
  
  <entry>
    <title>Call Me, or How Becoiming a Verb is a Sign of Success</title>
-   <link href="http://0.0.0.0:4000/startups/call-me"/>
+   <link href="http://blog.hardikr.com/startups/call-me"/>
    <updated>2011-02-09T00:00:00+04:00</updated>
-   <id>http://0.0.0.0:4000/startups/call-me</id>
+   <id>http://blog.hardikr.com/startups/call-me</id>
    <content type="html">&lt;p&gt;If you’ve ever noticed, many of the successful technologies that have emerged over the past century, have become verbs of their own right, or become the de-facto ‘direct object’ of an &lt;a href='http://en.wikipedia.org/wiki/Verb#Valency'&gt;intransitive verb&lt;/a&gt;. First we have some of the golden oldies,&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;&amp;#8220;Call me&amp;#8221;&lt;br /&gt;&amp;#8220;Fax me&amp;#8221;&lt;br /&gt;&amp;#8220;E-mail me&amp;#8221; / &amp;#8220;Check my e-mail&amp;#8221;&lt;br /&gt;&amp;#8220;Watching TV&amp;#8221;&lt;br /&gt;&amp;#8220;Digg it&amp;#8221;&lt;/em&gt;&lt;/p&gt;
