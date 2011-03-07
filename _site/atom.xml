@@ -2,9 +2,9 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>A Day Without Chocolate</title>
- <link href="http://0.0.0.0:4000/atom.xml" rel="self"/>
- <link href="http://0.0.0.0:4000/"/>
- <updated>2011-03-07T15:46:27+04:00</updated>
+ <link href="http://blog.hardikr.com/atom.xml" rel="self"/>
+ <link href="http://blog.hardikr.com/"/>
+ <updated>2011-03-07T16:08:38+04:00</updated>
  <id>http://blog.hardikr.com.com/</id>
  <author>
    <name>Hardik Ruparel</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Egypt, India</title>
-   <link href="http://0.0.0.0:4000/india/egypt-india"/>
+   <link href="http://blog.hardikr.com/india/egypt-india"/>
    <updated>2011-03-01T00:00:00+04:00</updated>
-   <id>http://0.0.0.0:4000/india/egypt-india</id>
+   <id>http://blog.hardikr.com/india/egypt-india</id>
    <content type="html">&lt;p&gt;Keeping in tune with my last post about &lt;a href='http://blog.hardikr.com/startups/call-me'&gt;verbs&lt;/a&gt;, &lt;em&gt;pulling off an ‘Egypt’&lt;/em&gt; seems like a acceptable phrase that India can aspire to. Let’s take a look at some of the causes of the Egyptian Revolution of 2011. Let’s stack up Egypt’s problems alongside India’s (with utmost respect towards Egypt, I know it was much worse off than India is now, but just for the sake or argument). According to Wikipedia,&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -54,9 +54,9 @@
  
  <entry>
    <title>Call Me, or How Becoiming a Verb is a Sign of Success</title>
-   <link href="http://0.0.0.0:4000/startups/call-me"/>
+   <link href="http://blog.hardikr.com/startups/call-me"/>
    <updated>2011-02-09T00:00:00+04:00</updated>
-   <id>http://0.0.0.0:4000/startups/call-me</id>
+   <id>http://blog.hardikr.com/startups/call-me</id>
    <content type="html">&lt;p&gt;If you’ve ever noticed, many of the successful technologies that have emerged over the past century, have become verbs of their own right, or become the de-facto ‘direct object’ of an &lt;a href='http://en.wikipedia.org/wiki/Verb#Valency'&gt;intransitive verb&lt;/a&gt;. First we have some of the golden oldies,&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;&amp;#8220;Call me&amp;#8221;&lt;br /&gt;&amp;#8220;Fax me&amp;#8221;&lt;br /&gt;&amp;#8220;E-mail me&amp;#8221; / &amp;#8220;Check my e-mail&amp;#8221;&lt;br /&gt;&amp;#8220;Watching TV&amp;#8221;&lt;br /&gt;&amp;#8220;Digg it&amp;#8221;&lt;/em&gt;&lt;/p&gt;
@@ -74,9 +74,9 @@
  
  <entry>
    <title>Jo Jeeta Wohi Sikander to be Banned</title>
-   <link href="http://0.0.0.0:4000/satire/jo-jeeta-banned"/>
+   <link href="http://blog.hardikr.com/satire/jo-jeeta-banned"/>
    <updated>2011-01-25T00:00:00+04:00</updated>
-   <id>http://0.0.0.0:4000/satire/jo-jeeta-banned</id>
+   <id>http://blog.hardikr.com/satire/jo-jeeta-banned</id>
    <content type="html">&lt;p&gt;The 1992 cult movie &lt;em&gt;&lt;a href='http://www.imdb.com/title/tt0104561/' title='Jo Jeeta Wohi Sikandar'&gt;Jo Jeeta Wohi Sikandar&lt;/a&gt;&lt;/em&gt; is all set to be banned in India, following repeated protests of parents, teachers and child-rights groups and activists.&lt;/p&gt;
 
 &lt;p&gt;The decision came after parents all over the country threatened to burn down the only movie theater in the country that still shows the movie, a 50 seater cinema at Baltana, Punjab.&lt;/p&gt;
@@ -84,7 +84,7 @@
 &lt;p&gt;One enraged parent says,&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;This is not the way we teach our kids. The title of the movie itself demonstrates that only the winner can be championed. Look at me, I was an average student, and now have an average salary. Yet, I can afford to drive my &lt;a href='http://www.scootygals.com/' title='TVS Scooty'&gt;Scooty&lt;/a&gt; to work. Is that not that winning ? If we don&amp;#8217;t teach our kids that being average is acceptable, they will all try to do extravagant things like not taking up engineering or medicine. How will my children be winners if they don&amp;#8217;t take up one of those two professions?&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This is not the way we teach our kids. The title of the movie itself demonstrates that only the winner can be championed. Look at me, I was an average student, and now have an average salary. Yet, I can afford to drive my &lt;a href='http://www.scootygals.com/' title='TVS Scooty'&gt;Scooty&lt;/a&gt; to work. Is that not that winning ? If we don&amp;#8217;t teach our kids that being average is acceptable, they will all try to do extravagant things like not taking up engineering or medicine. How will my children be winners if they don&amp;#8217;t take up one of those two professions?&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;As contentious as this parent&amp;#8217;s claim may be, it certainly hasn&amp;#8217;t deterred the rest of the Indian parents to joining in with the protests, and echoing their concerns.&lt;/p&gt;
@@ -94,19 +94,19 @@
 &lt;p&gt;Reacting to this, Aayesha Jhulka, one of the stars in the movie (that seemingly launched her career) says,&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;I can understand why Indian parents want to ban this movie.&lt;br /&gt;However, I am totally against it because it&amp;#8217;s one of the few movies on my Wikipedia page that has an entry darn&amp;#8217;it!&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;I can understand why Indian parents want to ban this movie.&lt;br /&gt;However, I am totally against it because it&amp;#8217;s one of the few movies on my Wikipedia page that has an entry darn&amp;#8217;it!&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;The Education Minister of India, who prefers to remain anonymous, has reinforced that the decision is left to Pankaja Thakur, the CEO of the Censor Board of India. When we approached Mrs. Thakur, she made the following comments,&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;I know that we (The Censor Board of India) are notorious for censoring some of the most obscure things around. You know, I actually censored the two most important lines in the movie, &amp;#8216;The Social Network&amp;#8217;, so I could avoid giving it an &amp;#8216;Adult&amp;#8217; certificate and my daughter could watch it.&lt;br /&gt;(pauses and raises hand for a high-five, to which our reporter reluctantly obliges)&lt;br /&gt;Anyway, coming back to &lt;em&gt;Jo Jeeta&lt;/em&gt;, yeah, consider it banned.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;I know that we (The Censor Board of India) are notorious for censoring some of the most obscure things around. You know, I actually censored the two most important lines in the movie, &amp;#8216;The Social Network&amp;#8217;, so I could avoid giving it an &amp;#8216;Adult&amp;#8217; certificate and my daughter could watch it.&lt;br /&gt;(pauses and raises hand for a high-five, to which our reporter reluctantly obliges)&lt;br /&gt;Anyway, coming back to&lt;/em&gt;Jo Jeeta&lt;em&gt;, yeah, consider it banned.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Meanwhile, the Indian intellectual community on Twitter has strongly condemned this ban, saying that banning a movie is not the Censor Board&amp;#8217;s job anyway. In reply, Mrs. Pankaja Thakur created a Twitter account, but couldn&amp;#8217;t manage to find a way to tweet. She then snail-mailed the following comment:&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;They call themselves intellectuals. Can&amp;#8217;t they see I&amp;#8217;m effectively censoring the whole movie?&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;They call themselves intellectuals. Can&amp;#8217;t they see I&amp;#8217;m effectively censoring the whole movie?&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;</content>
  </entry>
  
