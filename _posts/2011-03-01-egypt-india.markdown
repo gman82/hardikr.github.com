@@ -77,7 +77,7 @@ anything done from the government of India.
 
 Let’s pull of an Egypt.
 
-  [verbs]: http://blog.hardikr.com/post/3196114018/call-me
+  [verbs]: http://blog.hardikr.com/startups/call-me
   [recently]: http://www.google.com/hostednews/afp/article/ALeqM5hPEP4v8X3uqX4vQ-KSlAVXxbqY0A?docId=CNG.26f85a77fe573d0130a10eb475c1a65e.c41
   [mosquito repellent creams]: http://news.google.co.in/news/url?sa=t&ct2=in/0_0_s_0_0_t&ct3=MAA4AEgAUABgAWoCaW4&usg=AFQjCNGwSh9GKChv4xi-cOLtqmY8CMYjfw&cid=8797660069560&ei=rohbTaCbK8G3cKXNzN0C&rt=SEARCH&vm=STANDARD&url=http://timesofindia.indiatimes.com/india/DRDO-develops-mosquito-repellent-cream/articleshow/7496555.cms
   [die]: http://www.reuters.com/article/2010/11/13/us-india-deaths-child-idUSTRE6AC01Y20101113

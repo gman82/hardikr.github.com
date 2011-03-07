@@ -25,7 +25,7 @@ body {color: #4f4d4b;background: #FFF;font-family: 'PT Sans', "Lucida Grande", H
 .side {margin-right: 0;float: right;width: 30.8%;}
 .main {margin-right: 3.8%;padding: 50px 0 0 0;float: left;width: 60%;}
 .footer {margin: 15px 0 0 0;color:#8c8c8c;font-size:13px;}
-	.footer-copynone {margin-right: 3.8%;padding-left: 119px;float: left;width: 100%;}
+	.footer-copynone {margin-right: 3.8%;float: left;width: 100%;}
 	.footer-toplink {margin-right:0;float:right;width:20%;text-align:right;}
 
 /* = LOGO */
@@ -34,13 +34,13 @@ body {color: #4f4d4b;background: #FFF;font-family: 'PT Sans', "Lucida Grande", H
 	
 /* = POSTS */
 .post {margin-bottom:20px}
-.post h2, .post p, .post h3 {padding-left: 120px;}
-.post p img {margin: 0;padding-left:-120px;}
+.post h2, .post p, .post h3 {padding-left: 0px;}
+.post p img {margin: 0;padding-left:-0px;}
 .post h2, .post h3 {font-family: 'Yanone Kaffeesatz', Arial, sans-serif;font-weight: normal;}
 .post h2 {font-size: 25px;color: #32677a;margin:20px 0;}
 .post h2 a, .post h2 a:link, .post h2 a:visited, .post h2 a:active, .post h2 a:hover {color:#32677a;background:transparent;text-decoration:none;}
 .post p {font-family: 'PT Sans', "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, Arial, Helvetica, sans-serif;font-size: 15px;line-height: 21px;}
-.post-meta {margin: 10px 0;padding: 0 0 0 120px;}
+.post-meta {margin: 10px 0;padding: 0;}
 .meta-date, .meta-tags {margin: 0;font-size: 12px;font-weight: normal;color: #8c8c8c;}
 .meta-tags ul {margin: 0;padding: 0;list-style: none;}
 .meta-tags li {margin: 0;padding: 0;display: inline;list-style: none;}
@@ -51,7 +51,7 @@ body {color: #4f4d4b;background: #FFF;font-family: 'PT Sans', "Lucida Grande", H
 .related-posts{margin-top:24px;padding:0;}
 .related-posts ul {
 	margin: 0;
-	padding: 0 0 0 120px;
+	padding: 0 0 0 0px;
 	list-style: none;
 }
 .related-posts li {
@@ -87,7 +87,7 @@ h3 {margin: 5px 0 10px 0;font-size: 18px;font-weight: normal;}
 a, a:link, a:active {color: #7B3F00;text-decoration: none;border-bottom: 1px solid #4f4d4b;}
 a:visited{color: #7b4587;}
 a:hover {border: none;}
-hr.pad{margin:24px 0 0 120px;color:#DDD;background:#DDD;height:1px;border:none;}
+hr.pad{margin:24px 0 0 0px;color:#DDD;background:#DDD;height:1px;border:none;}
 hr{margin:24px 0 0 0;color:#DDD;background:#DDD;height:1px;border:none;}
 
 /* = DECREASE FONT SIZE FOR SMALLER SCREENS */
