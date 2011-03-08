@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Egypt, India
-tags: [india, egypt]
+tags: [india, egypt, politics]
 categories: [india]
 ---
 

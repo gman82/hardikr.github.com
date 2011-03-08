@@ -3,3 +3,7 @@ auto: false
 permalink: /:categories/:title
 paginate: 5
 baseurl: http://blog.hardikr.com
+# Change the dir the individual category files are output to
+category_dir: categories # Default is categories
+# Title to be used when generating the individual category html files prefixed to category name
+category_title_prefix: "categories"

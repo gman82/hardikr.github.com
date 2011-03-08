@@ -5,7 +5,7 @@ layout: default
 <div id="post-{{ id }}" class="post">
 	<h2>{{ page.title }}</h2>
 	<div class="post-meta">
-	<div class="meta-date">{{ page.date | date: "%B %d, %Y" }}</div>
+	<div class="meta-date">{{ page.date | date: "%B %d, %Y" }}&nbsp;|&nbsp;<span class="perma"><a href="{{site.baseurl}}{{page.url}}">Permalink</a></span></div>
 	</div>
 
 	{{ content }}
@@ -25,4 +25,22 @@ layout: default
 		    {% endfor %}
 		  </ul>
 	</div> -->
+</div>
+<div class="paginator">
+  
+  <div class="left_column">
+    {% if page.previous %}
+      <a href="{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a>
+    {% endif %}
+  </div>
+
+  <div class="right_column">
+    {% if page.next %}
+      <a href="{{ page.next.url }}" title="{{ page.next.title }}">Next &rarr;</a>
+    {% endif %}
+  </div>
+  
+  <div class="clear_both">
+  </div>
+  
 </div>
