@@ -4,7 +4,7 @@
  <title>A Day Without Chocolate</title>
  <link href="http://blog.hardikr.com/atom.xml" rel="self"/>
  <link href="http://blog.hardikr.com/"/>
- <updated>2011-03-08T15:57:51+04:00</updated>
+ <updated>2011-03-09T12:48:03+04:00</updated>
  <id>http://blog.hardikr.com.com/</id>
  <author>
    <name>Hardik Ruparel</name>
@@ -115,7 +115,8 @@
    <link href="http://blog.hardikr.com/india/somethings-wrong"/>
    <updated>2011-01-18T00:00:00+04:00</updated>
    <id>http://blog.hardikr.com/india/somethings-wrong</id>
-   <content type="html">&lt;p&gt;The last few months have been really, really crazy. Just look around and you can see disruption everywhere! Firstly, there were news that a viral Facebook app called threewords.me is about to be acquired just after a couple of days of launch.&lt;/p&gt;
+   <content type="html">
+&lt;p&gt;The last few months have been really, really crazy. Just look around and you can see disruption everywhere! Firstly, there were news that a viral Facebook app called threewords.me is about to be acquired just after a couple of days of launch.&lt;/p&gt;
 &lt;p&gt;Cheezburger network just raised 30 million dollars.&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;WTF DO I DOEZ WIF 30 MILLION DOLLARS?&lt;/p&gt;
 &lt;p&gt;Something's not quite right. The Silicon Valley has gone crazy. I can accept that a &lt;a href=&quot;http://posterous.com&quot;&gt;Tumblr clone&lt;/a&gt; somehow managed to get accepted into &lt;a href=&quot;http://ycombinator.com&quot;&gt;YC&lt;/a&gt;&amp;nbsp;, but seriously, Cheezburger network raising 30 million dollars?&lt;/p&gt;
@@ -149,12 +150,42 @@
    <link href="http://blog.hardikr.com/startups/flipkart"/>
    <updated>2011-01-13T00:00:00+04:00</updated>
    <id>http://blog.hardikr.com/startups/flipkart</id>
-   <content type="html">&lt;p&gt;Yesterday, I got this e-mail from Flipkart:&lt;/p&gt;
+   <content type="html">
+&lt;p&gt;Yesterday, I got this e-mail from Flipkart:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;span&gt;Hello,&lt;br /&gt;&lt;br /&gt;We recently sent you an Availability notification for the book &quot;Liar's Poker: The Great Powers, Yugoslavia And The Wars Of The Future&quot; &amp;nbsp;(&lt;a target=&quot;_blank&quot; href=&quot;http://www.flipkart.com/liar-poker-michel-collon-great-book-0965691667&quot;&gt;http://www.flipkart.com/liar-poker-michel-collon-great-book-0965691667&lt;/a&gt;) as earlier requested by you on December 14, 2010.&lt;br /&gt;&lt;br /&gt;Regrettably, the notification was due to an error at our end. &amp;nbsp;The issue was fixed earlier today and needless to say, will not be repeated. Our apologies if we got your hopes up with regards to a book that you had long been waiting for. Be assured, we will continue to maintain a record of your request(s). The next time we send you an Availability email, you can be sure the book will be available for ordering.&lt;br /&gt;&lt;br /&gt;Sincere apologies again from all of us at Flipkart.com. Do let us know if we can be of any further assistance.&lt;br /&gt;&lt;br /&gt;Regards,&lt;br /&gt;Flipkart Customer Support Team&lt;/span&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;span&gt;I was left open-mouthed when I read this ! They're actually sending me an e-mail apologizing for &lt;strong&gt;getting my hopes up&lt;/strong&gt;! Apart from providing wonderful books which I could never otherwise find in India, they have this sort of customer support.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;This, is why Flipkart rocks. Kudos! I think you're poised for a hell of an exit when Amazon enters India and acquires you guys.&lt;/span&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Hacker News Classic</title>
+   <link href="http://blog.hardikr.com/hn/hn-classic"/>
+   <updated>2011-01-10T00:00:00+04:00</updated>
+   <id>http://blog.hardikr.com/hn/hn-classic</id>
+   <content type="html">
+&lt;p&gt;&lt;strong&gt;Hacker News Classic&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;For newer members of Hacker News (like me), HN Classic is a lesser known feature. You can view it&amp;nbsp;&lt;a target=&quot;_blank&quot; href=&quot;http://news.ycombinator.com/classic&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;What is it? It shows the front-page with number of votes cast from accounts that are at least a year old. Why ? PG says, almost two years ago, in &lt;a href=&quot;http://news.ycombinator.com/item?id=607271&quot;&gt;this submission&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span&gt;I wanted to see if there had been any visible decrease in quality. Doesn't look like it. There's surprisingly little difference between this and the regular frontpage.&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Even today, there doesn't seem to be much of a difference between the Classic page and the regular front page. HN probably has a really high number of lurkers, who don't bother registering/upvoting. Also, HN has been around for a long time, so a relatively higher number of accounts are older than a year. That probably dilutes the measure PG was looking for.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Submissions with Minimum Votes&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Next, we come to the Minimum votes feature. You can view the front-page with submissions that have at least a minimum number of votes that you can specify. Example: &lt;a href=&quot;http://news.ycombinator.com/over?points=100&quot;&gt;http://news.ycombinator.com/over?points=100&lt;/a&gt; will return posts with minimum of 100 votes. An interesting experiment is visiting the above link, and seeing how many of the thirty you have already visited. If it's greater than 20, you can be sure you're up-to-date with the latest in tech/startup. (in fact, HN was earlier known as &lt;em&gt;Startup News&lt;/em&gt;).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Karma Thresholds&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;After you reach a certain threshold ( 200-300 I think), you can edit the color of the website header. At 500 karma, you get down-voting. At a higher karma level, you can create Polls. Also, I've read somewhere that beyond a really high threshold you can even edit the text 'Hacker News' in the header !&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Hacker News Mirror&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;PG hosts a mirror at &lt;a href=&quot;http://apps.ycombinator.com/news&quot;&gt;http://apps.ycombinator.com/news&lt;/a&gt;&amp;nbsp;, in case you live in a weird-ass place that's blocked news.YC .&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;E-mail Notifications&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You can use Notifo to get notified when somebody responds to your thread. Just put your Notifo username in the appropriate place in your HN profile.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Bookmarking Stories&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Ever wished you could bookmark that clever hack to use for your next project. Sure, there's Instapaper, but if you just upvote it, it'll appear in your saved stories in your profile.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Delay your comment&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Ever posted a comment only to find out the original poster has edited his/her comment meanwhile? Use the delay field in your profile to make your comments appear after a short while.&lt;/p&gt;
+&lt;p&gt;That's it I guess. You probably knew most of the stuff above. If you didn't, well, now you do!&lt;/p&gt;
 </content>
  </entry>
  

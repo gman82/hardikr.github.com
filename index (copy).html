@@ -1,12 +1,12 @@
 ---
 layout: default
 ---
-{% for post in paginator.posts %}
+{% for post in site.posts limit:5 %}
 <!--Post {{ id }}-->
 <div id="post-{{ id }}" class="post">
 	<h2><a href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a></h2>
 	<div class="post-meta">
-		<div class="meta-date">{{ post.date | date: "%B %d, %Y" }}
+		<div class="meta-date">{{ post.date | date: "%B %d, %Y" }}</div>
 	</div>
 	{{ post.content }}
 
