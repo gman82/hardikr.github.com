@@ -117,7 +117,7 @@ h3 {margin: 5px 0 10px 0;font-size: 18px;font-weight: normal;}
 a, a:link, a:active {color: #7B3F00;text-decoration: none;border-bottom: 1px solid #4f4d4b;}
 a:visited{color: #7b4587;}
 a:hover {border: none;}
-hr.pad{margin:24px 0 0 0px;color:#DDD;background:#DDD;height:1px;border:none;}
+hr.pad{margin:20px 0px 20px 0px;color:#DDD;background:#DDD;height:1px;border:none;}
 hr{margin:24px 0 0 0;color:#DDD;background:#DDD;height:1px;border:none;}
 
 /* = DECREASE FONT SIZE FOR SMALLER SCREENS */
