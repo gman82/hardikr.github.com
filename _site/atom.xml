@@ -4,13 +4,25 @@
  <title>A Day Without Chocolate</title>
  <link href="http://blog.hardikr.com/atom.xml" rel="self"/>
  <link href="http://blog.hardikr.com/"/>
- <updated>2011-03-26T12:31:19+04:00</updated>
+ <updated>2011-03-26T22:29:53+04:00</updated>
  <id>http://blog.hardikr.com.com/</id>
  <author>
    <name>Hardik Ruparel</name>
    <email>me@hardikr.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Apparently, Eightbit.me has hijacked my Twitter profile photo!</title>
+   <link href="http://blog.hardikr.com/tech/eightbit-hijack"/>
+   <updated>2011-03-26T00:00:00+04:00</updated>
+   <id>http://blog.hardikr.com/tech/eightbit-hijack</id>
+   <content type="html">&lt;p&gt;I logged into Twitter today and realized that my profile picture had got changed to an avatar I had created on &lt;a href=&quot;http://eightbit.me&quot;&gt;eightbit.me&lt;/a&gt; a few days ago. That's weird! I do not remember doing such a thing!&lt;/p&gt;
+&lt;p&gt;My first instinct was to check whether other people who had used eightbit.me had suffered a similar fate, and around eight of the ten people I checked out on eightbit using their profile randomizer had their avatars set as their Twitter profile photo. I don't know if that proves anything or not, I'm just stating my observations.&lt;/p&gt;
+&lt;p&gt;I'll be the first one to admit it, I did not verify what sort of permissions eightbit demanded at the time I approved it, and I presumed it was just an interface for signing in.&lt;/p&gt;
+&lt;p&gt;But, it seems that they've hijacked my Twitter profile photo. What's next? It reminds me of that post on Hacker News whose title went something like 'oAuth will kill your kids'. I can't find it right now, but I really want to go back and read that article again.&amp;nbsp;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>A Time for New Mistakes</title>

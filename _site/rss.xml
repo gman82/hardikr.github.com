@@ -5,10 +5,29 @@
     <link>http://blog.hardikr.com</link>
     <language>en</language>
     <webMaster>me@hardikr.com (Hardik Ruparel)</webMaster>
-    <pubDate>2011-03-26T12:31:19+04:00</pubDate>
+    <pubDate>2011-03-26T22:29:53+04:00</pubDate>
     <copyright>Copyright 2011</copyright>
     <ttl>60</ttl>
     <description>A Blog by Hardik Ruparel</description>
+    
+    <item>
+      <title>Apparently, Eightbit.me has hijacked my Twitter profile photo!</title>
+      <link>http://blog.hardikr.com/tech/eightbit-hijack</link>
+      <pubDate>Sat Mar 26 00:00:00 +0400 2011</pubDate>
+      <guid>http://blog.hardikr.com/tech/eightbit-hijack/</guid>
+      <description>&lt;p&gt;I logged into Twitter today and realized that my profile picture had got changed to an avatar I had created on &lt;a href=&quot;http://eightbit.me&quot;&gt;eightbit.me&lt;/a&gt; a few days ago. That's weird! I do not remember doing such a thing!&lt;/p&gt;
+&lt;p&gt;My first instinct was to check whether other people who had used eightbit.me had suffered a similar fate, and around eight of the ten people I checked out on eightbit using their profile randomizer had their avatars set as their Twitter profile photo. I don't know if that proves anything or not, I'm just stating my observations.&lt;/p&gt;
+&lt;p&gt;I'll be the first one to admit it, I did not verify what sort of permissions eightbit demanded at the time I approved it, and I presumed it was just an interface for signing in.&lt;/p&gt;
+&lt;p&gt;But, it seems that they've hijacked my Twitter profile photo. What's next? It reminds me of that post on Hacker News whose title went something like 'oAuth will kill your kids'. I can't find it right now, but I really want to go back and read that article again.&amp;nbsp;&lt;/p&gt;
+</description>
+      
+      <category domain="http://blog.hardikr.com/tag/tech">tech</category>
+      
+      <category domain="http://blog.hardikr.com/tag/oauth">oauth</category>
+      
+      <category domain="http://blog.hardikr.com/tag/twitter">twitter</category>
+      
+    </item>
     
     <item>
       <title>A Time for New Mistakes</title>
@@ -32,7 +51,9 @@
 &lt;p&gt;Trusting your instincts is something that'll probably never let you down. I'm pretty sure the dots will connect. I just can't see it right now! In the grand scheme of things, things will work out! I may sound like a lunatic trying to continuously reassure myself, but you could look back on your own life, and you'll see how even really bad things eventually led to something nice happening. It's statistically inevitable. After bad stuff happens, it's time for the good stuff, and hence the dots end up connecting. Sure, you may call it &lt;em&gt;karma&lt;/em&gt;, religion or Justin Beiber if you're into that sort of a thing. But I'm sure a good mathematician could prove this &lt;em&gt;connecting of dots &lt;/em&gt;Steve Jobs speaks about.&lt;/p&gt;
 </description>
       
-      <category domain="http://blog.hardikr.com/tag/startups,jobs">startups,jobs</category>
+      <category domain="http://blog.hardikr.com/tag/startups">startups</category>
+      
+      <category domain="http://blog.hardikr.com/tag/jobs">jobs</category>
       
     </item>
     
