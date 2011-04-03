@@ -1,4 +1,4 @@
-lsi: true
+lsi: false
 auto: false
 permalink: /:categories/:title
 paginate: 5
