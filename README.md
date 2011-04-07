@@ -6,9 +6,9 @@ You should follow me on [Twitter][4] !
 
 - All the content, i.e. all files in the following folders:
 
-_posts
-essays
-including other files in root (/)
+-- _posts
+-- essays
+-- including other files in root (/)
 
 are under the [Attribution-NonCommercial-NoDerivs 3.0 Unported (CC BY-NC-ND 3.0)][3] license ( in short, you're free to share the work for non-commercial purposes as long as you attribute it to me.)
 
