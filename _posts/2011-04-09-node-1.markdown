@@ -1,0 +1,162 @@
+---
+layout: post
+title: A Gentle Introduction to Node - 1
+tags: [node, nodejs, programming, javascript]
+categories: [js]
+---
+
+There are many great introductions to Node, and I'm not going to waste my time reinventing the wheel. Instead, I'm trying to fill a gap that exists, somewhere between the [hello world program][1] and the [node-chat example][2], all while linking to great resources already out there. At the end of the post series, you should be able to comfortably create real-time web applications using NodeJS + [Socket.IO][14]. Now it's really easy to create real-time web applications :)
+
+First off, a few points to note:
+
+- I'm in the midst of learning Node myself, so do not expect super high-performance code. Let's leave premature optimization to the pros and focus on getting the basics of Node down.
+- A lot of the code examples have probably been inspired from the thousands of lines of open-source code I've read (which invariably is the best way to learn Node). So, thanks to them.
+- As far as possible, I give credit to the original authors of any code I may have borrowed. If I may have unintentionally missed something, please tweet me [@hardikr][3].
+- Keep referring the [Node docs][7] when you learn something new. The API is fairly small and straightforward.
+- The latest version of Node as of this writing is 0.4.5. That's the version I'll be using
+- Consult the [Javascript style guide][9] by [Felix Geisendörfer][10], to learn about best practises while writing JS code.
+
+I'll link to some interesting webpages about Node, so you get a broad view of Node. First, give Node website's [about section][4] a casual read. Even if you don't understand much, it's alright. Next, to get a gentler introduction to Node, check out [this paragraph][5] from a Net.Tuts blog post about Node over a year ago. Don't bother with the code samples just yet, we'll get into that. Finally, read the Introduction section oN Net.Tuts' new [new post][18] on Node.
+
+In short, just keep the following in mind:
+
+> Node is an implementation of server-side Javascript and is written using the V8 Javascript engine (which is a blazing fast JS engine written by Google, and it's part of the reason why Chrome is so fast). Node uses an event-driven programming model, that is non-blocking in nature.
+
+If you still don't understand, don't fret. Later on in the article I'll link you to a few articles that make things crystal clear.
+
+Right, so let's dive into some code now. First, install Node using the instructions on the [Node Github Wiki][8]. If you're on a Debian based system, just use:
+
+{% highlight bash %}
+sudo apt-get install node
+{% endhighlight %}
+ 	
+Node can run as an [REPL][6]. So fire up your terminal.
+
+{% highlight bash %}
+hardik@voodoo:~$ node
+> console.log('Hello World!');
+Hello World!
+> 
+{% endhighlight %}
+	
+That was easy, wasn't it? You may remember console.log() from using client side Javascript. Yes, you can use it on Server-Side Javascript too. Although in real-world environments, we would use *sys.debug*.
+
+So, you're probably not too excited about using Node in the terminal. Right, let's create our first server! Open up your favorite text editor, and **type** in this code. That's right, type it. Not copy-paste. Trust me, it'll help.
+
+{% highlight javascript %}
+var http = require('http'),
+		   server;
+server = http.createServer(function (req,res) {
+	res.writeHead(200, {'Content-Type' : 'text/html'});
+	res.write('<b>Hello World</b>');
+	res.end();
+}).listen(8080); // Defaults to localhost (127.0.0.1)
+console.log('Server started on http://localhost:8080');
+{% endhighlight %}  
+
+Fine, if you really want to copy paste it, grab it [here][28]. But I warned you.
+
+Let's break it down here. Natively, Node supports program components known as *modules*. These modules have to be imported by Node whenever you want to use any of them, just like you would use require in Python, Javascript etc. 
+
+{% highlight javascript %}
+var http = require('http'),
+{% endhighlight %}
+
+First, we require the *http* module, which comes packaged with Node. We create a HTTP server object. So, let's take a pause here and understand that HTTP !== Apache. Many people new to Node believe we're creating an Apache server. That's wrong. We're creating a simple HTTP server object. Next, we define a variable called server, which will act as the placeholder for the server we create in the next line.
+
+{% highlight javascript %}
+server = http.createServer(function (req,res) {
+{% endhighlight %}
+
+*function (req,res)* is the callback function for *http.createServer*. This is the crux of the event-driven programming style of Node. Because Javascript provides extensive capabilities for callbacks and anonymous functions, it seemed to be the perfect choice for implementing Node. 
+
+But, what's a callback function? A callback function is attached to a listener, and is fired on a particular event. 
+
+In the above example, the _addListener_ event is automatically added to the *http.createServer* method. In essence, whenever a client connects to our server (aka the listener receives an event), the aforementioend anonymous function is called. 
+
+{% highlight javascript %}
+res.writeHead(200, {'Content-Type' : 'text/html'});
+{% endhighlight %}
+
+Now, we have an HTTP server setup, but we still have to output Hello World to the browser. So, let's set the HTTP headers for the output. (If you have no idea about the HTTP protocol, you should probably read [RFC 2616][16], which defines the HTTP/1.1 protocol. It's a very comprehensive document and it'll be worth the time you spend on it. If you're in a hurry, you always have Wikipedia.) 
+
+Right, so the 200 status code implies everything's okay (see the [complete list][17] of HTTP status codes), and we set the Content-Type to text/html, since we're going to be sending a snippet of HTML code to our client. The headers are set so the browser knows how to render the incoming stream.
+
+{% highlight javascript %}
+res.write('<b>Hello World</b>');
+res.end();
+{% endhighlight %}
+
+We've set the headers, and now we actualy have to send the output. We write to the output stream. It's important to understand that we're just writing the snippet *<b>Hello World</b>* to the stream that is being sent by the HTTP server object, and nothing else. This could be anything: a jpeg image, an ogg audio or even an mp4 video, as long as we set the headers correctly. Next, with _res.end()_, we end the output stream, and that's an indication for the server to finally send it over to the client.
+
+{% highlight javascript %}
+}).listen(8080);
+{% endhighlight %}
+
+But, how will the server know who's listening? That's the next part, we make the server listen on a particular port and host. If you don't specify the host, it defaults to localhost (127.0.0.1). I choose port 8080 because I usually have an Apache server running on 80.
+
+{% highlight javascript %}
+console.log('Server started on http://localhost:8080');
+{% endhighlight %}
+
+Finally, we output to the terminal saying we've started the server at a particular address. This line is not required. But if it appears once you've run the code, it means the server has at least started listening.
+
+Now, save the file as server.js, and run it in the terminal like:
+
+{% highlight bash %}
+hardik@voodoo:~$ node server.js 
+Server started on http://localhost:8080
+{% endhighlight %} 
+
+That's it, fire up your favorite browser, and navigate to http://locahost:8080 and you should see your Hello World, all bolded up, because remember, we sent an html output.
+
+So, that's enough for the first post, but I'll leave with providing a few links, which you **should** read, and I cannot emphasize that enough. Even if you take nothing away from this post apart from these digesting the content of these links, it would be acceptable.
+
+- [Understanding Node][11] by Felix Geisendörfer
+- [Understanding Event-Driven programming][12] by Dan York
+- [Understanding Event Loops and Writing Great Code for NodeJS - Part 1][13] by Yahoo
+- [Deep Inside Node.Js with Ryan Dahl][15] by InfoQ
+- [Ryan Dahl on NodeJS][19] on Yahoo
+- [Understanding Threading in Node][27] on StackOverflow
+
+The InfoQ interview goes into great detail about Node, and will give you a great overall review of Node. As with everything to do with Node, always check the date of publication of the resource you're using. Things might have changed already, new features implemented, old ones deprecated and even a few API methods changed. So, learn to keep up, as you'll be doing a lot of that when using Node.
+
+In the next post, I'll introduce static file servers and basic URL routing! Till then, happy reading and make sure you thoroughly read the above mentioned links.
+
+Net.Tuts has started a screencast series on NodeJS just as I was about to publish this. They'll be building a blog engine using Node. You can check it out [here][18]. I haven't seen it yet, but knowing NetTuts, I can only vouch for it to be pretty easygoing on beginners. 
+As I mentioned before, we'll concentrate on building real-time web applications using Node and Socket.IO.
+
+One more thing, make sure to thank Ryan Dahl/Joyent for the awesome work they're doing. You could e-mail them, or even a tweet [@ry][20]/[@joyent][21] would be good enough. There are a bunch of other very influential people in the Node community, [Felix Geisendörfer][23] , [Guillermo Rauch][24] (the main guy behind [Socket.IO][14]), [TJ Holowaychuk][25] and many others. Check out an incomplete list [here][22].
+
+If you've lost track of all the links I've provided, check them out as a nice consolidated at the bottom of [the source][26] of this post.
+
+If you liked (or more importantly, hated) this post, do tweet and follow me on Twitter at [@hardikr][3] as a little thank-you :)
+
+  [1]: http://nodejs.org "Node Home"
+  [2]: https://github.com/ry/node_chat "Node_Chat"  
+  [3]: https://twitter.com/hardikr "My Twitter"
+  [4]: http://nodejs.org/#about "About Node"
+  [5]: http://net.tutsplus.com/tutorials/javascript-ajax/learning-serverside-javascript-with-node-js/#more-10044 "NetTuts Node"
+  [6]: http://en.wikipedia.org/wiki/REPL "REPL"
+  [7]: http://nodejs.org/docs/v0.4.5/api/all.html "Node Docs"
+  [8]: https://github.com/joyent/node/wiki/Installation "Node GitHub Wiki - Install"
+  [9]: http://nodeguide.com/style.html "Felixge's JS style guide"
+  [10]: http://debuggable.com "Felixge"
+  [11]: http://debuggable.com/posts/understanding-node-js:4bd98440-45e4-4a9a-8ef7-0f7ecbdd56cb "Understanding Node"
+  [12]: http://code.danyork.com/2011/01/25/node-js-doctors-offices-and-fast-food-restaurants-understanding-event-driven-programming/ "Dan York on Node"
+  [13]: http://developer.yahoo.com/blogs/ydn/posts/2010/10/understanding-the-event-loops-and-writing-great-code-for-node-js-part-1/ "Yahoo on Node"
+  [14]: http://socket.io "Socket.IO"
+  [15]: http://www.infoq.com/interviews/node-ryan-dahl "Ryan Dahl interview"
+  [16]: http://www.ietf.org/rfc/rfc2616.txt "RFC 2616"
+  [17]: http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html "HTTP status codes"
+  [18]: http://net.tutsplus.com/tutorials/javascript-ajax/this-time-youll-learn-node-js/ "NetTuts Node - new"
+  [19]: http://www.yuiblog.com/blog/2010/05/20/video-dahl/ "Ryan Dahl Video"
+  [20]: https://twitter.com/ry "Ryan Dahl Twitter"
+  [21]: https://twitter.com/joyent "Joyent Twitter"
+  [22]: http://nodeguide.com/community.html "Node Community"
+  [23]: https://github.com/felixge "Felixge Github"
+  [24]: https://github.com/guille "Guille Github"
+  [25]: https://github.com/visionmedia "TJ Github"
+  [26]: https://github.com/hardikr/hardikr.github.com/raw/master/_posts/2011-04-09-node-1.markdown "Link List"
+  [27]: http://stackoverflow.com/questions/3629784/how-is-node-js-inherently-faster-when-it-still-relies-on-threads-internally "Node Threads"
+  [28]: https://github.com/hardikr/hardikr.github.com/blob/master/static/node/post1.js [Post1 source code]

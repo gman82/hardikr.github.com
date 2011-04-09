@@ -2,19 +2,156 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>A Day Without Chocolate</title>
-    <link>http://blog.hardikr.com</link>
+    <link>http://localhost:4000</link>
     <language>en</language>
     <webMaster>me@hardikr.com (Hardik Ruparel)</webMaster>
-    <pubDate>2011-04-03T20:00:33+04:00</pubDate>
+    <pubDate>2011-04-09T20:26:43+04:00</pubDate>
     <copyright>Copyright 2011</copyright>
     <ttl>60</ttl>
     <description>A Blog by Hardik Ruparel</description>
     
     <item>
+      <title>A Gentle Introduction to Node - 1</title>
+      <link>http://localhost:4000/js/node-1</link>
+      <pubDate>Sat Apr 09 00:00:00 +0400 2011</pubDate>
+      <guid>http://localhost:4000/js/node-1/</guid>
+      <description>&lt;p&gt;There are many great introductions to Node, and I&amp;#8217;m not going to waste my time reinventing the wheel. Instead, I&amp;#8217;m trying to fill a gap that exists, somewhere between the &lt;a href='http://nodejs.org' title='Node Home'&gt;hello world program&lt;/a&gt; and the &lt;a href='https://github.com/ry/node_chat' title='Node_Chat'&gt;node-chat example&lt;/a&gt;, all while linking to great resources already out there. At the end of the post series, you should be able to comfortably create real-time web applications using NodeJS + &lt;a href='http://socket.io' title='Socket.IO'&gt;Socket.IO&lt;/a&gt;. Now it&amp;#8217;s really easy to create real-time web applications :)&lt;/p&gt;
+
+&lt;p&gt;First off, a few points to note:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I&amp;#8217;m in the midst of learning Node myself, so do not expect super high-performance code. Let&amp;#8217;s leave premature optimization to the pros and focus on getting the basics of Node down.&lt;/li&gt;
+
+&lt;li&gt;A lot of the code examples have probably been inspired from the thousands of lines of open-source code I&amp;#8217;ve read (which invariably is the best way to learn Node). So, thanks to them.&lt;/li&gt;
+
+&lt;li&gt;As far as possible, I give credit to the original authors of any code I may have borrowed. If I may have unintentionally missed something, please tweet me &lt;a href='https://twitter.com/hardikr' title='My Twitter'&gt;@hardikr&lt;/a&gt;.&lt;/li&gt;
+
+&lt;li&gt;Keep referring the &lt;a href='http://nodejs.org/docs/v0.4.5/api/all.html' title='Node Docs'&gt;Node docs&lt;/a&gt; when you learn something new. The API is fairly small and straightforward.&lt;/li&gt;
+
+&lt;li&gt;The latest version of Node as of this writing is 0.4.5. That&amp;#8217;s the version I&amp;#8217;ll be using&lt;/li&gt;
+
+&lt;li&gt;Consult the &lt;a href='http://nodeguide.com/style.html' title='Felixge'&gt;Javascript style guide&lt;/a&gt; by &lt;a href='http://debuggable.com' title='Felixge'&gt;Felix Geisendörfer&lt;/a&gt;, to learn about best practises while writing JS code.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I&amp;#8217;ll link to some interesting webpages about Node, so you get a broad view of Node. First, give Node website&amp;#8217;s &lt;a href='http://nodejs.org/#about' title='About Node'&gt;about section&lt;/a&gt; a casual read. Even if you don&amp;#8217;t understand much, it&amp;#8217;s alright. Next, to get a gentler introduction to Node, check out &lt;a href='http://net.tutsplus.com/tutorials/javascript-ajax/learning-serverside-javascript-with-node-js/#more-10044' title='NetTuts Node'&gt;this paragraph&lt;/a&gt; from a Net.Tuts blog post about Node over a year ago. Don&amp;#8217;t bother with the code samples just yet, we&amp;#8217;ll get into that. Finally, read the Introduction section oN Net.Tuts&amp;#8217; new &lt;a href='http://net.tutsplus.com/tutorials/javascript-ajax/this-time-youll-learn-node-js/' title='NetTuts Node - new'&gt;new post&lt;/a&gt; on Node.&lt;/p&gt;
+
+&lt;p&gt;In short, just keep the following in mind:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Node is an implementation of server-side Javascript and is written using the V8 Javascript engine (which is a blazing fast JS engine written by Google, and it&amp;#8217;s part of the reason why Chrome is so fast). Node uses an event-driven programming model, that is non-blocking in nature.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;If you still don&amp;#8217;t understand, don&amp;#8217;t fret. Later on in the article I&amp;#8217;ll link you to a few articles that make things crystal clear.&lt;/p&gt;
+
+&lt;p&gt;Right, so let&amp;#8217;s dive into some code now. First, install Node using the instructions on the &lt;a href='https://github.com/joyent/node/wiki/Installation' title='Node GitHub Wiki - Install'&gt;Node Github Wiki&lt;/a&gt;. If you&amp;#8217;re on a Debian based system, just use:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;sudo apt-get install node
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Node can run as an &lt;a href='http://en.wikipedia.org/wiki/REPL' title='REPL'&gt;REPL&lt;/a&gt;. So fire up your terminal.&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;hardik@voodoo:~&lt;span class='nv'&gt;$ &lt;/span&gt;node
+&amp;gt; console.log&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;Hello World!&amp;#39;&lt;/span&gt;&lt;span class='o'&gt;)&lt;/span&gt;;
+Hello World!
+&amp;gt; 
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;That was easy, wasn&amp;#8217;t it? You may remember console.log() from using client side Javascript. Yes, you can use it on Server-Side Javascript too. Although in real-world environments, we would use &lt;em&gt;sys.debug&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;So, you&amp;#8217;re probably not too excited about using Node in the terminal. Right, let&amp;#8217;s create our first server! Open up your favorite text editor, and &lt;strong&gt;type&lt;/strong&gt; in this code. That&amp;#8217;s right, type it. Not copy-paste. Trust me, it&amp;#8217;ll help.&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;http&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;http&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;),&lt;/span&gt;
+		   &lt;span class='nx'&gt;server&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='nx'&gt;server&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;http&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;createServer&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;req&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+	&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;writeHead&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='mi'&gt;200&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;text/html&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;});&lt;/span&gt;
+	&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;write&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;&amp;lt;b&amp;gt;Hello World&amp;lt;/b&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+	&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;end&lt;/span&gt;&lt;span class='p'&gt;();&lt;/span&gt;
+&lt;span class='p'&gt;}).&lt;/span&gt;&lt;span class='nx'&gt;listen&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='mi'&gt;8080&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt; &lt;span class='c1'&gt;// Defaults to localhost (127.0.0.1)&lt;/span&gt;
+&lt;span class='nx'&gt;console&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;log&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;Server started on http://localhost:8080&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Fine, if you really want to copy paste it, grab it &lt;a href='https://github.com/hardikr/hardikr.github.com/blob/master/static/node/post1.js'&gt;here&lt;/a&gt;. But I warned you.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#8217;s break it down here. Natively, Node supports program components known as &lt;em&gt;modules&lt;/em&gt;. These modules have to be imported by Node whenever you want to use any of them, just like you would use require in Python, Javascript etc.&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;http&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;http&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;),&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;First, we require the &lt;em&gt;http&lt;/em&gt; module, which comes packaged with Node. We create a HTTP server object. So, let&amp;#8217;s take a pause here and understand that HTTP !== Apache. Many people new to Node believe we&amp;#8217;re creating an Apache server. That&amp;#8217;s wrong. We&amp;#8217;re creating a simple HTTP server object. Next, we define a variable called server, which will act as the placeholder for the server we create in the next line.&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='nx'&gt;server&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;http&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;createServer&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;req&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;function (req,res)&lt;/em&gt; is the callback function for &lt;em&gt;http.createServer&lt;/em&gt;. This is the crux of the event-driven programming style of Node. Because Javascript provides extensive capabilities for callbacks and anonymous functions, it seemed to be the perfect choice for implementing Node.&lt;/p&gt;
+
+&lt;p&gt;But, what&amp;#8217;s a callback function? A callback function is attached to a listener, and is fired on a particular event.&lt;/p&gt;
+
+&lt;p&gt;In the above example, the &lt;em&gt;addListener&lt;/em&gt; event is automatically added to the &lt;em&gt;http.createServer&lt;/em&gt; method. In essence, whenever a client connects to our server (aka the listener receives an event), the aforementioend anonymous function is called.&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;writeHead&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='mi'&gt;200&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;text/html&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;});&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Now, we have an HTTP server setup, but we still have to output Hello World to the browser. So, let&amp;#8217;s set the HTTP headers for the output. (If you have no idea about the HTTP protocol, you should probably read &lt;a href='http://www.ietf.org/rfc/rfc2616.txt' title='RFC 2616'&gt;RFC 2616&lt;/a&gt;, which defines the HTTP/1.1 protocol. It&amp;#8217;s a very comprehensive document and it&amp;#8217;ll be worth the time you spend on it. If you&amp;#8217;re in a hurry, you always have Wikipedia.)&lt;/p&gt;
+
+&lt;p&gt;Right, so the 200 status code implies everything&amp;#8217;s okay (see the &lt;a href='http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html' title='HTTP status codes'&gt;complete list&lt;/a&gt; of HTTP status codes), and we set the Content-Type to text/html, since we&amp;#8217;re going to be sending a snippet of HTML code to our client. The headers are set so the browser knows how to render the incoming stream.&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;write&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;&amp;lt;b&amp;gt;Hello World&amp;lt;/b&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;end&lt;/span&gt;&lt;span class='p'&gt;();&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;We&amp;#8217;ve set the headers, and now we actualy have to send the output. We write to the output stream. It&amp;#8217;s important to understand that we&amp;#8217;re just writing the snippet &lt;em&gt;&lt;b&gt;Hello World&lt;/b&gt;&lt;/em&gt; to the stream that is being sent by the HTTP server object, and nothing else. This could be anything: a jpeg image, an ogg audio or even an mp4 video, as long as we set the headers correctly. Next, with &lt;em&gt;res.end()&lt;/em&gt;, we end the output stream, and that&amp;#8217;s an indication for the server to finally send it over to the client.&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='p'&gt;}).&lt;/span&gt;&lt;span class='nx'&gt;listen&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='mi'&gt;8080&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;But, how will the server know who&amp;#8217;s listening? That&amp;#8217;s the next part, we make the server listen on a particular port and host. If you don&amp;#8217;t specify the host, it defaults to localhost (127.0.0.1). I choose port 8080 because I usually have an Apache server running on 80.&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='nx'&gt;console&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;log&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;Server started on http://localhost:8080&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Finally, we output to the terminal saying we&amp;#8217;ve started the server at a particular address. This line is not required. But if it appears once you&amp;#8217;ve run the code, it means the server has at least started listening.&lt;/p&gt;
+
+&lt;p&gt;Now, save the file as server.js, and run it in the terminal like:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;hardik@voodoo:~&lt;span class='nv'&gt;$ &lt;/span&gt;node server.js 
+Server started on http://localhost:8080
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;That&amp;#8217;s it, fire up your favorite browser, and navigate to http://locahost:8080 and you should see your Hello World, all bolded up, because remember, we sent an html output.&lt;/p&gt;
+
+&lt;p&gt;So, that&amp;#8217;s enough for the first post, but I&amp;#8217;ll leave with providing a few links, which you should read. Even if you take nothing away from this post apart from these links, it would be acceptable. Sometimes, content might repeat but that would only help reinforce cocnepts.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='http://debuggable.com/posts/understanding-node-js:4bd98440-45e4-4a9a-8ef7-0f7ecbdd56cb' title='Understanding Node'&gt;Understanding Node&lt;/a&gt; by Felix Geisendörfer&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://code.danyork.com/2011/01/25/node-js-doctors-offices-and-fast-food-restaurants-understanding-event-driven-programming/' title='Dan York on Node'&gt;Understanding Event-Driven programming&lt;/a&gt; by Dan York&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://developer.yahoo.com/blogs/ydn/posts/2010/10/understanding-the-event-loops-and-writing-great-code-for-node-js-part-1/' title='Yahoo on Node'&gt;Understanding Event Loops and Writing Great Code for NodeJS - Part 1&lt;/a&gt; by Yahoo&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://www.infoq.com/interviews/node-ryan-dahl' title='Ryan Dahl interview'&gt;Deep Inside Node.Js with Ryan Dahl&lt;/a&gt; by InfoQ&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://www.yuiblog.com/blog/2010/05/20/video-dahl/' title='Ryan Dahl Video'&gt;Ryan Dahl on NodeJS&lt;/a&gt; by Yahoo&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://stackoverflow.com/questions/3629784/how-is-node-js-inherently-faster-when-it-still-relies-on-threads-internally' title='Node Threads'&gt;Understanding Threading in Node&lt;/a&gt; on StackOverflow&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The InfoQ interview goes into great detail about Node, and will give you a great overall review of Node. As with everything to do with Node, always check the date of publication of the resource you&amp;#8217;re using. Things might have changed already, new features implemented, old ones deprecated and even a few API methods changed. So, learn to keep up, as you&amp;#8217;ll be doing a lot of that when using Node.&lt;/p&gt;
+
+&lt;p&gt;In the next post, I&amp;#8217;ll introduce static file servers and basic URL routing! Till then, happy reading and make sure you thoroughly read the above mentioned links.&lt;/p&gt;
+
+&lt;p&gt;Net.Tuts has started a screencast series on NodeJS just as I was about to publish this. They&amp;#8217;ll be building a blog engine using Node. You can check it out &lt;a href='http://net.tutsplus.com/tutorials/javascript-ajax/this-time-youll-learn-node-js/' title='NetTuts Node - new'&gt;here&lt;/a&gt;. I haven&amp;#8217;t seen it yet, but knowing NetTuts, I can only vouch for it to be pretty easygoing on beginners. As I mentioned before, we&amp;#8217;ll concentrate on building real-time web applications using Node and Socket.IO.&lt;/p&gt;
+
+&lt;p&gt;One more thing, make sure to thank Ryan Dahl/Joyent for the awesome work they&amp;#8217;re doing. You could e-mail them, or even a tweet &lt;a href='https://twitter.com/ry' title='Ryan Dahl Twitter'&gt;@ry&lt;/a&gt;/&lt;a href='https://twitter.com/joyent' title='Joyent Twitter'&gt;@joyent&lt;/a&gt; would be good enough. There are a bunch of other very influential people in the Node community, &lt;a href='https://github.com/felixge' title='Felixge Github'&gt;Felix Geisendörfer&lt;/a&gt; , &lt;a href='https://github.com/guille' title='Guille Github'&gt;Guillermo Rauch&lt;/a&gt; (the main guy behind &lt;a href='http://socket.io' title='Socket.IO'&gt;Socket.IO&lt;/a&gt;), &lt;a href='https://github.com/visionmedia' title='TJ Github'&gt;TJ Holowaychuk&lt;/a&gt; and many others. Check out an incomplete list &lt;a href='http://nodeguide.com/community.html' title='Node Community'&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;#8217;ve lost track of all the links I&amp;#8217;ve provided, check them out as a nice consolidated at the bottom of &lt;a href='https://github.com/hardikr/hardikr.github.com/raw/master/_posts/2011-04-09-node-1.markdown' title='Link List'&gt;the source&lt;/a&gt; of this post.&lt;/p&gt;
+
+&lt;p&gt;If you liked (or more importantly, hated) this post, do tweet and follow me on Twitter at &lt;a href='https://twitter.com/hardikr' title='My Twitter'&gt;@hardikr&lt;/a&gt; as a little thank-you :)&lt;/p&gt;</description>
+      
+      <category domain="http://blog.hardikr.com/tag/node">node</category>
+      
+      <category domain="http://blog.hardikr.com/tag/nodejs">nodejs</category>
+      
+      <category domain="http://blog.hardikr.com/tag/programming">programming</category>
+      
+      <category domain="http://blog.hardikr.com/tag/javascript">javascript</category>
+      
+    </item>
+    
+    <item>
       <title>Twenty Minutes on a Mumbai local train</title>
-      <link>http://blog.hardikr.com/india/mumbai-locals</link>
+      <link>http://localhost:4000/india/mumbai-locals</link>
       <pubDate>Sun Apr 03 00:00:00 +0400 2011</pubDate>
-      <guid>http://blog.hardikr.com/india/mumbai-locals/</guid>
+      <guid>http://localhost:4000/india/mumbai-locals/</guid>
       <description>&lt;p&gt;A big part of the excitement of being a resident of Mumbai involves travelling by local trains. It would be an educated guess when I say that Mumbai boasts of one of the most extensive intra-city rail transport in the world.&lt;/p&gt;
 
 &lt;p&gt;My commute to work involves a local train journey lasting approximately 15-20 minutes, enveloped between two bus rides. However, this 20 minute journey never ceases to be eventful. I arrive at Borivali Railway Station by bus at about 08:05, and my local train, which arrives at Platform #1, is not until 08:17. However, I&amp;#8217;m already all set for boarding. My wallet and mobile phone have been safely tucked into my backpack, which ironically, I wear on my front.&lt;/p&gt;
@@ -63,10 +200,11 @@
     
     <item>
       <title>Apparently, Eightbit.me has hijacked my Twitter profile photo!</title>
-      <link>http://blog.hardikr.com/tech/eightbit-hijack</link>
+      <link>http://localhost:4000/tech/eightbit-hijack</link>
       <pubDate>Sat Mar 26 00:00:00 +0400 2011</pubDate>
-      <guid>http://blog.hardikr.com/tech/eightbit-hijack/</guid>
-      <description>&lt;p&gt;I logged into Twitter today and realized that my profile picture had got changed to an avatar I had created on &lt;a href=&quot;http://eightbit.me&quot;&gt;eightbit.me&lt;/a&gt; a few days ago. That's weird! I do not remember doing such a thing!&lt;/p&gt;
+      <guid>http://localhost:4000/tech/eightbit-hijack/</guid>
+      <description>
+&lt;p&gt;I logged into Twitter today and realized that my profile picture had got changed to an avatar I had created on &lt;a href=&quot;http://eightbit.me&quot;&gt;eightbit.me&lt;/a&gt; a few days ago. That's weird! I do not remember doing such a thing!&lt;/p&gt;
 &lt;p&gt;My first instinct was to check whether other people who had used eightbit.me had suffered a similar fate, and around eight of the ten people I checked out on eightbit using their profile randomizer had their avatars set as their Twitter profile photo. I don't know if that proves anything or not, I'm just stating my observations.&lt;/p&gt;
 &lt;p&gt;I'll be the first one to admit it, I did not verify what sort of permissions eightbit demanded at the time I approved it, and I presumed it was just an interface for signing in.&lt;/p&gt;
 &lt;p&gt;But, it seems that they've hijacked my Twitter profile photo. What's next? It reminds me of that post on Hacker News whose title went something like 'oAuth will kill your kids'. I can't find it right now, but I really want to go back and read that article again.&amp;nbsp;&lt;/p&gt;
@@ -82,10 +220,11 @@
     
     <item>
       <title>A Time for New Mistakes</title>
-      <link>http://blog.hardikr.com/startups/mistakes</link>
+      <link>http://localhost:4000/startups/mistakes</link>
       <pubDate>Wed Mar 23 00:00:00 +0400 2011</pubDate>
-      <guid>http://blog.hardikr.com/startups/mistakes/</guid>
-      <description>&lt;p&gt;Most startup people are ex-disgruntled folks, having grown beards of experience in their jobs which they held for years and they were so sick of, attempting to quit their jobs day-in and day-out like it was a terrible addiction, and finally picking up the courage to do so. Alas, all those hours of slogging away at work, coding into the night for your company's new projects, teaming up with brilliant and quirky programmers, getting admonished for making mistakes in the production release of the code-base; all these things come to an end. Time and experience has made them the wiser.&lt;/p&gt;
+      <guid>http://localhost:4000/startups/mistakes/</guid>
+      <description>
+&lt;p&gt;Most startup people are ex-disgruntled folks, having grown beards of experience in their jobs which they held for years and they were so sick of, attempting to quit their jobs day-in and day-out like it was a terrible addiction, and finally picking up the courage to do so. Alas, all those hours of slogging away at work, coding into the night for your company's new projects, teaming up with brilliant and quirky programmers, getting admonished for making mistakes in the production release of the code-base; all these things come to an end. Time and experience has made them the wiser.&lt;/p&gt;
 
 &lt;p&gt;They've found a new life. They've rediscovered what's it like to be a workaholic, but only this time they enjoy doing it. They've discovered a new passion ( it's usually photography ) , and they've started to finally love what they do for a living.  They're ready to sacrifice anything and everything for their startup to succeed. Every minute spent not doing anything else counts to making the startup a success. Some founders even make corn-flakes to make their ends meet.&lt;/p&gt;
 
@@ -110,10 +249,11 @@
     
     <item>
       <title>A Week with BlackBerry</title>
-      <link>http://blog.hardikr.com/tech/testing-blackberry</link>
+      <link>http://localhost:4000/tech/testing-blackberry</link>
       <pubDate>Tue Mar 15 00:00:00 +0400 2011</pubDate>
-      <guid>http://blog.hardikr.com/tech/testing-blackberry/</guid>
-      <description>&lt;p&gt;I've now spent over a week with the Blackberry Curve 9300, which is the first in the Curve series to have 3G and GPS.. I guess at around 300$, that was a decent buy.&lt;/p&gt;
+      <guid>http://localhost:4000/tech/testing-blackberry/</guid>
+      <description>
+&lt;p&gt;I've now spent over a week with the Blackberry Curve 9300, which is the first in the Curve series to have 3G and GPS.. I guess at around 300$, that was a decent buy.&lt;/p&gt;
 &lt;p&gt;This is my first smartphone (I know!!), but I am in a position to compare BlackBerry with iOS, since I've owned an iPod touch for a good while now, and have extensively used the App Store and all the great apps that come with it. I'll be talking about BlackBerry iOS 5.0 and Apple iOS 4.2.1&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;First, the obvious and the ugly&lt;/strong&gt;. The BB App Store sucks. I'm thankful for my iPod touch without which apps like Instapaper, Angry Birds, TinyWings and $_your_favorite_app would only be a distant dream.&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;The prominent apps in the BB App Store are the social media giants: Facebook, Twitter, FourSquare and those apps are god-awful. The Facebook app is especially made to make sharing as difficult as possible. The Twitter app looks like it's doing a favor to me in terms of the UI/UX, and geotagging seems to be a feature missing (or very difficult to find, at best). The FourSquare just about passes the mark, but it often fails to connect to it's mother ship, even when the BB data services are working fine.&lt;br /&gt;&lt;br /&gt;Another thing worth mentioning here would be that BB allows access to the App Store, and usage of these mainstream apps only over it's data service, and they DO NOT work over a wireless connection. It's as blatant a way of saying, &quot;Either pay for our data connection every month, or get lost&quot;. They expect me, as a smartphone buyer, not to access the basic features of a smartphone, aka social media (which they actually use to sell this product) over Wi-Fi hotspots, which are fast becoming the major way of accessing the Internet at home and at work. This decision has really set a rebellious anti-BlackBerry sentiment inside me.&lt;/p&gt;
@@ -132,9 +272,9 @@
     
     <item>
       <title>Egypt, India</title>
-      <link>http://blog.hardikr.com/india/egypt-india</link>
+      <link>http://localhost:4000/india/egypt-india</link>
       <pubDate>Tue Mar 01 00:00:00 +0400 2011</pubDate>
-      <guid>http://blog.hardikr.com/india/egypt-india/</guid>
+      <guid>http://localhost:4000/india/egypt-india/</guid>
       <description>&lt;p&gt;Keeping in tune with my last post about &lt;a href='http://blog.hardikr.com/startups/call-me'&gt;verbs&lt;/a&gt;, &lt;em&gt;pulling off an ‘Egypt’&lt;/em&gt; seems like a acceptable phrase that India can aspire to. Let’s take a look at some of the causes of the Egyptian Revolution of 2011. Let’s stack up Egypt’s problems alongside India’s (with utmost respect towards Egypt, I know it was much worse off than India is now, but just for the sake or argument). According to Wikipedia,&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -179,9 +319,9 @@
     
     <item>
       <title>Call Me, or How Becoiming a Verb is a Sign of Success</title>
-      <link>http://blog.hardikr.com/startups/call-me</link>
+      <link>http://localhost:4000/startups/call-me</link>
       <pubDate>Wed Feb 09 00:00:00 +0400 2011</pubDate>
-      <guid>http://blog.hardikr.com/startups/call-me/</guid>
+      <guid>http://localhost:4000/startups/call-me/</guid>
       <description>&lt;p&gt;If you’ve ever noticed, many of the successful technologies that have emerged over the past century, have become verbs of their own right, or become the de-facto ‘direct object’ of an &lt;a href='http://en.wikipedia.org/wiki/Verb#Valency'&gt;intransitive verb&lt;/a&gt;. First we have some of the golden oldies,&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;&amp;#8220;Call me&amp;#8221;&lt;br /&gt;&amp;#8220;Fax me&amp;#8221;&lt;br /&gt;&amp;#8220;E-mail me&amp;#8221; / &amp;#8220;Check my e-mail&amp;#8221;&lt;br /&gt;&amp;#8220;Watching TV&amp;#8221;&lt;br /&gt;&amp;#8220;Digg it&amp;#8221;&lt;/em&gt;&lt;/p&gt;
@@ -204,9 +344,9 @@
     
     <item>
       <title>Jo Jeeta Wohi Sikander to be Banned</title>
-      <link>http://blog.hardikr.com/satire/jo-jeeta-banned</link>
+      <link>http://localhost:4000/satire/jo-jeeta-banned</link>
       <pubDate>Tue Jan 25 00:00:00 +0400 2011</pubDate>
-      <guid>http://blog.hardikr.com/satire/jo-jeeta-banned/</guid>
+      <guid>http://localhost:4000/satire/jo-jeeta-banned/</guid>
       <description>&lt;p&gt;The 1992 cult movie &lt;em&gt;&lt;a href='http://www.imdb.com/title/tt0104561/' title='Jo Jeeta Wohi Sikandar'&gt;Jo Jeeta Wohi Sikandar&lt;/a&gt;&lt;/em&gt; is all set to be banned in India, following repeated protests of parents, teachers and child-rights groups and activists.&lt;/p&gt;
 
 &lt;p&gt;The decision came after parents all over the country threatened to burn down the only movie theater in the country that still shows the movie, a 50 seater cinema at Baltana, Punjab.&lt;/p&gt;
@@ -245,10 +385,11 @@
     
     <item>
       <title>Something's Wrong</title>
-      <link>http://blog.hardikr.com/india/somethings-wrong</link>
+      <link>http://localhost:4000/india/somethings-wrong</link>
       <pubDate>Tue Jan 18 00:00:00 +0400 2011</pubDate>
-      <guid>http://blog.hardikr.com/india/somethings-wrong/</guid>
-      <description>&lt;p&gt;The last few months have been really, really crazy. Just look around and you can see disruption everywhere! Firstly, there were news that a viral Facebook app called threewords.me is about to be acquired just after a couple of days of launch.&lt;/p&gt;
+      <guid>http://localhost:4000/india/somethings-wrong/</guid>
+      <description>
+&lt;p&gt;The last few months have been really, really crazy. Just look around and you can see disruption everywhere! Firstly, there were news that a viral Facebook app called threewords.me is about to be acquired just after a couple of days of launch.&lt;/p&gt;
 &lt;p&gt;Cheezburger network just raised 30 million dollars.&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;WTF DO I DOEZ WIF 30 MILLION DOLLARS?&lt;/p&gt;
 &lt;p&gt;Something's not quite right. The Silicon Valley has gone crazy. I can accept that a &lt;a href=&quot;http://posterous.com&quot;&gt;Tumblr clone&lt;/a&gt; somehow managed to get accepted into &lt;a href=&quot;http://ycombinator.com&quot;&gt;YC&lt;/a&gt;&amp;nbsp;, but seriously, Cheezburger network raising 30 million dollars?&lt;/p&gt;
@@ -284,10 +425,11 @@
     
     <item>
       <title>Why Flipkart Rocks</title>
-      <link>http://blog.hardikr.com/startups/flipkart</link>
+      <link>http://localhost:4000/startups/flipkart</link>
       <pubDate>Thu Jan 13 00:00:00 +0400 2011</pubDate>
-      <guid>http://blog.hardikr.com/startups/flipkart/</guid>
-      <description>&lt;p&gt;Yesterday, I got this e-mail from Flipkart:&lt;/p&gt;
+      <guid>http://localhost:4000/startups/flipkart/</guid>
+      <description>
+&lt;p&gt;Yesterday, I got this e-mail from Flipkart:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;span&gt;Hello,&lt;br /&gt;&lt;br /&gt;We recently sent you an Availability notification for the book &quot;Liar's Poker: The Great Powers, Yugoslavia And The Wars Of The Future&quot; &amp;nbsp;(&lt;a target=&quot;_blank&quot; href=&quot;http://www.flipkart.com/liar-poker-michel-collon-great-book-0965691667&quot;&gt;http://www.flipkart.com/liar-poker-michel-collon-great-book-0965691667&lt;/a&gt;) as earlier requested by you on December 14, 2010.&lt;br /&gt;&lt;br /&gt;Regrettably, the notification was due to an error at our end. &amp;nbsp;The issue was fixed earlier today and needless to say, will not be repeated. Our apologies if we got your hopes up with regards to a book that you had long been waiting for. Be assured, we will continue to maintain a record of your request(s). The next time we send you an Availability email, you can be sure the book will be available for ordering.&lt;br /&gt;&lt;br /&gt;Sincere apologies again from all of us at Flipkart.com. Do let us know if we can be of any further assistance.&lt;br /&gt;&lt;br /&gt;Regards,&lt;br /&gt;Flipkart Customer Support Team&lt;/span&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -298,37 +440,6 @@
       <category domain="http://blog.hardikr.com/tag/india">india</category>
       
       <category domain="http://blog.hardikr.com/tag/startups">startups</category>
-      
-    </item>
-    
-    <item>
-      <title>Hacker News Classic</title>
-      <link>http://blog.hardikr.com/hn/hn-classic</link>
-      <pubDate>Mon Jan 10 00:00:00 +0400 2011</pubDate>
-      <guid>http://blog.hardikr.com/hn/hn-classic/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Hacker News Classic&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;For newer members of Hacker News (like me), HN Classic is a lesser known feature. You can view it&amp;nbsp;&lt;a target=&quot;_blank&quot; href=&quot;http://news.ycombinator.com/classic&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;What is it? It shows the front-page with number of votes cast from accounts that are at least a year old. Why ? PG says, almost two years ago, in &lt;a href=&quot;http://news.ycombinator.com/item?id=607271&quot;&gt;this submission&lt;/a&gt;.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;span&gt;I wanted to see if there had been any visible decrease in quality. Doesn't look like it. There's surprisingly little difference between this and the regular frontpage.&lt;/span&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Even today, there doesn't seem to be much of a difference between the Classic page and the regular front page. HN probably has a really high number of lurkers, who don't bother registering/upvoting. Also, HN has been around for a long time, so a relatively higher number of accounts are older than a year. That probably dilutes the measure PG was looking for.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Submissions with Minimum Votes&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Next, we come to the Minimum votes feature. You can view the front-page with submissions that have at least a minimum number of votes that you can specify. Example: &lt;a href=&quot;http://news.ycombinator.com/over?points=100&quot;&gt;http://news.ycombinator.com/over?points=100&lt;/a&gt; will return posts with minimum of 100 votes. An interesting experiment is visiting the above link, and seeing how many of the thirty you have already visited. If it's greater than 20, you can be sure you're up-to-date with the latest in tech/startup. (in fact, HN was earlier known as &lt;em&gt;Startup News&lt;/em&gt;).&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Karma Thresholds&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;After you reach a certain threshold ( 200-300 I think), you can edit the color of the website header. At 500 karma, you get down-voting. At a higher karma level, you can create Polls. Also, I've read somewhere that beyond a really high threshold you can even edit the text 'Hacker News' in the header !&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Hacker News Mirror&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;PG hosts a mirror at &lt;a href=&quot;http://apps.ycombinator.com/news&quot;&gt;http://apps.ycombinator.com/news&lt;/a&gt;&amp;nbsp;, in case you live in a weird-ass place that's blocked news.YC .&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;E-mail Notifications&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;You can use Notifo to get notified when somebody responds to your thread. Just put your Notifo username in the appropriate place in your HN profile.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Bookmarking Stories&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Ever wished you could bookmark that clever hack to use for your next project. Sure, there's Instapaper, but if you just upvote it, it'll appear in your saved stories in your profile.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Delay your comment&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Ever posted a comment only to find out the original poster has edited his/her comment meanwhile? Use the delay field in your profile to make your comments appear after a short while.&lt;/p&gt;
-&lt;p&gt;That's it I guess. You probably knew most of the stuff above. If you didn't, well, now you do!&lt;/p&gt;
-</description>
-      
-      <category domain="http://blog.hardikr.com/tag/hacker news">hacker news</category>
       
     </item>
     
