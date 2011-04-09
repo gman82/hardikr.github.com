@@ -126,7 +126,7 @@ In the next post, I'll introduce static file servers and basic URL routing! Till
 Net.Tuts has started a screencast series on NodeJS just as I was about to publish this. They'll be building a blog engine using Node. You can check it out [here][18]. I haven't seen it yet, but knowing NetTuts, I can only vouch for it to be pretty easygoing on beginners. 
 As I mentioned before, we'll concentrate on building real-time web applications using Node and Socket.IO.
 
-One more thing, make sure to thank Ryan Dahl/Joyent for the awesome work they're doing. You could e-mail them, or even a tweet [@ry][20]/[@joyent][21] would be good enough. There are a bunch of other very influential people in the Node community, [Felix Geisendörfer][23] , [Guillermo Rauch][24] (the main guy behind [Socket.IO][14]), [TJ Holowaychuk][25] and many others. Check out an incomplete list [here][22].
+One more thing, make sure to thank Ryan Dahl/Joyent for the awesome work they're doing. You could e-mail them, or even a tweet [@ryah][20]/[@joyent][21] would be good enough. There are a bunch of other very influential people in the Node community, [Felix Geisendörfer][23] , [Guillermo Rauch][24] (the main guy behind [Socket.IO][14]), [TJ Holowaychuk][25] and many others. Check out an incomplete list [here][22].
 
 If you've lost track of all the links I've provided, check them out as a nice consolidated at the bottom of [the source][26] of this post.
 
@@ -151,7 +151,7 @@ If you liked (or more importantly, hated) this post, do tweet and follow me on T
   [17]: http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html "HTTP status codes"
   [18]: http://net.tutsplus.com/tutorials/javascript-ajax/this-time-youll-learn-node-js/ "NetTuts Node - new"
   [19]: http://www.yuiblog.com/blog/2010/05/20/video-dahl/ "Ryan Dahl Video"
-  [20]: https://twitter.com/ry "Ryan Dahl Twitter"
+  [20]: https://twitter.com/ryah "Ryan Dahl Twitter"
   [21]: https://twitter.com/joyent "Joyent Twitter"
   [22]: http://nodeguide.com/community.html "Node Community"
   [23]: https://github.com/felixge "Felixge Github"
