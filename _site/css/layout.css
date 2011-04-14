@@ -10,16 +10,6 @@ margin-left: 0}
 blockquote {font-style: italic;}
 img {-webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius: 3px;margin-bottom: 20px;}
 a img {display: block;}
-code {
- font-family: Monaco, Verdana, Sans-serif;
- font-size: 12px;
- background-color: #f9f9f9;
- border: 1px solid #D0D0D0;
- color: #002166;
- display: block;
- margin: 14px 0 14px 0;
- padding: 12px 10px 12px 10px;
-}
 
 body {color: #4f4d4b;background: #FFF;font-family: 'PT Sans', "Lucida Grande", Helvetica, "Lucida Sans Unicode", "Lucida Sans", Tahoma, Arial, sans-serif;font-size: 14px;line-height: 24px;-webkit-text-size-adjust: none;}
 

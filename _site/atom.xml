@@ -2,9 +2,9 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>A Day Without Chocolate</title>
- <link href="http://localhost:4000/atom.xml" rel="self"/>
- <link href="http://localhost:4000/"/>
- <updated>2011-04-09T20:26:43+04:00</updated>
+ <link href="http://blog.hardikr.com/atom.xml" rel="self"/>
+ <link href="http://blog.hardikr.com/"/>
+ <updated>2011-04-14T21:19:20+04:00</updated>
  <id>http://blog.hardikr.com.com/</id>
  <author>
    <name>Hardik Ruparel</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>A Gentle Introduction to Node - 1</title>
-   <link href="http://localhost:4000/js/node-1"/>
+   <link href="http://blog.hardikr.com/js/node-1"/>
    <updated>2011-04-09T00:00:00+04:00</updated>
-   <id>http://localhost:4000/js/node-1</id>
+   <id>http://blog.hardikr.com/js/node-1</id>
    <content type="html">&lt;p&gt;There are many great introductions to Node, and I&amp;#8217;m not going to waste my time reinventing the wheel. Instead, I&amp;#8217;m trying to fill a gap that exists, somewhere between the &lt;a href='http://nodejs.org' title='Node Home'&gt;hello world program&lt;/a&gt; and the &lt;a href='https://github.com/ry/node_chat' title='Node_Chat'&gt;node-chat example&lt;/a&gt;, all while linking to great resources already out there. At the end of the post series, you should be able to comfortably create real-time web applications using NodeJS + &lt;a href='http://socket.io' title='Socket.IO'&gt;Socket.IO&lt;/a&gt;. Now it&amp;#8217;s really easy to create real-time web applications :)&lt;/p&gt;
 
 &lt;p&gt;First off, a few points to note:&lt;/p&gt;
@@ -111,7 +111,7 @@ Server started on http://localhost:8080
 &lt;/div&gt;
 &lt;p&gt;That&amp;#8217;s it, fire up your favorite browser, and navigate to http://locahost:8080 and you should see your Hello World, all bolded up, because remember, we sent an html output.&lt;/p&gt;
 
-&lt;p&gt;So, that&amp;#8217;s enough for the first post, but I&amp;#8217;ll leave with providing a few links, which you should read. Even if you take nothing away from this post apart from these links, it would be acceptable. Sometimes, content might repeat but that would only help reinforce cocnepts.&lt;/p&gt;
+&lt;p&gt;So, that&amp;#8217;s enough for the first post, but I&amp;#8217;ll leave with providing a few links, which you &lt;strong&gt;should&lt;/strong&gt; read, and I cannot emphasize that enough. Even if you take nothing away from this post apart from these digesting the content of these links, it would be acceptable.&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href='http://debuggable.com/posts/understanding-node-js:4bd98440-45e4-4a9a-8ef7-0f7ecbdd56cb' title='Understanding Node'&gt;Understanding Node&lt;/a&gt; by Felix Geisendörfer&lt;/li&gt;
@@ -122,7 +122,7 @@ Server started on http://localhost:8080
 
 &lt;li&gt;&lt;a href='http://www.infoq.com/interviews/node-ryan-dahl' title='Ryan Dahl interview'&gt;Deep Inside Node.Js with Ryan Dahl&lt;/a&gt; by InfoQ&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='http://www.yuiblog.com/blog/2010/05/20/video-dahl/' title='Ryan Dahl Video'&gt;Ryan Dahl on NodeJS&lt;/a&gt; by Yahoo&lt;/li&gt;
+&lt;li&gt;&lt;a href='http://www.yuiblog.com/blog/2010/05/20/video-dahl/' title='Ryan Dahl Video'&gt;Ryan Dahl on NodeJS&lt;/a&gt; on Yahoo&lt;/li&gt;
 
 &lt;li&gt;&lt;a href='http://stackoverflow.com/questions/3629784/how-is-node-js-inherently-faster-when-it-still-relies-on-threads-internally' title='Node Threads'&gt;Understanding Threading in Node&lt;/a&gt; on StackOverflow&lt;/li&gt;
 &lt;/ul&gt;
@@ -133,7 +133,7 @@ Server started on http://localhost:8080
 
 &lt;p&gt;Net.Tuts has started a screencast series on NodeJS just as I was about to publish this. They&amp;#8217;ll be building a blog engine using Node. You can check it out &lt;a href='http://net.tutsplus.com/tutorials/javascript-ajax/this-time-youll-learn-node-js/' title='NetTuts Node - new'&gt;here&lt;/a&gt;. I haven&amp;#8217;t seen it yet, but knowing NetTuts, I can only vouch for it to be pretty easygoing on beginners. As I mentioned before, we&amp;#8217;ll concentrate on building real-time web applications using Node and Socket.IO.&lt;/p&gt;
 
-&lt;p&gt;One more thing, make sure to thank Ryan Dahl/Joyent for the awesome work they&amp;#8217;re doing. You could e-mail them, or even a tweet &lt;a href='https://twitter.com/ry' title='Ryan Dahl Twitter'&gt;@ry&lt;/a&gt;/&lt;a href='https://twitter.com/joyent' title='Joyent Twitter'&gt;@joyent&lt;/a&gt; would be good enough. There are a bunch of other very influential people in the Node community, &lt;a href='https://github.com/felixge' title='Felixge Github'&gt;Felix Geisendörfer&lt;/a&gt; , &lt;a href='https://github.com/guille' title='Guille Github'&gt;Guillermo Rauch&lt;/a&gt; (the main guy behind &lt;a href='http://socket.io' title='Socket.IO'&gt;Socket.IO&lt;/a&gt;), &lt;a href='https://github.com/visionmedia' title='TJ Github'&gt;TJ Holowaychuk&lt;/a&gt; and many others. Check out an incomplete list &lt;a href='http://nodeguide.com/community.html' title='Node Community'&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;One more thing, make sure to thank Ryan Dahl/Joyent for the awesome work they&amp;#8217;re doing. You could e-mail them, or even a tweet &lt;a href='https://twitter.com/ryah' title='Ryan Dahl Twitter'&gt;@ryah&lt;/a&gt;/&lt;a href='https://twitter.com/joyent' title='Joyent Twitter'&gt;@joyent&lt;/a&gt; would be good enough. There are a bunch of other very influential people in the Node community, &lt;a href='https://github.com/felixge' title='Felixge Github'&gt;Felix Geisendörfer&lt;/a&gt; , &lt;a href='https://github.com/guille' title='Guille Github'&gt;Guillermo Rauch&lt;/a&gt; (the main guy behind &lt;a href='http://socket.io' title='Socket.IO'&gt;Socket.IO&lt;/a&gt;), &lt;a href='https://github.com/visionmedia' title='TJ Github'&gt;TJ Holowaychuk&lt;/a&gt; and many others. Check out an incomplete list &lt;a href='http://nodeguide.com/community.html' title='Node Community'&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;If you&amp;#8217;ve lost track of all the links I&amp;#8217;ve provided, check them out as a nice consolidated at the bottom of &lt;a href='https://github.com/hardikr/hardikr.github.com/raw/master/_posts/2011-04-09-node-1.markdown' title='Link List'&gt;the source&lt;/a&gt; of this post.&lt;/p&gt;
 
@@ -142,9 +142,9 @@ Server started on http://localhost:8080
  
  <entry>
    <title>Twenty Minutes on a Mumbai local train</title>
-   <link href="http://localhost:4000/india/mumbai-locals"/>
+   <link href="http://blog.hardikr.com/india/mumbai-locals"/>
    <updated>2011-04-03T00:00:00+04:00</updated>
-   <id>http://localhost:4000/india/mumbai-locals</id>
+   <id>http://blog.hardikr.com/india/mumbai-locals</id>
    <content type="html">&lt;p&gt;A big part of the excitement of being a resident of Mumbai involves travelling by local trains. It would be an educated guess when I say that Mumbai boasts of one of the most extensive intra-city rail transport in the world.&lt;/p&gt;
 
 &lt;p&gt;My commute to work involves a local train journey lasting approximately 15-20 minutes, enveloped between two bus rides. However, this 20 minute journey never ceases to be eventful. I arrive at Borivali Railway Station by bus at about 08:05, and my local train, which arrives at Platform #1, is not until 08:17. However, I&amp;#8217;m already all set for boarding. My wallet and mobile phone have been safely tucked into my backpack, which ironically, I wear on my front.&lt;/p&gt;
@@ -188,9 +188,9 @@ Server started on http://localhost:8080
  
  <entry>
    <title>Apparently, Eightbit.me has hijacked my Twitter profile photo!</title>
-   <link href="http://localhost:4000/tech/eightbit-hijack"/>
+   <link href="http://blog.hardikr.com/tech/eightbit-hijack"/>
    <updated>2011-03-26T00:00:00+04:00</updated>
-   <id>http://localhost:4000/tech/eightbit-hijack</id>
+   <id>http://blog.hardikr.com/tech/eightbit-hijack</id>
    <content type="html">
 &lt;p&gt;I logged into Twitter today and realized that my profile picture had got changed to an avatar I had created on &lt;a href=&quot;http://eightbit.me&quot;&gt;eightbit.me&lt;/a&gt; a few days ago. That's weird! I do not remember doing such a thing!&lt;/p&gt;
 &lt;p&gt;My first instinct was to check whether other people who had used eightbit.me had suffered a similar fate, and around eight of the ten people I checked out on eightbit using their profile randomizer had their avatars set as their Twitter profile photo. I don't know if that proves anything or not, I'm just stating my observations.&lt;/p&gt;
@@ -201,9 +201,9 @@ Server started on http://localhost:8080
  
  <entry>
    <title>A Time for New Mistakes</title>
-   <link href="http://localhost:4000/startups/mistakes"/>
+   <link href="http://blog.hardikr.com/startups/mistakes"/>
    <updated>2011-03-23T00:00:00+04:00</updated>
-   <id>http://localhost:4000/startups/mistakes</id>
+   <id>http://blog.hardikr.com/startups/mistakes</id>
    <content type="html">
 &lt;p&gt;Most startup people are ex-disgruntled folks, having grown beards of experience in their jobs which they held for years and they were so sick of, attempting to quit their jobs day-in and day-out like it was a terrible addiction, and finally picking up the courage to do so. Alas, all those hours of slogging away at work, coding into the night for your company's new projects, teaming up with brilliant and quirky programmers, getting admonished for making mistakes in the production release of the code-base; all these things come to an end. Time and experience has made them the wiser.&lt;/p&gt;
 
@@ -225,9 +225,9 @@ Server started on http://localhost:8080
  
  <entry>
    <title>A Week with BlackBerry</title>
-   <link href="http://localhost:4000/tech/testing-blackberry"/>
+   <link href="http://blog.hardikr.com/tech/testing-blackberry"/>
    <updated>2011-03-15T00:00:00+04:00</updated>
-   <id>http://localhost:4000/tech/testing-blackberry</id>
+   <id>http://blog.hardikr.com/tech/testing-blackberry</id>
    <content type="html">
 &lt;p&gt;I've now spent over a week with the Blackberry Curve 9300, which is the first in the Curve series to have 3G and GPS.. I guess at around 300$, that was a decent buy.&lt;/p&gt;
 &lt;p&gt;This is my first smartphone (I know!!), but I am in a position to compare BlackBerry with iOS, since I've owned an iPod touch for a good while now, and have extensively used the App Store and all the great apps that come with it. I'll be talking about BlackBerry iOS 5.0 and Apple iOS 4.2.1&lt;/p&gt;
@@ -243,9 +243,9 @@ Server started on http://localhost:8080
  
  <entry>
    <title>Egypt, India</title>
-   <link href="http://localhost:4000/india/egypt-india"/>
+   <link href="http://blog.hardikr.com/india/egypt-india"/>
    <updated>2011-03-01T00:00:00+04:00</updated>
-   <id>http://localhost:4000/india/egypt-india</id>
+   <id>http://blog.hardikr.com/india/egypt-india</id>
    <content type="html">&lt;p&gt;Keeping in tune with my last post about &lt;a href='http://blog.hardikr.com/startups/call-me'&gt;verbs&lt;/a&gt;, &lt;em&gt;pulling off an ‘Egypt’&lt;/em&gt; seems like a acceptable phrase that India can aspire to. Let’s take a look at some of the causes of the Egyptian Revolution of 2011. Let’s stack up Egypt’s problems alongside India’s (with utmost respect towards Egypt, I know it was much worse off than India is now, but just for the sake or argument). According to Wikipedia,&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -283,9 +283,9 @@ Server started on http://localhost:8080
  
  <entry>
    <title>Call Me, or How Becoiming a Verb is a Sign of Success</title>
-   <link href="http://localhost:4000/startups/call-me"/>
+   <link href="http://blog.hardikr.com/startups/call-me"/>
    <updated>2011-02-09T00:00:00+04:00</updated>
-   <id>http://localhost:4000/startups/call-me</id>
+   <id>http://blog.hardikr.com/startups/call-me</id>
    <content type="html">&lt;p&gt;If you’ve ever noticed, many of the successful technologies that have emerged over the past century, have become verbs of their own right, or become the de-facto ‘direct object’ of an &lt;a href='http://en.wikipedia.org/wiki/Verb#Valency'&gt;intransitive verb&lt;/a&gt;. First we have some of the golden oldies,&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;&amp;#8220;Call me&amp;#8221;&lt;br /&gt;&amp;#8220;Fax me&amp;#8221;&lt;br /&gt;&amp;#8220;E-mail me&amp;#8221; / &amp;#8220;Check my e-mail&amp;#8221;&lt;br /&gt;&amp;#8220;Watching TV&amp;#8221;&lt;br /&gt;&amp;#8220;Digg it&amp;#8221;&lt;/em&gt;&lt;/p&gt;
@@ -303,9 +303,9 @@ Server started on http://localhost:8080
  
  <entry>
    <title>Jo Jeeta Wohi Sikander to be Banned</title>
-   <link href="http://localhost:4000/satire/jo-jeeta-banned"/>
+   <link href="http://blog.hardikr.com/satire/jo-jeeta-banned"/>
    <updated>2011-01-25T00:00:00+04:00</updated>
-   <id>http://localhost:4000/satire/jo-jeeta-banned</id>
+   <id>http://blog.hardikr.com/satire/jo-jeeta-banned</id>
    <content type="html">&lt;p&gt;The 1992 cult movie &lt;em&gt;&lt;a href='http://www.imdb.com/title/tt0104561/' title='Jo Jeeta Wohi Sikandar'&gt;Jo Jeeta Wohi Sikandar&lt;/a&gt;&lt;/em&gt; is all set to be banned in India, following repeated protests of parents, teachers and child-rights groups and activists.&lt;/p&gt;
 
 &lt;p&gt;The decision came after parents all over the country threatened to burn down the only movie theater in the country that still shows the movie, a 50 seater cinema at Baltana, Punjab.&lt;/p&gt;
@@ -341,9 +341,9 @@ Server started on http://localhost:8080
  
  <entry>
    <title>Something's Wrong</title>
-   <link href="http://localhost:4000/india/somethings-wrong"/>
+   <link href="http://blog.hardikr.com/india/somethings-wrong"/>
    <updated>2011-01-18T00:00:00+04:00</updated>
-   <id>http://localhost:4000/india/somethings-wrong</id>
+   <id>http://blog.hardikr.com/india/somethings-wrong</id>
    <content type="html">
 &lt;p&gt;The last few months have been really, really crazy. Just look around and you can see disruption everywhere! Firstly, there were news that a viral Facebook app called threewords.me is about to be acquired just after a couple of days of launch.&lt;/p&gt;
 &lt;p&gt;Cheezburger network just raised 30 million dollars.&amp;nbsp;&lt;/p&gt;
@@ -376,9 +376,9 @@ Server started on http://localhost:8080
  
  <entry>
    <title>Why Flipkart Rocks</title>
-   <link href="http://localhost:4000/startups/flipkart"/>
+   <link href="http://blog.hardikr.com/startups/flipkart"/>
    <updated>2011-01-13T00:00:00+04:00</updated>
-   <id>http://localhost:4000/startups/flipkart</id>
+   <id>http://blog.hardikr.com/startups/flipkart</id>
    <content type="html">
 &lt;p&gt;Yesterday, I got this e-mail from Flipkart:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -391,9 +391,9 @@ Server started on http://localhost:8080
  
  <entry>
    <title>Hacker News Classic</title>
-   <link href="http://localhost:4000/hn/hn-classic"/>
+   <link href="http://blog.hardikr.com/hn/hn-classic"/>
    <updated>2011-01-10T00:00:00+04:00</updated>
-   <id>http://localhost:4000/hn/hn-classic</id>
+   <id>http://blog.hardikr.com/hn/hn-classic</id>
    <content type="html">
 &lt;p&gt;&lt;strong&gt;Hacker News Classic&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;For newer members of Hacker News (like me), HN Classic is a lesser known feature. You can view it&amp;nbsp;&lt;a target=&quot;_blank&quot; href=&quot;http://news.ycombinator.com/classic&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
