@@ -159,4 +159,4 @@ If you liked (or more importantly, hated) this post, do tweet and follow me on T
   [25]: https://github.com/visionmedia "TJ Github"
   [26]: https://github.com/hardikr/hardikr.github.com/raw/master/_posts/2011-04-09-node-1.markdown "Link List"
   [27]: http://stackoverflow.com/questions/3629784/how-is-node-js-inherently-faster-when-it-still-relies-on-threads-internally "Node Threads"
-  [28]: https://github.com/hardikr/hardikr.github.com/blob/master/static/node/post1.js [Post1 source code]
+  [28]: https://github.com/hardikr/hardikr.github.com/raw/master/static/node/post1.js [Post1 source code]
