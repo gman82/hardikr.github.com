@@ -3,7 +3,7 @@
 	<meta charset="utf-8" />
 	<meta name="description" content="The personal blog of Hardik Ruparel where he talks about programming, technology, startups, India, and pretty much anything he finds interesting" />
 	<meta name="keywords" content="programming, startups, india, entrepreneurship, javascript, node.js" />
-        <meta property="og:title" content="A Day Without Chocolate" />
+        <meta property="og:title" content="{%if page.title %} {{page.title}} - A Day Without Chocolate {% else %}A Day Without Chocolate {% endif %}" />
         <meta property="og:type" content="Blog" />
         <meta property="og:url" content="{{site.baseurl}}{{page.url}}" />
         <meta property="og:image" content="http://commondatastorage.googleapis.com/hardik/new.ico" />
