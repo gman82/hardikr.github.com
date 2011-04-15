@@ -54,7 +54,7 @@ server = http.createServer(function (req,res) {
 console.log('Server started on http://localhost:8080');
 {% endhighlight %}  
 
-Fine, if you really want to copy paste it, grab it [here][28]. But I warned you.
+Fine, if you really don't want to type it, grab it (right click, Save Link As) [here][28]. But I warned you.
 
 Let's break it down here. Natively, Node supports program components known as *modules*. These modules have to be imported by Node whenever you want to use any of them, just like you would use require in Python, Javascript etc. 
 
