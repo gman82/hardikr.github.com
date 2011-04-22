@@ -2,19 +2,124 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>A Day Without Chocolate</title>
-    <link>http://blog.hardikr.com</link>
+    <link>http://localhost:4000</link>
     <language>en</language>
     <webMaster>me@hardikr.com (Hardik Ruparel)</webMaster>
-    <pubDate>2011-04-14T21:19:20+04:00</pubDate>
+    <pubDate>2011-04-22T19:07:44+04:00</pubDate>
     <copyright>Copyright 2011</copyright>
     <ttl>60</ttl>
     <description>A Blog by Hardik Ruparel</description>
     
     <item>
+      <title>A Gentle Introduction to Node - 2</title>
+      <link>http://localhost:4000/js/node-2</link>
+      <pubDate>Fri Apr 22 00:00:00 +0400 2011</pubDate>
+      <guid>http://localhost:4000/js/node-2/</guid>
+      <description>&lt;p&gt;Previously: &lt;a href='http://blog.hardikr.com/js/node-1/' title='The first post in the series'&gt;A Gentle Introduction to Node - 1&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If you&amp;#8217;ve not read the first post, please read it ! (especially the &lt;a href='http://blog.hardikr.com/js/node-1/#resources' title='Resources in first post'&gt;resources&lt;/a&gt; section to get a good understanding of how Node works.&lt;/p&gt;
+
+&lt;p&gt;So let&amp;#8217;s dive in. We&amp;#8217;re going to be building a simple looking homepage for me using a static file server in Node.JS. I agree that&amp;#8217;s probably not what Node is best at, but at some point in your life you are going to want to serve static files to the browser.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#8217;s dive in. The code may look big and mean, but it&amp;#8217;s actually really easy to understand.&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;http&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;http&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;url&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;url&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;fs&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;fs&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;server&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;http&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;createServer&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;req&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+	&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;path&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;url&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;parse&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;req&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;url&lt;/span&gt;&lt;span class='p'&gt;).&lt;/span&gt;&lt;span class='nx'&gt;pathname&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+	&lt;span class='k'&gt;switch&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;path&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+	
+	&lt;span class='c1'&gt;// This is a trivial implementation of URL routing.		&lt;/span&gt;
+	
+		&lt;span class='k'&gt;case&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;/&amp;#39;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt;	
+	&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;writeHead&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='mi'&gt;200&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;text/html&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;});&lt;/span&gt;
+	&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;write&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;Welcome, you have reached my homepage. &amp;#39;&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; 
+	&lt;span class='s1'&gt;&amp;#39;You can check out my twitter profile &amp;#39;&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; 
+	&lt;span class='s1'&gt;&amp;#39;&amp;lt;a href=&amp;quot;https://twitter.com/hardikr&amp;quot;&amp;gt;here&amp;lt;/a&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; 
+	&lt;span class='s1'&gt;&amp;#39;&amp;lt;p&amp;gt;Sitemap&amp;lt;/p&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; 
+	&lt;span class='s1'&gt;&amp;#39;&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;about&amp;quot;&amp;gt;About&amp;lt;/a&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; 
+	&lt;span class='s1'&gt;&amp;#39;&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;image.png&amp;quot;&amp;gt;My Favorite XKCD comic&amp;lt;/a&amp;gt;&amp;#39;&lt;/span&gt;
+	&lt;span class='p'&gt;);&lt;/span&gt;
+	&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;end&lt;/span&gt;&lt;span class='p'&gt;();&lt;/span&gt;
+	&lt;span class='k'&gt;break&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+
+		&lt;span class='k'&gt;case&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;/about&amp;#39;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; 
+	&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;writeHead&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='mi'&gt;200&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;text/html&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;});&lt;/span&gt;
+	&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;write&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;My name is Hardik. That\&amp;#39;s all :| &amp;#39;&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; 
+	&lt;span class='s1'&gt;&amp;#39;&amp;lt;br/&amp;gt; &amp;lt;a href=&amp;quot;/&amp;quot;&amp;gt;Go Back&amp;lt;/a&amp;gt;&amp;#39;&lt;/span&gt;
+	&lt;span class='p'&gt;);&lt;/span&gt;
+	&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;end&lt;/span&gt;&lt;span class='p'&gt;();&lt;/span&gt;
+	&lt;span class='k'&gt;break&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+
+		&lt;span class='k'&gt;case&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;/image.png&amp;#39;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; 
+	&lt;span class='nx'&gt;fs&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;readFile&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;__dirname&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='nx'&gt;path&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;err&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;data&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+		&lt;span class='k'&gt;if&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;err&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='k'&gt;throw&lt;/span&gt; &lt;span class='nx'&gt;err&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+		&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;writeHead&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='mi'&gt;200&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;image/png&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;});&lt;/span&gt;
+		&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;write&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;data&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;utf8&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+		&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;end&lt;/span&gt;&lt;span class='p'&gt;();&lt;/span&gt;
+	&lt;span class='p'&gt;});&lt;/span&gt;
+	&lt;span class='k'&gt;break&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+
+		&lt;span class='k'&gt;case&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;default&amp;#39;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; 	
+	&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;writeHead&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='mi'&gt;404&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;text/plain&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;});&lt;/span&gt;
+	&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;write&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;Page Not Found. 404&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+	&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;end&lt;/span&gt;&lt;span class='p'&gt;();&lt;/span&gt;
+	
+	&lt;span class='p'&gt;}&lt;/span&gt;
+
+&lt;span class='p'&gt;}).&lt;/span&gt;&lt;span class='nx'&gt;listen&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='mi'&gt;8080&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='nx'&gt;console&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;log&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;Server started at http://localhost:8080&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;As discussed before, Node uses modules which you can include in your code to let you do awesome stuff. Just like Python, Node is an uber-cool Swiss Army Knife, only there&amp;#8217;s no limit to how far you can customize the modules you need to include. You can even use the hundreds of third party modules already available, and when you&amp;#8217;re confident enough, you can build your own modules to serve your needs.&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;http&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;http&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;url&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;url&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;fs&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;fs&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;So, we start off with importing the &lt;code&gt;http&lt;/code&gt; module (which we used in the previous post), along with the &lt;code&gt;url&lt;/code&gt; and the &lt;code&gt;fs&lt;/code&gt; module. The &lt;code&gt;url&lt;/code&gt; module lets us manipulate the URL fragment of the incoming request, which we&amp;#8217;ll see later on, and the &lt;code&gt;fs&lt;/code&gt; module is the File System module, which we&amp;#8217;ll use to read a local file and display it to the browser.&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;server&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;http&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;createServer&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;req&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+ &lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;path&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;url&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;parse&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;req&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;url&lt;/span&gt;&lt;span class='p'&gt;).&lt;/span&gt;&lt;span class='nx'&gt;pathname&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Next, we initialize our server object, with our &lt;code&gt;req&lt;/code&gt; (request) and &lt;code&gt;response&lt;/code&gt; (response) objects coming in as parameters to the callback function. If you paid attention last week, you may have realized we never used the request object. Well, we&amp;#8217;re gonna do that right now.&lt;/p&gt;
+
+&lt;p&gt;We parse the requested URL (that you type in the browser eg : &lt;code&gt;http://example.com/about&lt;/code&gt; ) using the &lt;code&gt;url.parse&lt;/code&gt; method of the &lt;code&gt;url&lt;/code&gt; module we imported, and we extract the requested pathname. in the above URL, it is &lt;code&gt;/about&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;After that, it&amp;#8217;s pretty self explanatory. We use the &lt;code&gt;switch&lt;/code&gt; method (which I presume you know). The first case, we test for the root of our homepage - for which the pathname would be &lt;code&gt;/&lt;/code&gt;. We write the response headers and body just like last time, and end the output with &lt;code&gt;res.end()&lt;/code&gt;. Don&amp;#8217;t forget to put your break statement. Similarly, we test for &lt;code&gt;/about&lt;/code&gt; and send my about page.&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='nx'&gt;fs&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;readFile&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;__dirname&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='nx'&gt;path&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;err&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;data&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+ &lt;span class='k'&gt;if&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;err&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='k'&gt;throw&lt;/span&gt; &lt;span class='nx'&gt;err&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+ &lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;writeHead&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='mi'&gt;200&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;image/png&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;});&lt;/span&gt;
+ &lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;write&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;data&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;utf8&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+ &lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;end&lt;/span&gt;&lt;span class='p'&gt;();&lt;/span&gt;
+&lt;span class='p'&gt;});&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;But now, I want to send over a PNG image as my favorite XKCD comic. I have a file named image.png lying in the same folder as my server.js file which I want to serve. Logically, I have to read the file from my Node.JS code first. I can do this with the &lt;code&gt;readFile&lt;/code&gt; method.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;__dirname&lt;/code&gt; specifies the current working directory (where the Node server file is present), and we append to it the path that we extracted from &lt;code&gt;url.parse(req.url).pathname&lt;/code&gt;; hence building the absolute path to the image.png file on the UNIX filesystem. We declare an anonymous callback function which will return the file as an object &lt;code&gt;data&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;I check for any errors, if found will be thrown. I write the HTTP response header, but this time my &lt;code&gt;Content-Type&lt;/code&gt; is set to &lt;code&gt;image/png&lt;/code&gt; since I&amp;#8217;m returning a PNG image. I pass along the file object &lt;code&gt;data&lt;/code&gt; which contains the PNG file and end my output stream with &lt;code&gt;res.end&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;default&lt;/code&gt; case will be selected if the client requests one of the paths we&amp;#8217;re not checking for; and it sends over a simple 404 error.&lt;/p&gt;
+
+&lt;p&gt;That&amp;#8217;s pretty much it. We have our working homepage, and you can test it out! You can get to designing your webpage in Node and host it over at EC2 which I think is still offering one year of free micro-instances.&lt;/p&gt;</description>
+      
+      <category domain="http://blog.hardikr.com/tag/node">node</category>
+      
+      <category domain="http://blog.hardikr.com/tag/nodejs">nodejs</category>
+      
+      <category domain="http://blog.hardikr.com/tag/programming">programming</category>
+      
+      <category domain="http://blog.hardikr.com/tag/javascript">javascript</category>
+      
+    </item>
+    
+    <item>
       <title>A Gentle Introduction to Node - 1</title>
-      <link>http://blog.hardikr.com/js/node-1</link>
+      <link>http://localhost:4000/js/node-1</link>
       <pubDate>Sat Apr 09 00:00:00 +0400 2011</pubDate>
-      <guid>http://blog.hardikr.com/js/node-1/</guid>
+      <guid>http://localhost:4000/js/node-1/</guid>
       <description>&lt;p&gt;There are many great introductions to Node, and I&amp;#8217;m not going to waste my time reinventing the wheel. Instead, I&amp;#8217;m trying to fill a gap that exists, somewhere between the &lt;a href='http://nodejs.org' title='Node Home'&gt;hello world program&lt;/a&gt; and the &lt;a href='https://github.com/ry/node_chat' title='Node_Chat'&gt;node-chat example&lt;/a&gt;, all while linking to great resources already out there. At the end of the post series, you should be able to comfortably create real-time web applications using NodeJS + &lt;a href='http://socket.io' title='Socket.IO'&gt;Socket.IO&lt;/a&gt;. Now it&amp;#8217;s really easy to create real-time web applications :)&lt;/p&gt;
 
 &lt;p&gt;First off, a few points to note:&lt;/p&gt;
@@ -111,7 +216,7 @@ Server started on http://localhost:8080
 
 &lt;p&gt;So, that&amp;#8217;s enough for the first post, but I&amp;#8217;ll leave with providing a few links, which you &lt;strong&gt;should&lt;/strong&gt; read, and I cannot emphasize that enough. Even if you take nothing away from this post apart from these digesting the content of these links, it would be acceptable.&lt;/p&gt;
 
-&lt;ul&gt;
+&lt;ul id='resources'&gt;
 &lt;li&gt;&lt;a href='http://debuggable.com/posts/understanding-node-js:4bd98440-45e4-4a9a-8ef7-0f7ecbdd56cb' title='Understanding Node'&gt;Understanding Node&lt;/a&gt; by Felix Geisendörfer&lt;/li&gt;
 
 &lt;li&gt;&lt;a href='http://code.danyork.com/2011/01/25/node-js-doctors-offices-and-fast-food-restaurants-understanding-event-driven-programming/' title='Dan York on Node'&gt;Understanding Event-Driven programming&lt;/a&gt; by Dan York&lt;/li&gt;
@@ -149,9 +254,9 @@ Server started on http://localhost:8080
     
     <item>
       <title>Twenty Minutes on a Mumbai local train</title>
-      <link>http://blog.hardikr.com/india/mumbai-locals</link>
+      <link>http://localhost:4000/india/mumbai-locals</link>
       <pubDate>Sun Apr 03 00:00:00 +0400 2011</pubDate>
-      <guid>http://blog.hardikr.com/india/mumbai-locals/</guid>
+      <guid>http://localhost:4000/india/mumbai-locals/</guid>
       <description>&lt;p&gt;A big part of the excitement of being a resident of Mumbai involves travelling by local trains. It would be an educated guess when I say that Mumbai boasts of one of the most extensive intra-city rail transport in the world.&lt;/p&gt;
 
 &lt;p&gt;My commute to work involves a local train journey lasting approximately 15-20 minutes, enveloped between two bus rides. However, this 20 minute journey never ceases to be eventful. I arrive at Borivali Railway Station by bus at about 08:05, and my local train, which arrives at Platform #1, is not until 08:17. However, I&amp;#8217;m already all set for boarding. My wallet and mobile phone have been safely tucked into my backpack, which ironically, I wear on my front.&lt;/p&gt;
@@ -200,9 +305,9 @@ Server started on http://localhost:8080
     
     <item>
       <title>Apparently, Eightbit.me has hijacked my Twitter profile photo!</title>
-      <link>http://blog.hardikr.com/tech/eightbit-hijack</link>
+      <link>http://localhost:4000/tech/eightbit-hijack</link>
       <pubDate>Sat Mar 26 00:00:00 +0400 2011</pubDate>
-      <guid>http://blog.hardikr.com/tech/eightbit-hijack/</guid>
+      <guid>http://localhost:4000/tech/eightbit-hijack/</guid>
       <description>
 &lt;p&gt;I logged into Twitter today and realized that my profile picture had got changed to an avatar I had created on &lt;a href=&quot;http://eightbit.me&quot;&gt;eightbit.me&lt;/a&gt; a few days ago. That's weird! I do not remember doing such a thing!&lt;/p&gt;
 &lt;p&gt;My first instinct was to check whether other people who had used eightbit.me had suffered a similar fate, and around eight of the ten people I checked out on eightbit using their profile randomizer had their avatars set as their Twitter profile photo. I don't know if that proves anything or not, I'm just stating my observations.&lt;/p&gt;
@@ -220,9 +325,9 @@ Server started on http://localhost:8080
     
     <item>
       <title>A Time for New Mistakes</title>
-      <link>http://blog.hardikr.com/startups/mistakes</link>
+      <link>http://localhost:4000/startups/mistakes</link>
       <pubDate>Wed Mar 23 00:00:00 +0400 2011</pubDate>
-      <guid>http://blog.hardikr.com/startups/mistakes/</guid>
+      <guid>http://localhost:4000/startups/mistakes/</guid>
       <description>
 &lt;p&gt;Most startup people are ex-disgruntled folks, having grown beards of experience in their jobs which they held for years and they were so sick of, attempting to quit their jobs day-in and day-out like it was a terrible addiction, and finally picking up the courage to do so. Alas, all those hours of slogging away at work, coding into the night for your company's new projects, teaming up with brilliant and quirky programmers, getting admonished for making mistakes in the production release of the code-base; all these things come to an end. Time and experience has made them the wiser.&lt;/p&gt;
 
@@ -249,9 +354,9 @@ Server started on http://localhost:8080
     
     <item>
       <title>A Week with BlackBerry</title>
-      <link>http://blog.hardikr.com/tech/testing-blackberry</link>
+      <link>http://localhost:4000/tech/testing-blackberry</link>
       <pubDate>Tue Mar 15 00:00:00 +0400 2011</pubDate>
-      <guid>http://blog.hardikr.com/tech/testing-blackberry/</guid>
+      <guid>http://localhost:4000/tech/testing-blackberry/</guid>
       <description>
 &lt;p&gt;I've now spent over a week with the Blackberry Curve 9300, which is the first in the Curve series to have 3G and GPS.. I guess at around 300$, that was a decent buy.&lt;/p&gt;
 &lt;p&gt;This is my first smartphone (I know!!), but I am in a position to compare BlackBerry with iOS, since I've owned an iPod touch for a good while now, and have extensively used the App Store and all the great apps that come with it. I'll be talking about BlackBerry iOS 5.0 and Apple iOS 4.2.1&lt;/p&gt;
@@ -272,9 +377,9 @@ Server started on http://localhost:8080
     
     <item>
       <title>Egypt, India</title>
-      <link>http://blog.hardikr.com/india/egypt-india</link>
+      <link>http://localhost:4000/india/egypt-india</link>
       <pubDate>Tue Mar 01 00:00:00 +0400 2011</pubDate>
-      <guid>http://blog.hardikr.com/india/egypt-india/</guid>
+      <guid>http://localhost:4000/india/egypt-india/</guid>
       <description>&lt;p&gt;Keeping in tune with my last post about &lt;a href='http://blog.hardikr.com/startups/call-me'&gt;verbs&lt;/a&gt;, &lt;em&gt;pulling off an ‘Egypt’&lt;/em&gt; seems like a acceptable phrase that India can aspire to. Let’s take a look at some of the causes of the Egyptian Revolution of 2011. Let’s stack up Egypt’s problems alongside India’s (with utmost respect towards Egypt, I know it was much worse off than India is now, but just for the sake or argument). According to Wikipedia,&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -319,9 +424,9 @@ Server started on http://localhost:8080
     
     <item>
       <title>Call Me, or How Becoiming a Verb is a Sign of Success</title>
-      <link>http://blog.hardikr.com/startups/call-me</link>
+      <link>http://localhost:4000/startups/call-me</link>
       <pubDate>Wed Feb 09 00:00:00 +0400 2011</pubDate>
-      <guid>http://blog.hardikr.com/startups/call-me/</guid>
+      <guid>http://localhost:4000/startups/call-me/</guid>
       <description>&lt;p&gt;If you’ve ever noticed, many of the successful technologies that have emerged over the past century, have become verbs of their own right, or become the de-facto ‘direct object’ of an &lt;a href='http://en.wikipedia.org/wiki/Verb#Valency'&gt;intransitive verb&lt;/a&gt;. First we have some of the golden oldies,&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;&amp;#8220;Call me&amp;#8221;&lt;br /&gt;&amp;#8220;Fax me&amp;#8221;&lt;br /&gt;&amp;#8220;E-mail me&amp;#8221; / &amp;#8220;Check my e-mail&amp;#8221;&lt;br /&gt;&amp;#8220;Watching TV&amp;#8221;&lt;br /&gt;&amp;#8220;Digg it&amp;#8221;&lt;/em&gt;&lt;/p&gt;
@@ -344,9 +449,9 @@ Server started on http://localhost:8080
     
     <item>
       <title>Jo Jeeta Wohi Sikander to be Banned</title>
-      <link>http://blog.hardikr.com/satire/jo-jeeta-banned</link>
+      <link>http://localhost:4000/satire/jo-jeeta-banned</link>
       <pubDate>Tue Jan 25 00:00:00 +0400 2011</pubDate>
-      <guid>http://blog.hardikr.com/satire/jo-jeeta-banned/</guid>
+      <guid>http://localhost:4000/satire/jo-jeeta-banned/</guid>
       <description>&lt;p&gt;The 1992 cult movie &lt;em&gt;&lt;a href='http://www.imdb.com/title/tt0104561/' title='Jo Jeeta Wohi Sikandar'&gt;Jo Jeeta Wohi Sikandar&lt;/a&gt;&lt;/em&gt; is all set to be banned in India, following repeated protests of parents, teachers and child-rights groups and activists.&lt;/p&gt;
 
 &lt;p&gt;The decision came after parents all over the country threatened to burn down the only movie theater in the country that still shows the movie, a 50 seater cinema at Baltana, Punjab.&lt;/p&gt;
@@ -385,9 +490,9 @@ Server started on http://localhost:8080
     
     <item>
       <title>Something's Wrong</title>
-      <link>http://blog.hardikr.com/india/somethings-wrong</link>
+      <link>http://localhost:4000/india/somethings-wrong</link>
       <pubDate>Tue Jan 18 00:00:00 +0400 2011</pubDate>
-      <guid>http://blog.hardikr.com/india/somethings-wrong/</guid>
+      <guid>http://localhost:4000/india/somethings-wrong/</guid>
       <description>
 &lt;p&gt;The last few months have been really, really crazy. Just look around and you can see disruption everywhere! Firstly, there were news that a viral Facebook app called threewords.me is about to be acquired just after a couple of days of launch.&lt;/p&gt;
 &lt;p&gt;Cheezburger network just raised 30 million dollars.&amp;nbsp;&lt;/p&gt;
@@ -415,26 +520,6 @@ Server started on http://localhost:8080
 &lt;li&gt;Indian institutes of higher education are still deemed as elite and premier institutions.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;What in God's name is going on? However, I must admit, I love civic disorder! People doubting their own governments? That's what I'm talking about!&lt;/p&gt;
-</description>
-      
-      <category domain="http://blog.hardikr.com/tag/india">india</category>
-      
-      <category domain="http://blog.hardikr.com/tag/startups">startups</category>
-      
-    </item>
-    
-    <item>
-      <title>Why Flipkart Rocks</title>
-      <link>http://blog.hardikr.com/startups/flipkart</link>
-      <pubDate>Thu Jan 13 00:00:00 +0400 2011</pubDate>
-      <guid>http://blog.hardikr.com/startups/flipkart/</guid>
-      <description>
-&lt;p&gt;Yesterday, I got this e-mail from Flipkart:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;span&gt;Hello,&lt;br /&gt;&lt;br /&gt;We recently sent you an Availability notification for the book &quot;Liar's Poker: The Great Powers, Yugoslavia And The Wars Of The Future&quot; &amp;nbsp;(&lt;a target=&quot;_blank&quot; href=&quot;http://www.flipkart.com/liar-poker-michel-collon-great-book-0965691667&quot;&gt;http://www.flipkart.com/liar-poker-michel-collon-great-book-0965691667&lt;/a&gt;) as earlier requested by you on December 14, 2010.&lt;br /&gt;&lt;br /&gt;Regrettably, the notification was due to an error at our end. &amp;nbsp;The issue was fixed earlier today and needless to say, will not be repeated. Our apologies if we got your hopes up with regards to a book that you had long been waiting for. Be assured, we will continue to maintain a record of your request(s). The next time we send you an Availability email, you can be sure the book will be available for ordering.&lt;br /&gt;&lt;br /&gt;Sincere apologies again from all of us at Flipkart.com. Do let us know if we can be of any further assistance.&lt;br /&gt;&lt;br /&gt;Regards,&lt;br /&gt;Flipkart Customer Support Team&lt;/span&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;span&gt;I was left open-mouthed when I read this ! They're actually sending me an e-mail apologizing for &lt;strong&gt;getting my hopes up&lt;/strong&gt;! Apart from providing wonderful books which I could never otherwise find in India, they have this sort of customer support.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;This, is why Flipkart rocks. Kudos! I think you're poised for a hell of an exit when Amazon enters India and acquires you guys.&lt;/span&gt;&lt;/p&gt;
 </description>
       
       <category domain="http://blog.hardikr.com/tag/india">india</category>

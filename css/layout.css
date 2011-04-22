@@ -13,6 +13,10 @@ a img {display: block;}
 
 body {color: #4f4d4b;background: #FFF;font-family: 'PT Sans', "Lucida Grande", Helvetica, "Lucida Sans Unicode", "Lucida Sans", Tahoma, Arial, sans-serif;font-size: 14px;line-height: 24px;-webkit-text-size-adjust: none;}
 
+code {
+background-color: #EEE;
+}
+
 /* = BOXES */
 .wrap {background: #FFF;margin: 0px;padding: 0px;}
 .payload {width: 100%;max-width: 960px;margin: 0 auto;overflow: hidden;}

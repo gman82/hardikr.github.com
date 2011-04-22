@@ -112,12 +112,14 @@ That's it, fire up your favorite browser, and navigate to http://locahost:8080 a
 
 So, that's enough for the first post, but I'll leave with providing a few links, which you **should** read, and I cannot emphasize that enough. Even if you take nothing away from this post apart from these digesting the content of these links, it would be acceptable.
 
+{#request}
 - [Understanding Node][11] by Felix Geisendörfer
 - [Understanding Event-Driven programming][12] by Dan York
 - [Understanding Event Loops and Writing Great Code for NodeJS - Part 1][13] by Yahoo
 - [Deep Inside Node.Js with Ryan Dahl][15] by InfoQ
 - [Ryan Dahl on NodeJS][19] on Yahoo
 - [Understanding Threading in Node][27] on StackOverflow
+
 
 The InfoQ interview goes into great detail about Node, and will give you a great overall review of Node. As with everything to do with Node, always check the date of publication of the resource you're using. Things might have changed already, new features implemented, old ones deprecated and even a few API methods changed. So, learn to keep up, as you'll be doing a lot of that when using Node.
 
