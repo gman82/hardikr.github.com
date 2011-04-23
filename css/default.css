@@ -1,4 +1,4 @@
-code .highlight { background-color: #ffffcc !important; margin-bottom: 15px; }
+code .highlight { background-color: #ffffcc; margin-bottom: 15px; }
 .c { color: #408080; font-style: italic } /* Comment */
 .err { border: 1px solid #FF0000 } /* Error */
 .k { color: #008000; font-weight: bold } /* Keyword */
