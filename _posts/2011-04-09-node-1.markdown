@@ -39,7 +39,7 @@ Hello World!
 > 
 {% endhighlight %}
 	
-That was easy, wasn't it? You may remember `console.log()` from using client side Javascript. Yes, you can use it on Server-Side Javascript too. Although in real-world environments, we would use `sys.debug`.
+That was easy, wasn't it? You may remember console.log() from using client side Javascript. Yes, you can use it on Server-Side Javascript too. Although in real-world environments, we would use *sys.debug*.
 
 So, you're probably not too excited about using Node in the terminal. Right, let's create our first server! Open up your favorite text editor, and **type** in this code. That's right, type it. Not copy-paste. Trust me, it'll help.
 
@@ -62,32 +62,32 @@ Let's break it down here. Natively, Node supports program components known as *m
 var http = require('http'),
 {% endhighlight %}
 
-First, we require the `http` module, which comes packaged with Node. We create a HTTP server object. So, let's take a pause here and understand that HTTP !== Apache. Many people new to Node believe we're creating an Apache server. That's wrong. We're creating a simple HTTP server object. Next, we define a variable called server, which will act as the placeholder for the server we create in the next line.
+First, we require the *http* module, which comes packaged with Node. We create a HTTP server object. So, let's take a pause here and understand that HTTP !== Apache. Many people new to Node believe we're creating an Apache server. That's wrong. We're creating a simple HTTP server object. Next, we define a variable called server, which will act as the placeholder for the server we create in the next line.
 
 {% highlight javascript %}
 server = http.createServer(function (req,res) {
 {% endhighlight %}
 
-`function (req,res)` is the callback function for `http.createServer`. This is the crux of the event-driven programming style of Node. Because Javascript provides extensive capabilities for callbacks and anonymous functions, it seemed to be the perfect choice for implementing Node. 
+*function (req,res)* is the callback function for *http.createServer*. This is the crux of the event-driven programming style of Node. Because Javascript provides extensive capabilities for callbacks and anonymous functions, it seemed to be the perfect choice for implementing Node. 
 
 But, what's a callback function? A callback function is attached to a listener, and is fired on a particular event. 
 
-In the above example, the `addListener` event is added to the *http.createServer* method. In essence, whenever a client connects to our server (aka the listener receives an event), the aforementioend anonymous function is called. 
+In the above example, the _addListener_ event is automatically added to the *http.createServer* method. In essence, whenever a client connects to our server (aka the listener receives an event), the aforementioend anonymous function is called. 
 
 {% highlight javascript %}
 res.writeHead(200, {'Content-Type' : 'text/html'});
 {% endhighlight %}
 
-Now, we have an HTTP server setup, but we still have to output Hello World to the browser. So, let's set the HTTP headers for the output. (If you have no idea about the HTTP protocol, you should probably read [RFC 2616][16], which defines the `HTTP/1.1 protocol`. It's a very comprehensive document and it'll be worth the time you spend on it. If you're in a hurry, you always have Wikipedia.) 
+Now, we have an HTTP server setup, but we still have to output Hello World to the browser. So, let's set the HTTP headers for the output. (If you have no idea about the HTTP protocol, you should probably read [RFC 2616][16], which defines the HTTP/1.1 protocol. It's a very comprehensive document and it'll be worth the time you spend on it. If you're in a hurry, you always have Wikipedia.) 
 
-Right, so the 200 status code implies everything's okay (see the [complete list][17] of HTTP status codes), and we set the `Content-Type` to `text/html`, since we're going to be sending a snippet of HTML code to our client. The headers are set so the browser knows how to render the incoming stream.
+Right, so the 200 status code implies everything's okay (see the [complete list][17] of HTTP status codes), and we set the Content-Type to text/html, since we're going to be sending a snippet of HTML code to our client. The headers are set so the browser knows how to render the incoming stream.
 
 {% highlight javascript %}
 res.write('<b>Hello World</b>');
 res.end();
 {% endhighlight %}
 
-We've set the headers, and now we actualy have to send the output. We write to the output stream. It's important to understand that we're just writing the snippet *<b>Hello World</b>* to the stream that is being sent by the HTTP server object, and nothing else. This could be anything: a jpeg image, an ogg audio or even an mp4 video, as long as we set the headers correctly. Next, with `res.end()`, we end the output stream, and that's an indication for the server to finally send it over to the client.
+We've set the headers, and now we actualy have to send the output. We write to the output stream. It's important to understand that we're just writing the snippet *<b>Hello World</b>* to the stream that is being sent by the HTTP server object, and nothing else. This could be anything: a jpeg image, an ogg audio or even an mp4 video, as long as we set the headers correctly. Next, with _res.end()_, we end the output stream, and that's an indication for the server to finally send it over to the client.
 
 {% highlight javascript %}
 }).listen(8080);
@@ -112,7 +112,7 @@ That's it, fire up your favorite browser, and navigate to http://locahost:8080 a
 
 So, that's enough for the first post, but I'll leave with providing a few links, which you **should** read, and I cannot emphasize that enough. Even if you take nothing away from this post apart from these digesting the content of these links, it would be acceptable.
 
-{#resources}
+{#request}
 - [Understanding Node][11] by Felix Geisendörfer
 - [Understanding Event-Driven programming][12] by Dan York
 - [Understanding Event Loops and Writing Great Code for NodeJS - Part 1][13] by Yahoo
@@ -161,4 +161,4 @@ If you liked (or more importantly, hated) this post, do tweet and follow me on T
   [25]: https://github.com/visionmedia "TJ Github"
   [26]: https://github.com/hardikr/hardikr.github.com/raw/master/_posts/2011-04-09-node-1.markdown "Link List"
   [27]: http://stackoverflow.com/questions/3629784/how-is-node-js-inherently-faster-when-it-still-relies-on-threads-internally "Node Threads"
-  [28]: https://github.com/hardikr/hardikr.github.com/raw/master/static/node/post1/post1.js "Post1 source code"
+  [28]: https://github.com/hardikr/hardikr.github.com/raw/master/static/node/post1.js [Post1 source code]

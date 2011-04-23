@@ -1,14 +1,15 @@
 /*
-* 2b. File Server (with Static File Server Function)
+* 2. File Server (with Static File Server Function)
 * Performance may be really low, but it's simple enough to learn for a complete noob
 * LICENSE: MIT LICENSE
 */
 
 var http   = require('http');
+var	url    = require('url');
 var	fs	   = require('fs');
-//var file;
+var file;
 var	server = http.createServer(function (req,res) {
-	var path = req.url;
+	var path = url.parse(req.url).pathname;
 	switch(path) {
 	// This is a trivial implementation of URL routing.		
 		case '/' :	
@@ -19,8 +20,8 @@ var	server = http.createServer(function (req,res) {
 			myStaticServer(res, '/about.html');
 			break;
 
-		case '/image.png' : 
-			myStaticServer(res, '/image.png');
+		case '/photo.jpg' : 
+			myStaticServer(res, '/photo.jpg');
 			break;
 
 		case 'default': 	
@@ -31,7 +32,7 @@ var	server = http.createServer(function (req,res) {
 
 	function myStaticServer(res, file) {
 		fs.readFile(__dirname + file, function(err, data) {
-				res.writeHead(200, {'Content-Type' : file.split('.')[1] == 'html' ? 'text/html' : 'image/png'});
+				res.writeHead(200, {'Content-Type' : file.split('.')[1] == 'html' ? 'text/html' : 'image/jpeg'});
 				res.write(data,'utf8');
 				res.end();
 		});

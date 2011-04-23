@@ -4,7 +4,7 @@
  <title>A Day Without Chocolate</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2011-04-23T09:09:48+04:00</updated>
+ <updated>2011-04-22T19:07:44+04:00</updated>
  <id>http://blog.hardikr.com.com/</id>
  <author>
    <name>Hardik Ruparel</name>
@@ -15,19 +15,20 @@
  <entry>
    <title>A Gentle Introduction to Node - 2</title>
    <link href="http://localhost:4000/js/node-2"/>
-   <updated>2011-04-23T00:00:00+04:00</updated>
+   <updated>2011-04-22T00:00:00+04:00</updated>
    <id>http://localhost:4000/js/node-2</id>
-   <content type="html">&lt;p&gt;&lt;em&gt;Previously: &lt;a href='http://blog.hardikr.com/js/node-1/' title='The first post in the series'&gt;A Gentle Introduction to Node - 1&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+   <content type="html">&lt;p&gt;Previously: &lt;a href='http://blog.hardikr.com/js/node-1/' title='The first post in the series'&gt;A Gentle Introduction to Node - 1&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;If you&amp;#8217;ve not read the first post, please read it ! (especially the &lt;a href='http://blog.hardikr.com/js/node-1/#resources' title='Resources in first post'&gt;resources&lt;/a&gt; section to get a good understanding of how Node works.&lt;/p&gt;
 
 &lt;p&gt;So let&amp;#8217;s dive in. We&amp;#8217;re going to be building a simple looking homepage for me using a static file server in Node.JS. I agree that&amp;#8217;s probably not what Node is best at, but at some point in your life you are going to want to serve static files to the browser.&lt;/p&gt;
 
-&lt;p&gt;Let&amp;#8217;s dive in. The code may look big and mean, but it&amp;#8217;s actually really easy to understand. And please, type out the code, especially if you&amp;#8217;re new to Javascript. If you want to view it in your code editor, grab the code &lt;a href='https://github.com/hardikr/hardikr.github.com/raw/master/static/node/post2/post2.js'&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Let&amp;#8217;s dive in. The code may look big and mean, but it&amp;#8217;s actually really easy to understand.&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;http&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;http&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;url&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;url&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
 &lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;fs&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;fs&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
 &lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;server&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;http&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;createServer&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;req&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
-	&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;path&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;req&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;url&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+	&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;path&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;url&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;parse&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;req&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;url&lt;/span&gt;&lt;span class='p'&gt;).&lt;/span&gt;&lt;span class='nx'&gt;pathname&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
 	&lt;span class='k'&gt;switch&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;path&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
 	
 	&lt;span class='c1'&gt;// This is a trivial implementation of URL routing.		&lt;/span&gt;
@@ -74,54 +75,20 @@
 &lt;/div&gt;
 &lt;p&gt;As discussed before, Node uses modules which you can include in your code to let you do awesome stuff. Just like Python, Node is an uber-cool Swiss Army Knife, only there&amp;#8217;s no limit to how far you can customize the modules you need to include. You can even use the hundreds of third party modules already available, and when you&amp;#8217;re confident enough, you can build your own modules to serve your needs.&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;http&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;http&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;url&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;url&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
 &lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;fs&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;fs&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
 &lt;/pre&gt;
 &lt;/div&gt;
-&lt;p&gt;So, we start off with importing the &lt;code&gt;http&lt;/code&gt; module (which we used in the previous post), along with the &lt;code&gt;fs&lt;/code&gt; module. The &lt;code&gt;fs&lt;/code&gt; module is the File System module, which we&amp;#8217;ll use to read a local file and display it to the browser.&lt;/p&gt;
+&lt;p&gt;So, we start off with importing the &lt;code&gt;http&lt;/code&gt; module (which we used in the previous post), along with the &lt;code&gt;url&lt;/code&gt; and the &lt;code&gt;fs&lt;/code&gt; module. The &lt;code&gt;url&lt;/code&gt; module lets us manipulate the URL fragment of the incoming request, which we&amp;#8217;ll see later on, and the &lt;code&gt;fs&lt;/code&gt; module is the File System module, which we&amp;#8217;ll use to read a local file and display it to the browser.&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;server&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;http&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;createServer&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;req&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
- &lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;path&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;req&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;url&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+ &lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;path&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;url&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;parse&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;req&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;url&lt;/span&gt;&lt;span class='p'&gt;).&lt;/span&gt;&lt;span class='nx'&gt;pathname&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
 &lt;/pre&gt;
 &lt;/div&gt;
-&lt;p&gt;Next, we initialize our server object, with our &lt;code&gt;req&lt;/code&gt; (request) and &lt;code&gt;res&lt;/code&gt; (response) objects coming in as parameters to the callback function. If you read the last post carefully, you may have realized we never used the request object for anything. Well, we&amp;#8217;re gonna do that right now.&lt;/p&gt;
+&lt;p&gt;Next, we initialize our server object, with our &lt;code&gt;req&lt;/code&gt; (request) and &lt;code&gt;response&lt;/code&gt; (response) objects coming in as parameters to the callback function. If you paid attention last week, you may have realized we never used the request object. Well, we&amp;#8217;re gonna do that right now.&lt;/p&gt;
 
-&lt;p&gt;We obtain the requested URL by accessing &lt;code&gt;req.url&lt;/code&gt; value (from the &lt;code&gt;req&lt;/code&gt; object). To illustrate, if I accessed &lt;code&gt;http://example.com/about&lt;/code&gt;, then &lt;code&gt;req.url&lt;/code&gt; returns &lt;code&gt;/about&lt;/code&gt;. (Note, you can get a detailed look at the request object by simply doing &lt;code&gt;console.log(req)&lt;/code&gt;. Similarly, you can log pretty much anything if you&amp;#8217;re not sure about something. It&amp;#8217;s actually a good way of debugging Node.JS code. Note that the log will appear in your terminal and not in your browser since this is server-side Javascript.)&lt;/p&gt;
+&lt;p&gt;We parse the requested URL (that you type in the browser eg : &lt;code&gt;http://example.com/about&lt;/code&gt; ) using the &lt;code&gt;url.parse&lt;/code&gt; method of the &lt;code&gt;url&lt;/code&gt; module we imported, and we extract the requested pathname. in the above URL, it is &lt;code&gt;/about&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/em&gt;: I&amp;#8217;m taking a little detour here. In several open-source projects, I&amp;#8217;ve seen the following code used to extract the pathname:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;url&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;url&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='c1'&gt;// Include the url module for url.parse&lt;/span&gt;
-&lt;span class='cm'&gt;/** &lt;/span&gt;
-&lt;span class='cm'&gt; * similar code until we get to defining our path&lt;/span&gt;
-&lt;span class='cm'&gt;**/&lt;/span&gt;
-&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;path&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;url&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;parse&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;req&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;url&lt;/span&gt;&lt;span class='p'&gt;).&lt;/span&gt;&lt;span class='nx'&gt;pathname&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;To make sure you&amp;#8217;re on track, if the browser requested &lt;code&gt;http://example.com/about&lt;/code&gt;, then req.url contains &lt;code&gt;/about&lt;/code&gt;. Coming to the above code, &lt;code&gt;url.parse&lt;/code&gt; is a method from the &lt;code&gt;url&lt;/code&gt; module that creates a &lt;code&gt;url&lt;/code&gt; object out of a URL string. Don&amp;#8217;t be confused, hang on! I&amp;#8217;m illustrating the use of url.parse() on a sample string:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;urlString&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;http://example.com/about&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt; 
-&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;urlObject&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;url&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;parse&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;urlString&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
-&lt;span class='nx'&gt;console&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;log&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;urlObject&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;This returns the &lt;code&gt;url&lt;/code&gt; object of the string we declared:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='nx'&gt;protocol&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;http:&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
-  &lt;span class='nx'&gt;slashes&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='kc'&gt;true&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
-  &lt;span class='nx'&gt;host&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;example.com&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
-  &lt;span class='nx'&gt;hostname&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;example.com&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
-  &lt;span class='nx'&gt;pathname&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;/about&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
-  &lt;span class='nx'&gt;href&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;http://example.com/about&amp;#39;&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;So, going back to the code,&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;path&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;url&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;parse&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;req&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;url&lt;/span&gt;&lt;span class='p'&gt;).&lt;/span&gt;&lt;span class='nx'&gt;pathname&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;Since the requested URL is &lt;code&gt;http://example.com/about&lt;/code&gt;, &lt;code&gt;req.url&lt;/code&gt; already contains &lt;code&gt;/about&lt;/code&gt;. So, if we were to use &lt;code&gt;url.parse(req.url)&lt;/code&gt; , it would convert &lt;code&gt;/about&lt;/code&gt; into an object, like so:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='nx'&gt;pathname&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;/about&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;href&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;/about&amp;#39;&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;Summing up, the code is unnecessarily (in my opinion) converting &lt;code&gt;/about&lt;/code&gt; into a URL object, and extracting the &lt;code&gt;pathname&lt;/code&gt; which would return the same &lt;code&gt;/about&lt;/code&gt;. I&amp;#8217;m not too sure why &lt;a href='https://github.com/search?q=path+%3D+url.parse%28req.url%29.pathname&amp;amp;type=Everything&amp;amp;repo=&amp;amp;langOverride=&amp;amp;start_value=1' title='GitHub search for url.parse'&gt;so many projects&lt;/a&gt; use this. It&amp;#8217;s almost like I&amp;#8217;m missing out something. If you know why, do &lt;a href='https://twitter.com/hardikr' title='My Twitter'&gt;tweet&lt;/a&gt; me !&lt;/p&gt;
-
-&lt;p&gt;Alright, let&amp;#8217;s get back to our own code. To recap, we just assigned &lt;code&gt;path&lt;/code&gt; to the requested path by using &lt;code&gt;req.url&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;After that, it&amp;#8217;s pretty self explanatory. We use the &lt;code&gt;switch&lt;/code&gt; method (which I presume you know). The first case, we test for the root of our homepage - for which the pathname would be &lt;code&gt;/&lt;/code&gt;. We write the response headers and body just like last time, and end the output with &lt;code&gt;res.end()&lt;/code&gt;. Don&amp;#8217;t forget to put your &lt;code&gt;break&lt;/code&gt; statement. Similarly, we test for &lt;code&gt;/about&lt;/code&gt; and send my about page.&lt;/p&gt;
+&lt;p&gt;After that, it&amp;#8217;s pretty self explanatory. We use the &lt;code&gt;switch&lt;/code&gt; method (which I presume you know). The first case, we test for the root of our homepage - for which the pathname would be &lt;code&gt;/&lt;/code&gt;. We write the response headers and body just like last time, and end the output with &lt;code&gt;res.end()&lt;/code&gt;. Don&amp;#8217;t forget to put your break statement. Similarly, we test for &lt;code&gt;/about&lt;/code&gt; and send my about page.&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='nx'&gt;fs&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;readFile&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;__dirname&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='nx'&gt;path&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;err&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;data&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
  &lt;span class='k'&gt;if&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;err&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='k'&gt;throw&lt;/span&gt; &lt;span class='nx'&gt;err&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
  &lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;writeHead&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='mi'&gt;200&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;image/png&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;});&lt;/span&gt;
@@ -132,33 +99,13 @@
 &lt;/div&gt;
 &lt;p&gt;But now, I want to send over a PNG image as my favorite XKCD comic. I have a file named image.png lying in the same folder as my server.js file which I want to serve. Logically, I have to read the file from my Node.JS code first. I can do this with the &lt;code&gt;readFile&lt;/code&gt; method.&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;__dirname&lt;/code&gt; specifies the current working directory (where the Node server file is present), and we append to it the path that we extracted from &lt;code&gt;url.parse(req.url).pathname&lt;/code&gt; hence building the absolute path to the &lt;code&gt;image.png&lt;/code&gt; file on the UNIX filesystem. We use an anonymous callback function which will return the file as an object &lt;code&gt;data&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;__dirname&lt;/code&gt; specifies the current working directory (where the Node server file is present), and we append to it the path that we extracted from &lt;code&gt;url.parse(req.url).pathname&lt;/code&gt;; hence building the absolute path to the image.png file on the UNIX filesystem. We declare an anonymous callback function which will return the file as an object &lt;code&gt;data&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;I check for any errors, if found will be thrown. I write the HTTP response header, but this time my &lt;code&gt;Content-Type&lt;/code&gt; is set to &lt;code&gt;image/png&lt;/code&gt; since I&amp;#8217;m returning a PNG image. I pass along the file object &lt;code&gt;data&lt;/code&gt; which contains the PNG file and end my output stream with &lt;code&gt;res.end()&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;I check for any errors, if found will be thrown. I write the HTTP response header, but this time my &lt;code&gt;Content-Type&lt;/code&gt; is set to &lt;code&gt;image/png&lt;/code&gt; since I&amp;#8217;m returning a PNG image. I pass along the file object &lt;code&gt;data&lt;/code&gt; which contains the PNG file and end my output stream with &lt;code&gt;res.end&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;The &lt;code&gt;default&lt;/code&gt; case will be selected if the client requests one of the paths we&amp;#8217;re not checking for; and it sends over a simple 404 error.&lt;/p&gt;
 
-&lt;p&gt;That&amp;#8217;s pretty much it. We have our working homepage, and you can test it out! If you want something like this for yourself on the Internet, you can get to designing your webpage in Node and host it over at Amazon EC2 which I think is still offering one year of free micro-instances :)&lt;/p&gt;
-
-&lt;p&gt;Since this is just a demo, the number of files are small, and the amount of HTML is small. Realistically, for a bigger homepage, obviously we would not want to include all your HTML in the Node.JS server code. That wouldn&amp;#8217;t be too smart of us!&lt;/p&gt;
-
-&lt;p&gt;One way would be to use the excellent &lt;a href='https://github.com/visionmedia/express' title='Express on GitHub'&gt;Express&lt;/a&gt; framework along with &lt;a href='https://github.com/senchalabs/connect' title='Connect on GitHub'&gt;Connect&lt;/a&gt; middleware; but let&amp;#8217;s leave that for later on, when we&amp;#8217;re more experienced with pure Node.JS code. I suggest this in the same vein as people will tell you to start off with pure Javascript and then to go jQuery.&lt;/p&gt;
-
-&lt;p&gt;Another way would be to build a static file server function, to which we can pass as parameter the file we wish to serve. Good ol&amp;#8217; functions !&lt;/p&gt;
-
-&lt;p&gt;You should try writing that code on your own. But, here are a few hints.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;You&amp;#8217;ll have to write the &lt;code&gt;/&lt;/code&gt; as an index.html file, and &lt;code&gt;/about&lt;/code&gt; as about.html, and pass them as parameters to the static file server.&lt;/li&gt;
-
-&lt;li&gt;You can use the same static file server function above and generalize it.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The solution can be found, if you know where to look! So, till next time, where we&amp;#8217;ll run bash functions through Node code!&lt;/p&gt;
-
-&lt;p&gt;A few words before we part, as I said before, keep perusing the Node documentation. It&amp;#8217;s quite small and easy to understand. There are a lot of methods which you may like to play around with. I&amp;#8217;m deliberately keeping it simple in the blog post, since I want everyone to read the Node docs.&lt;/p&gt;
-
-&lt;p&gt;You could also look at the hundreds of thousands of lines of open-sourced Node.JS code. Just &lt;a href='https://github.com/search?q=Node&amp;amp;type=Everything&amp;amp;repo=&amp;amp;langOverride=&amp;amp;start_value=1' title='GitHub search for Node'&gt;search&lt;/a&gt; on GitHub. At the end of next week&amp;#8217;s post on running bash functions, we&amp;#8217;ll take a look into a third-party Node.JS module that&amp;#8217;ll turn our command line into a dictionary! How cool is that ?! Hang on till next week!&lt;/p&gt;</content>
+&lt;p&gt;That&amp;#8217;s pretty much it. We have our working homepage, and you can test it out! You can get to designing your webpage in Node and host it over at EC2 which I think is still offering one year of free micro-instances.&lt;/p&gt;</content>
  </entry>
  
  <entry>
@@ -205,7 +152,7 @@ Hello World!
 &amp;gt; 
 &lt;/pre&gt;
 &lt;/div&gt;
-&lt;p&gt;That was easy, wasn&amp;#8217;t it? You may remember &lt;code&gt;console.log()&lt;/code&gt; from using client side Javascript. Yes, you can use it on Server-Side Javascript too. Although in real-world environments, we would use &lt;code&gt;sys.debug&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;That was easy, wasn&amp;#8217;t it? You may remember console.log() from using client side Javascript. Yes, you can use it on Server-Side Javascript too. Although in real-world environments, we would use &lt;em&gt;sys.debug&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;So, you&amp;#8217;re probably not too excited about using Node in the terminal. Right, let&amp;#8217;s create our first server! Open up your favorite text editor, and &lt;strong&gt;type&lt;/strong&gt; in this code. That&amp;#8217;s right, type it. Not copy-paste. Trust me, it&amp;#8217;ll help.&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;http&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;http&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;),&lt;/span&gt;
@@ -218,32 +165,32 @@ Hello World!
 &lt;span class='nx'&gt;console&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;log&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;Server started on http://localhost:8080&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
 &lt;/pre&gt;
 &lt;/div&gt;
-&lt;p&gt;Fine, if you really don&amp;#8217;t want to type it, grab it (right click, Save Link As) &lt;a href='https://github.com/hardikr/hardikr.github.com/raw/master/static/node/post1/post1.js' title='Post1 source code'&gt;here&lt;/a&gt;. But I warned you.&lt;/p&gt;
+&lt;p&gt;Fine, if you really want to copy paste it, grab it &lt;a href='https://github.com/hardikr/hardikr.github.com/blob/master/static/node/post1.js'&gt;here&lt;/a&gt;. But I warned you.&lt;/p&gt;
 
 &lt;p&gt;Let&amp;#8217;s break it down here. Natively, Node supports program components known as &lt;em&gt;modules&lt;/em&gt;. These modules have to be imported by Node whenever you want to use any of them, just like you would use require in Python, Javascript etc.&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;http&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;http&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;),&lt;/span&gt;
 &lt;/pre&gt;
 &lt;/div&gt;
-&lt;p&gt;First, we require the &lt;code&gt;http&lt;/code&gt; module, which comes packaged with Node. We create a HTTP server object. So, let&amp;#8217;s take a pause here and understand that HTTP !== Apache. Many people new to Node believe we&amp;#8217;re creating an Apache server. That&amp;#8217;s wrong. We&amp;#8217;re creating a simple HTTP server object. Next, we define a variable called server, which will act as the placeholder for the server we create in the next line.&lt;/p&gt;
+&lt;p&gt;First, we require the &lt;em&gt;http&lt;/em&gt; module, which comes packaged with Node. We create a HTTP server object. So, let&amp;#8217;s take a pause here and understand that HTTP !== Apache. Many people new to Node believe we&amp;#8217;re creating an Apache server. That&amp;#8217;s wrong. We&amp;#8217;re creating a simple HTTP server object. Next, we define a variable called server, which will act as the placeholder for the server we create in the next line.&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='nx'&gt;server&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;http&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;createServer&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;req&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
 &lt;/pre&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;code&gt;function (req,res)&lt;/code&gt; is the callback function for &lt;code&gt;http.createServer&lt;/code&gt;. This is the crux of the event-driven programming style of Node. Because Javascript provides extensive capabilities for callbacks and anonymous functions, it seemed to be the perfect choice for implementing Node.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;function (req,res)&lt;/em&gt; is the callback function for &lt;em&gt;http.createServer&lt;/em&gt;. This is the crux of the event-driven programming style of Node. Because Javascript provides extensive capabilities for callbacks and anonymous functions, it seemed to be the perfect choice for implementing Node.&lt;/p&gt;
 
 &lt;p&gt;But, what&amp;#8217;s a callback function? A callback function is attached to a listener, and is fired on a particular event.&lt;/p&gt;
 
-&lt;p&gt;In the above example, the &lt;code&gt;addListener&lt;/code&gt; event is added to the &lt;em&gt;http.createServer&lt;/em&gt; method. In essence, whenever a client connects to our server (aka the listener receives an event), the aforementioend anonymous function is called.&lt;/p&gt;
+&lt;p&gt;In the above example, the &lt;em&gt;addListener&lt;/em&gt; event is automatically added to the &lt;em&gt;http.createServer&lt;/em&gt; method. In essence, whenever a client connects to our server (aka the listener receives an event), the aforementioend anonymous function is called.&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;writeHead&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='mi'&gt;200&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;text/html&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;});&lt;/span&gt;
 &lt;/pre&gt;
 &lt;/div&gt;
-&lt;p&gt;Now, we have an HTTP server setup, but we still have to output Hello World to the browser. So, let&amp;#8217;s set the HTTP headers for the output. (If you have no idea about the HTTP protocol, you should probably read &lt;a href='http://www.ietf.org/rfc/rfc2616.txt' title='RFC 2616'&gt;RFC 2616&lt;/a&gt;, which defines the &lt;code&gt;HTTP/1.1 protocol&lt;/code&gt;. It&amp;#8217;s a very comprehensive document and it&amp;#8217;ll be worth the time you spend on it. If you&amp;#8217;re in a hurry, you always have Wikipedia.)&lt;/p&gt;
+&lt;p&gt;Now, we have an HTTP server setup, but we still have to output Hello World to the browser. So, let&amp;#8217;s set the HTTP headers for the output. (If you have no idea about the HTTP protocol, you should probably read &lt;a href='http://www.ietf.org/rfc/rfc2616.txt' title='RFC 2616'&gt;RFC 2616&lt;/a&gt;, which defines the HTTP/1.1 protocol. It&amp;#8217;s a very comprehensive document and it&amp;#8217;ll be worth the time you spend on it. If you&amp;#8217;re in a hurry, you always have Wikipedia.)&lt;/p&gt;
 
-&lt;p&gt;Right, so the 200 status code implies everything&amp;#8217;s okay (see the &lt;a href='http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html' title='HTTP status codes'&gt;complete list&lt;/a&gt; of HTTP status codes), and we set the &lt;code&gt;Content-Type&lt;/code&gt; to &lt;code&gt;text/html&lt;/code&gt;, since we&amp;#8217;re going to be sending a snippet of HTML code to our client. The headers are set so the browser knows how to render the incoming stream.&lt;/p&gt;
+&lt;p&gt;Right, so the 200 status code implies everything&amp;#8217;s okay (see the &lt;a href='http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html' title='HTTP status codes'&gt;complete list&lt;/a&gt; of HTTP status codes), and we set the Content-Type to text/html, since we&amp;#8217;re going to be sending a snippet of HTML code to our client. The headers are set so the browser knows how to render the incoming stream.&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;write&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;&amp;lt;b&amp;gt;Hello World&amp;lt;/b&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
 &lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;end&lt;/span&gt;&lt;span class='p'&gt;();&lt;/span&gt;
 &lt;/pre&gt;
 &lt;/div&gt;
-&lt;p&gt;We&amp;#8217;ve set the headers, and now we actualy have to send the output. We write to the output stream. It&amp;#8217;s important to understand that we&amp;#8217;re just writing the snippet &lt;em&gt;&lt;b&gt;Hello World&lt;/b&gt;&lt;/em&gt; to the stream that is being sent by the HTTP server object, and nothing else. This could be anything: a jpeg image, an ogg audio or even an mp4 video, as long as we set the headers correctly. Next, with &lt;code&gt;res.end()&lt;/code&gt;, we end the output stream, and that&amp;#8217;s an indication for the server to finally send it over to the client.&lt;/p&gt;
+&lt;p&gt;We&amp;#8217;ve set the headers, and now we actualy have to send the output. We write to the output stream. It&amp;#8217;s important to understand that we&amp;#8217;re just writing the snippet &lt;em&gt;&lt;b&gt;Hello World&lt;/b&gt;&lt;/em&gt; to the stream that is being sent by the HTTP server object, and nothing else. This could be anything: a jpeg image, an ogg audio or even an mp4 video, as long as we set the headers correctly. Next, with &lt;em&gt;res.end()&lt;/em&gt;, we end the output stream, and that&amp;#8217;s an indication for the server to finally send it over to the client.&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='p'&gt;}).&lt;/span&gt;&lt;span class='nx'&gt;listen&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='mi'&gt;8080&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
 &lt;/pre&gt;
 &lt;/div&gt;

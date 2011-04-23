@@ -3,7 +3,7 @@ auto: false
 permalink: /:categories/:title
 paginate: 5
 pygments: true
-baseurl: http://blog.hardikr.com
+baseurl: http://localhost:4000
 # Change the dir the individual category files are output to
 category_dir: categories # Default is categories
 # Title to be used when generating the individual category html files prefixed to category name

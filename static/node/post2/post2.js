@@ -5,9 +5,10 @@
 */
 
 var http   = require('http');
+var	url    = require('url');
 var	fs	   = require('fs');
 var	server = http.createServer(function (req,res) {
-	var path = req.url;
+	var path = url.parse(req.url).pathname;
 	switch(path) {
 	// This is a trivial implementation of URL routing.		
 		case '/' :	

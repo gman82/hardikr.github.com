@@ -1,14 +1,6 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<meta name="description" content="The personal blog of Hardik Ruparel where he talks about programming, technology, startups, India, and pretty much anything he finds interesting" />
-	<meta name="keywords" content="programming, startups, india, entrepreneurship, javascript, node.js" />
-        <meta property="og:title" content=" A Gentle Introduction to Node - 1 - A Day Without Chocolate " />
-        <meta property="og:type" content="Blog" />
-        <meta property="og:url" content="http://localhost:4000/js/node-1" />
-        <meta property="og:image" content="http://commondatastorage.googleapis.com/hardik/new.ico" />
-        <meta property="og:description" content="The personal blog of Hardik Ruparel where he talks about programming, technology, startups, India, and pretty much anything he finds interesting" />
-        <meta property="og:site_name" content="A Day Without Chocolate" />
 	<title> A Gentle Introduction to Node - 1 - A Day Without Chocolate </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<link rel="stylesheet" href="http://localhost:4000/css/layout.css" type="text/css" media="screen" />
@@ -99,7 +91,7 @@ Hello World!
 &gt; 
 </pre>
 </div>
-<p>That was easy, wasn&#8217;t it? You may remember <code>console.log()</code> from using client side Javascript. Yes, you can use it on Server-Side Javascript too. Although in real-world environments, we would use <code>sys.debug</code>.</p>
+<p>That was easy, wasn&#8217;t it? You may remember console.log() from using client side Javascript. Yes, you can use it on Server-Side Javascript too. Although in real-world environments, we would use <em>sys.debug</em>.</p>
 
 <p>So, you&#8217;re probably not too excited about using Node in the terminal. Right, let&#8217;s create our first server! Open up your favorite text editor, and <strong>type</strong> in this code. That&#8217;s right, type it. Not copy-paste. Trust me, it&#8217;ll help.</p>
 <div class='highlight'><pre><span class='kd'>var</span> <span class='nx'>http</span> <span class='o'>=</span> <span class='nx'>require</span><span class='p'>(</span><span class='s1'>&#39;http&#39;</span><span class='p'>),</span>
@@ -112,32 +104,32 @@ Hello World!
 <span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span><span class='s1'>&#39;Server started on http://localhost:8080&#39;</span><span class='p'>);</span>
 </pre>
 </div>
-<p>Fine, if you really don&#8217;t want to type it, grab it (right click, Save Link As) <a href='https://github.com/hardikr/hardikr.github.com/raw/master/static/node/post1/post1.js' title='Post1 source code'>here</a>. But I warned you.</p>
+<p>Fine, if you really want to copy paste it, grab it <a href='https://github.com/hardikr/hardikr.github.com/blob/master/static/node/post1.js'>here</a>. But I warned you.</p>
 
 <p>Let&#8217;s break it down here. Natively, Node supports program components known as <em>modules</em>. These modules have to be imported by Node whenever you want to use any of them, just like you would use require in Python, Javascript etc.</p>
 <div class='highlight'><pre><span class='kd'>var</span> <span class='nx'>http</span> <span class='o'>=</span> <span class='nx'>require</span><span class='p'>(</span><span class='s1'>&#39;http&#39;</span><span class='p'>),</span>
 </pre>
 </div>
-<p>First, we require the <code>http</code> module, which comes packaged with Node. We create a HTTP server object. So, let&#8217;s take a pause here and understand that HTTP !== Apache. Many people new to Node believe we&#8217;re creating an Apache server. That&#8217;s wrong. We&#8217;re creating a simple HTTP server object. Next, we define a variable called server, which will act as the placeholder for the server we create in the next line.</p>
+<p>First, we require the <em>http</em> module, which comes packaged with Node. We create a HTTP server object. So, let&#8217;s take a pause here and understand that HTTP !== Apache. Many people new to Node believe we&#8217;re creating an Apache server. That&#8217;s wrong. We&#8217;re creating a simple HTTP server object. Next, we define a variable called server, which will act as the placeholder for the server we create in the next line.</p>
 <div class='highlight'><pre><span class='nx'>server</span> <span class='o'>=</span> <span class='nx'>http</span><span class='p'>.</span><span class='nx'>createServer</span><span class='p'>(</span><span class='kd'>function</span> <span class='p'>(</span><span class='nx'>req</span><span class='p'>,</span><span class='nx'>res</span><span class='p'>)</span> <span class='p'>{</span>
 </pre>
 </div>
-<p><code>function (req,res)</code> is the callback function for <code>http.createServer</code>. This is the crux of the event-driven programming style of Node. Because Javascript provides extensive capabilities for callbacks and anonymous functions, it seemed to be the perfect choice for implementing Node.</p>
+<p><em>function (req,res)</em> is the callback function for <em>http.createServer</em>. This is the crux of the event-driven programming style of Node. Because Javascript provides extensive capabilities for callbacks and anonymous functions, it seemed to be the perfect choice for implementing Node.</p>
 
 <p>But, what&#8217;s a callback function? A callback function is attached to a listener, and is fired on a particular event.</p>
 
-<p>In the above example, the <code>addListener</code> event is added to the <em>http.createServer</em> method. In essence, whenever a client connects to our server (aka the listener receives an event), the aforementioend anonymous function is called.</p>
+<p>In the above example, the <em>addListener</em> event is automatically added to the <em>http.createServer</em> method. In essence, whenever a client connects to our server (aka the listener receives an event), the aforementioend anonymous function is called.</p>
 <div class='highlight'><pre><span class='nx'>res</span><span class='p'>.</span><span class='nx'>writeHead</span><span class='p'>(</span><span class='mi'>200</span><span class='p'>,</span> <span class='p'>{</span><span class='s1'>&#39;Content-Type&#39;</span> <span class='o'>:</span> <span class='s1'>&#39;text/html&#39;</span><span class='p'>});</span>
 </pre>
 </div>
-<p>Now, we have an HTTP server setup, but we still have to output Hello World to the browser. So, let&#8217;s set the HTTP headers for the output. (If you have no idea about the HTTP protocol, you should probably read <a href='http://www.ietf.org/rfc/rfc2616.txt' title='RFC 2616'>RFC 2616</a>, which defines the <code>HTTP/1.1 protocol</code>. It&#8217;s a very comprehensive document and it&#8217;ll be worth the time you spend on it. If you&#8217;re in a hurry, you always have Wikipedia.)</p>
+<p>Now, we have an HTTP server setup, but we still have to output Hello World to the browser. So, let&#8217;s set the HTTP headers for the output. (If you have no idea about the HTTP protocol, you should probably read <a href='http://www.ietf.org/rfc/rfc2616.txt' title='RFC 2616'>RFC 2616</a>, which defines the HTTP/1.1 protocol. It&#8217;s a very comprehensive document and it&#8217;ll be worth the time you spend on it. If you&#8217;re in a hurry, you always have Wikipedia.)</p>
 
-<p>Right, so the 200 status code implies everything&#8217;s okay (see the <a href='http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html' title='HTTP status codes'>complete list</a> of HTTP status codes), and we set the <code>Content-Type</code> to <code>text/html</code>, since we&#8217;re going to be sending a snippet of HTML code to our client. The headers are set so the browser knows how to render the incoming stream.</p>
+<p>Right, so the 200 status code implies everything&#8217;s okay (see the <a href='http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html' title='HTTP status codes'>complete list</a> of HTTP status codes), and we set the Content-Type to text/html, since we&#8217;re going to be sending a snippet of HTML code to our client. The headers are set so the browser knows how to render the incoming stream.</p>
 <div class='highlight'><pre><span class='nx'>res</span><span class='p'>.</span><span class='nx'>write</span><span class='p'>(</span><span class='s1'>&#39;&lt;b&gt;Hello World&lt;/b&gt;&#39;</span><span class='p'>);</span>
 <span class='nx'>res</span><span class='p'>.</span><span class='nx'>end</span><span class='p'>();</span>
 </pre>
 </div>
-<p>We&#8217;ve set the headers, and now we actualy have to send the output. We write to the output stream. It&#8217;s important to understand that we&#8217;re just writing the snippet <em><b>Hello World</b></em> to the stream that is being sent by the HTTP server object, and nothing else. This could be anything: a jpeg image, an ogg audio or even an mp4 video, as long as we set the headers correctly. Next, with <code>res.end()</code>, we end the output stream, and that&#8217;s an indication for the server to finally send it over to the client.</p>
+<p>We&#8217;ve set the headers, and now we actualy have to send the output. We write to the output stream. It&#8217;s important to understand that we&#8217;re just writing the snippet <em><b>Hello World</b></em> to the stream that is being sent by the HTTP server object, and nothing else. This could be anything: a jpeg image, an ogg audio or even an mp4 video, as long as we set the headers correctly. Next, with <em>res.end()</em>, we end the output stream, and that&#8217;s an indication for the server to finally send it over to the client.</p>
 <div class='highlight'><pre><span class='p'>}).</span><span class='nx'>listen</span><span class='p'>(</span><span class='mi'>8080</span><span class='p'>);</span>
 </pre>
 </div>
@@ -199,7 +191,7 @@ Server started on http://localhost:8080
 		<h3>Related Articles</h3>
 		<ul class="posts">
 		    
-		      <li><span>23 Apr 2011</span> &raquo; <a href="/js/node-2">A Gentle Introduction to Node - 2</a></li>
+		      <li><span>22 Apr 2011</span> &raquo; <a href="/js/node-2">A Gentle Introduction to Node - 2</a></li>
 		    
 		      <li><span>03 Apr 2011</span> &raquo; <a href="/india/mumbai-locals">Twenty Minutes on a Mumbai local train</a></li>
 		    
