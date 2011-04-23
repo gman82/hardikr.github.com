@@ -1,6 +1,14 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
+	<meta name="description" content="The personal blog of Hardik Ruparel where he talks about programming, technology, startups, India, and pretty much anything he finds interesting" />
+	<meta name="keywords" content="programming, startups, india, entrepreneurship, javascript, node.js" />
+        <meta property="og:title" content="A Day Without Chocolate " />
+        <meta property="og:type" content="Blog" />
+        <meta property="og:url" content="http://localhost:4000" />
+        <meta property="og:image" content="http://commondatastorage.googleapis.com/hardik/new.ico" />
+        <meta property="og:description" content="The personal blog of Hardik Ruparel where he talks about programming, technology, startups, India, and pretty much anything he finds interesting" />
+        <meta property="og:site_name" content="A Day Without Chocolate" />
 	<title>A Day Without Chocolate </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<link rel="stylesheet" href="http://localhost:4000/css/layout.css" type="text/css" media="screen" />
@@ -50,20 +58,19 @@
 <div id="post-" class="post">
 	<h2><a href="http://localhost:4000/js/node-2">A Gentle Introduction to Node - 2</a></h2>
 	<div class="post-meta">
-		<div class="meta-date">April 22, 2011</div>
+		<div class="meta-date">April 23, 2011</div>
 	</div>
-	<p>Previously: <a href='http://blog.hardikr.com/js/node-1/' title='The first post in the series'>A Gentle Introduction to Node - 1</a></p>
+	<p><em>Previously: <a href='http://blog.hardikr.com/js/node-1/' title='The first post in the series'>A Gentle Introduction to Node - 1</a></em></p>
 
 <p>If you&#8217;ve not read the first post, please read it ! (especially the <a href='http://blog.hardikr.com/js/node-1/#resources' title='Resources in first post'>resources</a> section to get a good understanding of how Node works.</p>
 
 <p>So let&#8217;s dive in. We&#8217;re going to be building a simple looking homepage for me using a static file server in Node.JS. I agree that&#8217;s probably not what Node is best at, but at some point in your life you are going to want to serve static files to the browser.</p>
 
-<p>Let&#8217;s dive in. The code may look big and mean, but it&#8217;s actually really easy to understand.</p>
+<p>Let&#8217;s dive in. The code may look big and mean, but it&#8217;s actually really easy to understand. And please, type out the code, especially if you&#8217;re new to Javascript. If you want to view it in your code editor, grab the code <a href='https://github.com/hardikr/hardikr.github.com/raw/master/static/node/post2/post2.js'>here</a>.</p>
 <div class='highlight'><pre><span class='kd'>var</span> <span class='nx'>http</span> <span class='o'>=</span> <span class='nx'>require</span><span class='p'>(</span><span class='s1'>&#39;http&#39;</span><span class='p'>);</span>
-<span class='kd'>var</span> <span class='nx'>url</span> <span class='o'>=</span> <span class='nx'>require</span><span class='p'>(</span><span class='s1'>&#39;url&#39;</span><span class='p'>);</span>
 <span class='kd'>var</span> <span class='nx'>fs</span> <span class='o'>=</span> <span class='nx'>require</span><span class='p'>(</span><span class='s1'>&#39;fs&#39;</span><span class='p'>);</span>
 <span class='kd'>var</span> <span class='nx'>server</span> <span class='o'>=</span> <span class='nx'>http</span><span class='p'>.</span><span class='nx'>createServer</span><span class='p'>(</span><span class='kd'>function</span> <span class='p'>(</span><span class='nx'>req</span><span class='p'>,</span><span class='nx'>res</span><span class='p'>)</span> <span class='p'>{</span>
-	<span class='kd'>var</span> <span class='nx'>path</span> <span class='o'>=</span> <span class='nx'>url</span><span class='p'>.</span><span class='nx'>parse</span><span class='p'>(</span><span class='nx'>req</span><span class='p'>.</span><span class='nx'>url</span><span class='p'>).</span><span class='nx'>pathname</span><span class='p'>;</span>
+	<span class='kd'>var</span> <span class='nx'>path</span> <span class='o'>=</span> <span class='nx'>req</span><span class='p'>.</span><span class='nx'>url</span><span class='p'>;</span>
 	<span class='k'>switch</span><span class='p'>(</span><span class='nx'>path</span><span class='p'>)</span> <span class='p'>{</span>
 	
 	<span class='c1'>// This is a trivial implementation of URL routing.		</span>
@@ -110,20 +117,54 @@
 </div>
 <p>As discussed before, Node uses modules which you can include in your code to let you do awesome stuff. Just like Python, Node is an uber-cool Swiss Army Knife, only there&#8217;s no limit to how far you can customize the modules you need to include. You can even use the hundreds of third party modules already available, and when you&#8217;re confident enough, you can build your own modules to serve your needs.</p>
 <div class='highlight'><pre><span class='kd'>var</span> <span class='nx'>http</span> <span class='o'>=</span> <span class='nx'>require</span><span class='p'>(</span><span class='s1'>&#39;http&#39;</span><span class='p'>);</span>
-<span class='kd'>var</span> <span class='nx'>url</span> <span class='o'>=</span> <span class='nx'>require</span><span class='p'>(</span><span class='s1'>&#39;url&#39;</span><span class='p'>);</span>
 <span class='kd'>var</span> <span class='nx'>fs</span> <span class='o'>=</span> <span class='nx'>require</span><span class='p'>(</span><span class='s1'>&#39;fs&#39;</span><span class='p'>);</span>
 </pre>
 </div>
-<p>So, we start off with importing the <code>http</code> module (which we used in the previous post), along with the <code>url</code> and the <code>fs</code> module. The <code>url</code> module lets us manipulate the URL fragment of the incoming request, which we&#8217;ll see later on, and the <code>fs</code> module is the File System module, which we&#8217;ll use to read a local file and display it to the browser.</p>
+<p>So, we start off with importing the <code>http</code> module (which we used in the previous post), along with the <code>fs</code> module. The <code>fs</code> module is the File System module, which we&#8217;ll use to read a local file and display it to the browser.</p>
 <div class='highlight'><pre><span class='kd'>var</span> <span class='nx'>server</span> <span class='o'>=</span> <span class='nx'>http</span><span class='p'>.</span><span class='nx'>createServer</span><span class='p'>(</span><span class='kd'>function</span> <span class='p'>(</span><span class='nx'>req</span><span class='p'>,</span><span class='nx'>res</span><span class='p'>)</span> <span class='p'>{</span>
- <span class='kd'>var</span> <span class='nx'>path</span> <span class='o'>=</span> <span class='nx'>url</span><span class='p'>.</span><span class='nx'>parse</span><span class='p'>(</span><span class='nx'>req</span><span class='p'>.</span><span class='nx'>url</span><span class='p'>).</span><span class='nx'>pathname</span><span class='p'>;</span>
+ <span class='kd'>var</span> <span class='nx'>path</span> <span class='o'>=</span> <span class='nx'>req</span><span class='p'>.</span><span class='nx'>url</span><span class='p'>;</span>
 </pre>
 </div>
-<p>Next, we initialize our server object, with our <code>req</code> (request) and <code>response</code> (response) objects coming in as parameters to the callback function. If you paid attention last week, you may have realized we never used the request object. Well, we&#8217;re gonna do that right now.</p>
+<p>Next, we initialize our server object, with our <code>req</code> (request) and <code>res</code> (response) objects coming in as parameters to the callback function. If you read the last post carefully, you may have realized we never used the request object for anything. Well, we&#8217;re gonna do that right now.</p>
 
-<p>We parse the requested URL (that you type in the browser eg : <code>http://example.com/about</code> ) using the <code>url.parse</code> method of the <code>url</code> module we imported, and we extract the requested pathname. in the above URL, it is <code>/about</code>.</p>
+<p>We obtain the requested URL by accessing <code>req.url</code> value (from the <code>req</code> object). To illustrate, if I accessed <code>http://example.com/about</code>, then <code>req.url</code> returns <code>/about</code>. (Note, you can get a detailed look at the request object by simply doing <code>console.log(req)</code>. Similarly, you can log pretty much anything if you&#8217;re not sure about something. It&#8217;s actually a good way of debugging Node.JS code. Note that the log will appear in your terminal and not in your browser since this is server-side Javascript.)</p>
 
-<p>After that, it&#8217;s pretty self explanatory. We use the <code>switch</code> method (which I presume you know). The first case, we test for the root of our homepage - for which the pathname would be <code>/</code>. We write the response headers and body just like last time, and end the output with <code>res.end()</code>. Don&#8217;t forget to put your break statement. Similarly, we test for <code>/about</code> and send my about page.</p>
+<p><em><strong>Note</strong></em>: I&#8217;m taking a little detour here. In several open-source projects, I&#8217;ve seen the following code used to extract the pathname:</p>
+<div class='highlight'><pre><span class='kd'>var</span> <span class='nx'>url</span> <span class='o'>=</span> <span class='nx'>require</span><span class='p'>(</span><span class='s1'>&#39;url&#39;</span><span class='p'>)</span> <span class='c1'>// Include the url module for url.parse</span>
+<span class='cm'>/** </span>
+<span class='cm'> * similar code until we get to defining our path</span>
+<span class='cm'>**/</span>
+<span class='kd'>var</span> <span class='nx'>path</span> <span class='o'>=</span> <span class='nx'>url</span><span class='p'>.</span><span class='nx'>parse</span><span class='p'>(</span><span class='nx'>req</span><span class='p'>.</span><span class='nx'>url</span><span class='p'>).</span><span class='nx'>pathname</span><span class='p'>;</span>
+</pre>
+</div>
+<p>To make sure you&#8217;re on track, if the browser requested <code>http://example.com/about</code>, then req.url contains <code>/about</code>. Coming to the above code, <code>url.parse</code> is a method from the <code>url</code> module that creates a <code>url</code> object out of a URL string. Don&#8217;t be confused, hang on! I&#8217;m illustrating the use of url.parse() on a sample string:</p>
+<div class='highlight'><pre><span class='kd'>var</span> <span class='nx'>urlString</span> <span class='o'>=</span> <span class='s1'>&#39;http://example.com/about&#39;</span><span class='p'>;</span> 
+<span class='kd'>var</span> <span class='nx'>urlObject</span> <span class='o'>=</span> <span class='nx'>url</span><span class='p'>.</span><span class='nx'>parse</span><span class='p'>(</span><span class='nx'>urlString</span><span class='p'>);</span>
+<span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span><span class='nx'>urlObject</span><span class='p'>);</span>
+</pre>
+</div>
+<p>This returns the <code>url</code> object of the string we declared:</p>
+<div class='highlight'><pre><span class='p'>{</span> <span class='nx'>protocol</span><span class='o'>:</span> <span class='s1'>&#39;http:&#39;</span><span class='p'>,</span>
+  <span class='nx'>slashes</span><span class='o'>:</span> <span class='kc'>true</span><span class='p'>,</span>
+  <span class='nx'>host</span><span class='o'>:</span> <span class='s1'>&#39;example.com&#39;</span><span class='p'>,</span>
+  <span class='nx'>hostname</span><span class='o'>:</span> <span class='s1'>&#39;example.com&#39;</span><span class='p'>,</span>
+  <span class='nx'>pathname</span><span class='o'>:</span> <span class='s1'>&#39;/about&#39;</span><span class='p'>,</span>
+  <span class='nx'>href</span><span class='o'>:</span> <span class='s1'>&#39;http://example.com/about&#39;</span> <span class='p'>}</span>
+</pre>
+</div>
+<p>So, going back to the code,</p>
+<div class='highlight'><pre><span class='kd'>var</span> <span class='nx'>path</span> <span class='o'>=</span> <span class='nx'>url</span><span class='p'>.</span><span class='nx'>parse</span><span class='p'>(</span><span class='nx'>req</span><span class='p'>.</span><span class='nx'>url</span><span class='p'>).</span><span class='nx'>pathname</span><span class='p'>;</span>
+</pre>
+</div>
+<p>Since the requested URL is <code>http://example.com/about</code>, <code>req.url</code> already contains <code>/about</code>. So, if we were to use <code>url.parse(req.url)</code> , it would convert <code>/about</code> into an object, like so:</p>
+<div class='highlight'><pre><span class='p'>{</span> <span class='nx'>pathname</span><span class='o'>:</span> <span class='s1'>&#39;/about&#39;</span><span class='p'>,</span> <span class='nx'>href</span><span class='o'>:</span> <span class='s1'>&#39;/about&#39;</span> <span class='p'>}</span>
+</pre>
+</div>
+<p>Summing up, the code is unnecessarily (in my opinion) converting <code>/about</code> into a URL object, and extracting the <code>pathname</code> which would return the same <code>/about</code>. I&#8217;m not too sure why <a href='https://github.com/search?q=path+%3D+url.parse%28req.url%29.pathname&amp;type=Everything&amp;repo=&amp;langOverride=&amp;start_value=1' title='GitHub search for url.parse'>so many projects</a> use this. It&#8217;s almost like I&#8217;m missing out something. If you know why, do <a href='https://twitter.com/hardikr' title='My Twitter'>tweet</a> me !</p>
+
+<p>Alright, let&#8217;s get back to our own code. To recap, we just assigned <code>path</code> to the requested path by using <code>req.url</code>.</p>
+
+<p>After that, it&#8217;s pretty self explanatory. We use the <code>switch</code> method (which I presume you know). The first case, we test for the root of our homepage - for which the pathname would be <code>/</code>. We write the response headers and body just like last time, and end the output with <code>res.end()</code>. Don&#8217;t forget to put your <code>break</code> statement. Similarly, we test for <code>/about</code> and send my about page.</p>
 <div class='highlight'><pre><span class='nx'>fs</span><span class='p'>.</span><span class='nx'>readFile</span><span class='p'>(</span><span class='nx'>__dirname</span> <span class='o'>+</span> <span class='nx'>path</span><span class='p'>,</span> <span class='kd'>function</span><span class='p'>(</span><span class='nx'>err</span><span class='p'>,</span> <span class='nx'>data</span><span class='p'>)</span> <span class='p'>{</span>
  <span class='k'>if</span><span class='p'>(</span><span class='nx'>err</span><span class='p'>)</span> <span class='k'>throw</span> <span class='nx'>err</span><span class='p'>;</span>
  <span class='nx'>res</span><span class='p'>.</span><span class='nx'>writeHead</span><span class='p'>(</span><span class='mi'>200</span><span class='p'>,</span> <span class='p'>{</span><span class='s1'>&#39;Content-Type&#39;</span> <span class='o'>:</span> <span class='s1'>&#39;image/png&#39;</span><span class='p'>});</span>
@@ -134,13 +175,33 @@
 </div>
 <p>But now, I want to send over a PNG image as my favorite XKCD comic. I have a file named image.png lying in the same folder as my server.js file which I want to serve. Logically, I have to read the file from my Node.JS code first. I can do this with the <code>readFile</code> method.</p>
 
-<p><code>__dirname</code> specifies the current working directory (where the Node server file is present), and we append to it the path that we extracted from <code>url.parse(req.url).pathname</code>; hence building the absolute path to the image.png file on the UNIX filesystem. We declare an anonymous callback function which will return the file as an object <code>data</code>.</p>
+<p><code>__dirname</code> specifies the current working directory (where the Node server file is present), and we append to it the path that we extracted from <code>url.parse(req.url).pathname</code> hence building the absolute path to the <code>image.png</code> file on the UNIX filesystem. We use an anonymous callback function which will return the file as an object <code>data</code>.</p>
 
-<p>I check for any errors, if found will be thrown. I write the HTTP response header, but this time my <code>Content-Type</code> is set to <code>image/png</code> since I&#8217;m returning a PNG image. I pass along the file object <code>data</code> which contains the PNG file and end my output stream with <code>res.end</code>.</p>
+<p>I check for any errors, if found will be thrown. I write the HTTP response header, but this time my <code>Content-Type</code> is set to <code>image/png</code> since I&#8217;m returning a PNG image. I pass along the file object <code>data</code> which contains the PNG file and end my output stream with <code>res.end()</code>.</p>
 
 <p>The <code>default</code> case will be selected if the client requests one of the paths we&#8217;re not checking for; and it sends over a simple 404 error.</p>
 
-<p>That&#8217;s pretty much it. We have our working homepage, and you can test it out! You can get to designing your webpage in Node and host it over at EC2 which I think is still offering one year of free micro-instances.</p>
+<p>That&#8217;s pretty much it. We have our working homepage, and you can test it out! If you want something like this for yourself on the Internet, you can get to designing your webpage in Node and host it over at Amazon EC2 which I think is still offering one year of free micro-instances :)</p>
+
+<p>Since this is just a demo, the number of files are small, and the amount of HTML is small. Realistically, for a bigger homepage, obviously we would not want to include all your HTML in the Node.JS server code. That wouldn&#8217;t be too smart of us!</p>
+
+<p>One way would be to use the excellent <a href='https://github.com/visionmedia/express' title='Express on GitHub'>Express</a> framework along with <a href='https://github.com/senchalabs/connect' title='Connect on GitHub'>Connect</a> middleware; but let&#8217;s leave that for later on, when we&#8217;re more experienced with pure Node.JS code. I suggest this in the same vein as people will tell you to start off with pure Javascript and then to go jQuery.</p>
+
+<p>Another way would be to build a static file server function, to which we can pass as parameter the file we wish to serve. Good ol&#8217; functions !</p>
+
+<p>You should try writing that code on your own. But, here are a few hints.</p>
+
+<ul>
+<li>You&#8217;ll have to write the <code>/</code> as an index.html file, and <code>/about</code> as about.html, and pass them as parameters to the static file server.</li>
+
+<li>You can use the same static file server function above and generalize it.</li>
+</ul>
+
+<p>The solution can be found, if you know where to look! So, till next time, where we&#8217;ll run bash functions through Node code!</p>
+
+<p>A few words before we part, as I said before, keep perusing the Node documentation. It&#8217;s quite small and easy to understand. There are a lot of methods which you may like to play around with. I&#8217;m deliberately keeping it simple in the blog post, since I want everyone to read the Node docs.</p>
+
+<p>You could also look at the hundreds of thousands of lines of open-sourced Node.JS code. Just <a href='https://github.com/search?q=Node&amp;type=Everything&amp;repo=&amp;langOverride=&amp;start_value=1' title='GitHub search for Node'>search</a> on GitHub. At the end of next week&#8217;s post on running bash functions, we&#8217;ll take a look into a third-party Node.JS module that&#8217;ll turn our command line into a dictionary! How cool is that ?! Hang on till next week!</p>
 
 		<!--<div class="meta-tags">
 			<ul>
@@ -203,7 +264,7 @@ Hello World!
 &gt; 
 </pre>
 </div>
-<p>That was easy, wasn&#8217;t it? You may remember console.log() from using client side Javascript. Yes, you can use it on Server-Side Javascript too. Although in real-world environments, we would use <em>sys.debug</em>.</p>
+<p>That was easy, wasn&#8217;t it? You may remember <code>console.log()</code> from using client side Javascript. Yes, you can use it on Server-Side Javascript too. Although in real-world environments, we would use <code>sys.debug</code>.</p>
 
 <p>So, you&#8217;re probably not too excited about using Node in the terminal. Right, let&#8217;s create our first server! Open up your favorite text editor, and <strong>type</strong> in this code. That&#8217;s right, type it. Not copy-paste. Trust me, it&#8217;ll help.</p>
 <div class='highlight'><pre><span class='kd'>var</span> <span class='nx'>http</span> <span class='o'>=</span> <span class='nx'>require</span><span class='p'>(</span><span class='s1'>&#39;http&#39;</span><span class='p'>),</span>
@@ -216,32 +277,32 @@ Hello World!
 <span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span><span class='s1'>&#39;Server started on http://localhost:8080&#39;</span><span class='p'>);</span>
 </pre>
 </div>
-<p>Fine, if you really want to copy paste it, grab it <a href='https://github.com/hardikr/hardikr.github.com/blob/master/static/node/post1.js'>here</a>. But I warned you.</p>
+<p>Fine, if you really don&#8217;t want to type it, grab it (right click, Save Link As) <a href='https://github.com/hardikr/hardikr.github.com/raw/master/static/node/post1/post1.js' title='Post1 source code'>here</a>. But I warned you.</p>
 
 <p>Let&#8217;s break it down here. Natively, Node supports program components known as <em>modules</em>. These modules have to be imported by Node whenever you want to use any of them, just like you would use require in Python, Javascript etc.</p>
 <div class='highlight'><pre><span class='kd'>var</span> <span class='nx'>http</span> <span class='o'>=</span> <span class='nx'>require</span><span class='p'>(</span><span class='s1'>&#39;http&#39;</span><span class='p'>),</span>
 </pre>
 </div>
-<p>First, we require the <em>http</em> module, which comes packaged with Node. We create a HTTP server object. So, let&#8217;s take a pause here and understand that HTTP !== Apache. Many people new to Node believe we&#8217;re creating an Apache server. That&#8217;s wrong. We&#8217;re creating a simple HTTP server object. Next, we define a variable called server, which will act as the placeholder for the server we create in the next line.</p>
+<p>First, we require the <code>http</code> module, which comes packaged with Node. We create a HTTP server object. So, let&#8217;s take a pause here and understand that HTTP !== Apache. Many people new to Node believe we&#8217;re creating an Apache server. That&#8217;s wrong. We&#8217;re creating a simple HTTP server object. Next, we define a variable called server, which will act as the placeholder for the server we create in the next line.</p>
 <div class='highlight'><pre><span class='nx'>server</span> <span class='o'>=</span> <span class='nx'>http</span><span class='p'>.</span><span class='nx'>createServer</span><span class='p'>(</span><span class='kd'>function</span> <span class='p'>(</span><span class='nx'>req</span><span class='p'>,</span><span class='nx'>res</span><span class='p'>)</span> <span class='p'>{</span>
 </pre>
 </div>
-<p><em>function (req,res)</em> is the callback function for <em>http.createServer</em>. This is the crux of the event-driven programming style of Node. Because Javascript provides extensive capabilities for callbacks and anonymous functions, it seemed to be the perfect choice for implementing Node.</p>
+<p><code>function (req,res)</code> is the callback function for <code>http.createServer</code>. This is the crux of the event-driven programming style of Node. Because Javascript provides extensive capabilities for callbacks and anonymous functions, it seemed to be the perfect choice for implementing Node.</p>
 
 <p>But, what&#8217;s a callback function? A callback function is attached to a listener, and is fired on a particular event.</p>
 
-<p>In the above example, the <em>addListener</em> event is automatically added to the <em>http.createServer</em> method. In essence, whenever a client connects to our server (aka the listener receives an event), the aforementioend anonymous function is called.</p>
+<p>In the above example, the <code>addListener</code> event is added to the <em>http.createServer</em> method. In essence, whenever a client connects to our server (aka the listener receives an event), the aforementioend anonymous function is called.</p>
 <div class='highlight'><pre><span class='nx'>res</span><span class='p'>.</span><span class='nx'>writeHead</span><span class='p'>(</span><span class='mi'>200</span><span class='p'>,</span> <span class='p'>{</span><span class='s1'>&#39;Content-Type&#39;</span> <span class='o'>:</span> <span class='s1'>&#39;text/html&#39;</span><span class='p'>});</span>
 </pre>
 </div>
-<p>Now, we have an HTTP server setup, but we still have to output Hello World to the browser. So, let&#8217;s set the HTTP headers for the output. (If you have no idea about the HTTP protocol, you should probably read <a href='http://www.ietf.org/rfc/rfc2616.txt' title='RFC 2616'>RFC 2616</a>, which defines the HTTP/1.1 protocol. It&#8217;s a very comprehensive document and it&#8217;ll be worth the time you spend on it. If you&#8217;re in a hurry, you always have Wikipedia.)</p>
+<p>Now, we have an HTTP server setup, but we still have to output Hello World to the browser. So, let&#8217;s set the HTTP headers for the output. (If you have no idea about the HTTP protocol, you should probably read <a href='http://www.ietf.org/rfc/rfc2616.txt' title='RFC 2616'>RFC 2616</a>, which defines the <code>HTTP/1.1 protocol</code>. It&#8217;s a very comprehensive document and it&#8217;ll be worth the time you spend on it. If you&#8217;re in a hurry, you always have Wikipedia.)</p>
 
-<p>Right, so the 200 status code implies everything&#8217;s okay (see the <a href='http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html' title='HTTP status codes'>complete list</a> of HTTP status codes), and we set the Content-Type to text/html, since we&#8217;re going to be sending a snippet of HTML code to our client. The headers are set so the browser knows how to render the incoming stream.</p>
+<p>Right, so the 200 status code implies everything&#8217;s okay (see the <a href='http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html' title='HTTP status codes'>complete list</a> of HTTP status codes), and we set the <code>Content-Type</code> to <code>text/html</code>, since we&#8217;re going to be sending a snippet of HTML code to our client. The headers are set so the browser knows how to render the incoming stream.</p>
 <div class='highlight'><pre><span class='nx'>res</span><span class='p'>.</span><span class='nx'>write</span><span class='p'>(</span><span class='s1'>&#39;&lt;b&gt;Hello World&lt;/b&gt;&#39;</span><span class='p'>);</span>
 <span class='nx'>res</span><span class='p'>.</span><span class='nx'>end</span><span class='p'>();</span>
 </pre>
 </div>
-<p>We&#8217;ve set the headers, and now we actualy have to send the output. We write to the output stream. It&#8217;s important to understand that we&#8217;re just writing the snippet <em><b>Hello World</b></em> to the stream that is being sent by the HTTP server object, and nothing else. This could be anything: a jpeg image, an ogg audio or even an mp4 video, as long as we set the headers correctly. Next, with <em>res.end()</em>, we end the output stream, and that&#8217;s an indication for the server to finally send it over to the client.</p>
+<p>We&#8217;ve set the headers, and now we actualy have to send the output. We write to the output stream. It&#8217;s important to understand that we&#8217;re just writing the snippet <em><b>Hello World</b></em> to the stream that is being sent by the HTTP server object, and nothing else. This could be anything: a jpeg image, an ogg audio or even an mp4 video, as long as we set the headers correctly. Next, with <code>res.end()</code>, we end the output stream, and that&#8217;s an indication for the server to finally send it over to the client.</p>
 <div class='highlight'><pre><span class='p'>}).</span><span class='nx'>listen</span><span class='p'>(</span><span class='mi'>8080</span><span class='p'>);</span>
 </pre>
 </div>
