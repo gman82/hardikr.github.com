@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 code .highlight { background-color: #ffffcc; margin-bottom: 15px; }
+=======
+.highlight { background-color: #ffffcc; margin-bottom: 15px; }
+>>>>>>> parent of ac6bf91... css code
 .c { color: #408080; font-style: italic } /* Comment */
 .err { border: 1px solid #FF0000 } /* Error */
 .k { color: #008000; font-weight: bold } /* Keyword */
