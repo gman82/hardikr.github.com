@@ -5,14 +5,15 @@
 	<meta name="keywords" content="programming, startups, india, entrepreneurship, javascript, node.js" />
         <meta property="og:title" content=" A Gentle Introduction to Node - 2 - A Day Without Chocolate " />
         <meta property="og:type" content="Blog" />
-        <meta property="og:url" content="http://localhost:4000/js/node-2" />
+        <meta property="og:url" content="http://blog.hardikr.com/js/node-2" />
         <meta property="og:image" content="http://commondatastorage.googleapis.com/hardik/new.ico" />
         <meta property="og:description" content="The personal blog of Hardik Ruparel where he talks about programming, technology, startups, India, and pretty much anything he finds interesting" />
         <meta property="og:site_name" content="A Day Without Chocolate" />
 	<title> A Gentle Introduction to Node - 2 - A Day Without Chocolate </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<link rel="stylesheet" href="http://localhost:4000/css/layout.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="http://localhost:4000/css/default.css" type="text/css" media="screen" />
+        <meta name="ttw" content="5x576ar" />
+	<link rel="stylesheet" href="http://blog.hardikr.com/css/layout.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="http://blog.hardikr.com/css/default.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic|Yanone+Kaffeesatz:regular,bold" />
 	<link rel="icon" href="http://commondatastorage.googleapis.com/hardik/new.ico" type="image/x-icon">
 	<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
@@ -35,21 +36,22 @@
 	<div class="wrap" id="page">
 		<div class="payload">
 			<div class="side">
-			<a href="http://localhost:4000"><h2 style="padding-top:65px;color:#BEBEBE">A Day Without <span style="color:#7B3F00">[Chocolate]</span></h2></a>
+			<a href="http://blog.hardikr.com"><h2 style="padding-top:65px;color:#BEBEBE">A Day Without <span style="color:#7B3F00">[Chocolate]</span></h2></a>
 				<div id="byline">
-					<a href="http://localhost:4000/about.html"><span class="fancy">By</span> Hardik Ruparel</a>
+					<a href="http://blog.hardikr.com/about.html"><span class="fancy">By</span> Hardik Ruparel</a>
 				</div><!--/byline-->
 				<div id="navigation">
 					<ul>
-						<li><a href="http://localhost:4000/essays">Essays</a></li>
-						<li><a href="http://localhost:4000/archives.html">Archives</a></li>
-						<li><a href="http://localhost:4000/about.html">About</a></li>
-						<li><a href="http://localhost:4000/contact.html">Contact</a></li>
-						<li><a href="http://localhost:4000/feeds.html">Feeds</a></li>
-						<li><a href="https://twitter.com/hardikr">Twitter</a></li>
+						<li><a href="http://blog.hardikr.com/essays">Essays</a></li>
+						<li><a href="http://blog.hardikr.com/archives.html">Archives</a></li>
+						<li><a href="http://blog.hardikr.com/about.html">About</a></li>
+						<li><a href="http://blog.hardikr.com/contact.html">Contact</a></li>
+						<li><a href="http://blog.hardikr.com/feeds.html">Feeds</a></li>
 					</ul>
 				</div><!--/navigation-->
-				<a target="_blank" rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img alt="Creative Commons License" style="border-width:0" id="cc" src="http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png" /></a>
+
+			    <a target="_blank" rel="twitter" href="https://twitter.com/hardikr"><img alt="Follow me on Twitter" style="border-width:0" id="cc" src="img/tw.png" /></a>
+				<a target="_blank" rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img alt="Creative Commons License" style="border-width:0" id="cc" src="img/cc.png" /></a>
 			</div><!--/side-->
 			<div class="main">
 				
@@ -57,17 +59,15 @@
 <div id="post-" class="post">
 	<h2>A Gentle Introduction to Node - 2</h2>
 	<div class="post-meta">
-	<div class="meta-date">April 23, 2011&nbsp;|&nbsp;<span class="perma"><a href="http://localhost:4000/js/node-2">Permalink</a></span></div>
+	<div class="meta-date">April 23, 2011&nbsp;|&nbsp;<span class="perma"><a href="http://blog.hardikr.com/js/node-2">Permalink</a></span></div>
 	</div>
 
-	<p><em>Previously: <a href='http://blog.hardikr.com/js/node-1/' title='The first post in the series'>A Gentle Introduction to Node - 1</a></em></p>
-
-<p>If you&#8217;ve not read the first post, please read it ! (especially the <a href='http://blog.hardikr.com/js/node-1/#resources' title='Resources in first post'>resources</a> section to get a good understanding of how Node works.</p>
+	<p>If you&#8217;ve not read the <a href='http://blog.hardikr.com/js/node-1/' title='The first post in the series'>first post</a>, please read it ! (especially the <a href='http://blog.hardikr.com/js/node-1/#resources' title='Resources in first post'>resources</a> section to get a good understanding of how Node works.</p>
 
 <p>So let&#8217;s dive in. We&#8217;re going to be building a simple looking homepage for me using a static file server in Node.JS. I agree that&#8217;s probably not what Node is best at, but at some point in your life you are going to want to serve static files to the browser.</p>
 
 <p>Let&#8217;s dive in. The code may look big and mean, but it&#8217;s actually really easy to understand. And please, type out the code, especially if you&#8217;re new to Javascript. If you want to view it in your code editor, grab the code <a href='https://github.com/hardikr/hardikr.github.com/raw/master/static/node/post2/post2.js'>here</a>.</p>
-<div class='highlight'><pre><span class='kd'>var</span> <span class='nx'>http</span> <span class='o'>=</span> <span class='nx'>require</span><span class='p'>(</span><span class='s1'>&#39;http&#39;</span><span class='p'>);</span>
+<div class='highlight'><pre><code class='javascript'><span class='kd'>var</span> <span class='nx'>http</span> <span class='o'>=</span> <span class='nx'>require</span><span class='p'>(</span><span class='s1'>&#39;http&#39;</span><span class='p'>);</span>
 <span class='kd'>var</span> <span class='nx'>fs</span> <span class='o'>=</span> <span class='nx'>require</span><span class='p'>(</span><span class='s1'>&#39;fs&#39;</span><span class='p'>);</span>
 <span class='kd'>var</span> <span class='nx'>server</span> <span class='o'>=</span> <span class='nx'>http</span><span class='p'>.</span><span class='nx'>createServer</span><span class='p'>(</span><span class='kd'>function</span> <span class='p'>(</span><span class='nx'>req</span><span class='p'>,</span><span class='nx'>res</span><span class='p'>)</span> <span class='p'>{</span>
 	<span class='kd'>var</span> <span class='nx'>path</span> <span class='o'>=</span> <span class='nx'>req</span><span class='p'>.</span><span class='nx'>url</span><span class='p'>;</span>
@@ -113,65 +113,65 @@
 
 <span class='p'>}).</span><span class='nx'>listen</span><span class='p'>(</span><span class='mi'>8080</span><span class='p'>);</span>
 <span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span><span class='s1'>&#39;Server started at http://localhost:8080&#39;</span><span class='p'>);</span>
-</pre>
+</code></pre>
 </div>
 <p>As discussed before, Node uses modules which you can include in your code to let you do awesome stuff. Just like Python, Node is an uber-cool Swiss Army Knife, only there&#8217;s no limit to how far you can customize the modules you need to include. You can even use the hundreds of third party modules already available, and when you&#8217;re confident enough, you can build your own modules to serve your needs.</p>
-<div class='highlight'><pre><span class='kd'>var</span> <span class='nx'>http</span> <span class='o'>=</span> <span class='nx'>require</span><span class='p'>(</span><span class='s1'>&#39;http&#39;</span><span class='p'>);</span>
+<div class='highlight'><pre><code class='javascript'><span class='kd'>var</span> <span class='nx'>http</span> <span class='o'>=</span> <span class='nx'>require</span><span class='p'>(</span><span class='s1'>&#39;http&#39;</span><span class='p'>);</span>
 <span class='kd'>var</span> <span class='nx'>fs</span> <span class='o'>=</span> <span class='nx'>require</span><span class='p'>(</span><span class='s1'>&#39;fs&#39;</span><span class='p'>);</span>
-</pre>
+</code></pre>
 </div>
 <p>So, we start off with importing the <code>http</code> module (which we used in the previous post), along with the <code>fs</code> module. The <code>fs</code> module is the File System module, which we&#8217;ll use to read a local file and display it to the browser.</p>
-<div class='highlight'><pre><span class='kd'>var</span> <span class='nx'>server</span> <span class='o'>=</span> <span class='nx'>http</span><span class='p'>.</span><span class='nx'>createServer</span><span class='p'>(</span><span class='kd'>function</span> <span class='p'>(</span><span class='nx'>req</span><span class='p'>,</span><span class='nx'>res</span><span class='p'>)</span> <span class='p'>{</span>
+<div class='highlight'><pre><code class='javascript'><span class='kd'>var</span> <span class='nx'>server</span> <span class='o'>=</span> <span class='nx'>http</span><span class='p'>.</span><span class='nx'>createServer</span><span class='p'>(</span><span class='kd'>function</span> <span class='p'>(</span><span class='nx'>req</span><span class='p'>,</span><span class='nx'>res</span><span class='p'>)</span> <span class='p'>{</span>
  <span class='kd'>var</span> <span class='nx'>path</span> <span class='o'>=</span> <span class='nx'>req</span><span class='p'>.</span><span class='nx'>url</span><span class='p'>;</span>
-</pre>
+</code></pre>
 </div>
 <p>Next, we initialize our server object, with our <code>req</code> (request) and <code>res</code> (response) objects coming in as parameters to the callback function. If you read the last post carefully, you may have realized we never used the request object for anything. Well, we&#8217;re gonna do that right now.</p>
 
 <p>We obtain the requested URL by accessing <code>req.url</code> value (from the <code>req</code> object). To illustrate, if I accessed <code>http://example.com/about</code>, then <code>req.url</code> returns <code>/about</code>. (Note, you can get a detailed look at the request object by simply doing <code>console.log(req)</code>. Similarly, you can log pretty much anything if you&#8217;re not sure about something. It&#8217;s actually a good way of debugging Node.JS code. Note that the log will appear in your terminal and not in your browser since this is server-side Javascript.)</p>
 
 <p><em><strong>Note</strong></em>: I&#8217;m taking a little detour here. In several open-source projects, I&#8217;ve seen the following code used to extract the pathname:</p>
-<div class='highlight'><pre><span class='kd'>var</span> <span class='nx'>url</span> <span class='o'>=</span> <span class='nx'>require</span><span class='p'>(</span><span class='s1'>&#39;url&#39;</span><span class='p'>)</span> <span class='c1'>// Include the url module for url.parse</span>
+<div class='highlight'><pre><code class='javascript'><span class='kd'>var</span> <span class='nx'>url</span> <span class='o'>=</span> <span class='nx'>require</span><span class='p'>(</span><span class='s1'>&#39;url&#39;</span><span class='p'>)</span> <span class='c1'>// Include the url module for url.parse</span>
 <span class='cm'>/** </span>
 <span class='cm'> * similar code until we get to defining our path</span>
 <span class='cm'>**/</span>
 <span class='kd'>var</span> <span class='nx'>path</span> <span class='o'>=</span> <span class='nx'>url</span><span class='p'>.</span><span class='nx'>parse</span><span class='p'>(</span><span class='nx'>req</span><span class='p'>.</span><span class='nx'>url</span><span class='p'>).</span><span class='nx'>pathname</span><span class='p'>;</span>
-</pre>
+</code></pre>
 </div>
 <p>To make sure you&#8217;re on track, if the browser requested <code>http://example.com/about</code>, then req.url contains <code>/about</code>. Coming to the above code, <code>url.parse</code> is a method from the <code>url</code> module that creates a <code>url</code> object out of a URL string. Don&#8217;t be confused, hang on! I&#8217;m illustrating the use of url.parse() on a sample string:</p>
-<div class='highlight'><pre><span class='kd'>var</span> <span class='nx'>urlString</span> <span class='o'>=</span> <span class='s1'>&#39;http://example.com/about&#39;</span><span class='p'>;</span> 
+<div class='highlight'><pre><code class='javascript'><span class='kd'>var</span> <span class='nx'>urlString</span> <span class='o'>=</span> <span class='s1'>&#39;http://example.com/about&#39;</span><span class='p'>;</span> 
 <span class='kd'>var</span> <span class='nx'>urlObject</span> <span class='o'>=</span> <span class='nx'>url</span><span class='p'>.</span><span class='nx'>parse</span><span class='p'>(</span><span class='nx'>urlString</span><span class='p'>);</span>
 <span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span><span class='nx'>urlObject</span><span class='p'>);</span>
-</pre>
+</code></pre>
 </div>
 <p>This returns the <code>url</code> object of the string we declared:</p>
-<div class='highlight'><pre><span class='p'>{</span> <span class='nx'>protocol</span><span class='o'>:</span> <span class='s1'>&#39;http:&#39;</span><span class='p'>,</span>
+<div class='highlight'><pre><code class='javascript'><span class='p'>{</span> <span class='nx'>protocol</span><span class='o'>:</span> <span class='s1'>&#39;http:&#39;</span><span class='p'>,</span>
   <span class='nx'>slashes</span><span class='o'>:</span> <span class='kc'>true</span><span class='p'>,</span>
   <span class='nx'>host</span><span class='o'>:</span> <span class='s1'>&#39;example.com&#39;</span><span class='p'>,</span>
   <span class='nx'>hostname</span><span class='o'>:</span> <span class='s1'>&#39;example.com&#39;</span><span class='p'>,</span>
   <span class='nx'>pathname</span><span class='o'>:</span> <span class='s1'>&#39;/about&#39;</span><span class='p'>,</span>
   <span class='nx'>href</span><span class='o'>:</span> <span class='s1'>&#39;http://example.com/about&#39;</span> <span class='p'>}</span>
-</pre>
+</code></pre>
 </div>
 <p>So, going back to the code,</p>
-<div class='highlight'><pre><span class='kd'>var</span> <span class='nx'>path</span> <span class='o'>=</span> <span class='nx'>url</span><span class='p'>.</span><span class='nx'>parse</span><span class='p'>(</span><span class='nx'>req</span><span class='p'>.</span><span class='nx'>url</span><span class='p'>).</span><span class='nx'>pathname</span><span class='p'>;</span>
-</pre>
+<div class='highlight'><pre><code class='javascript'><span class='kd'>var</span> <span class='nx'>path</span> <span class='o'>=</span> <span class='nx'>url</span><span class='p'>.</span><span class='nx'>parse</span><span class='p'>(</span><span class='nx'>req</span><span class='p'>.</span><span class='nx'>url</span><span class='p'>).</span><span class='nx'>pathname</span><span class='p'>;</span>
+</code></pre>
 </div>
 <p>Since the requested URL is <code>http://example.com/about</code>, <code>req.url</code> already contains <code>/about</code>. So, if we were to use <code>url.parse(req.url)</code> , it would convert <code>/about</code> into an object, like so:</p>
-<div class='highlight'><pre><span class='p'>{</span> <span class='nx'>pathname</span><span class='o'>:</span> <span class='s1'>&#39;/about&#39;</span><span class='p'>,</span> <span class='nx'>href</span><span class='o'>:</span> <span class='s1'>&#39;/about&#39;</span> <span class='p'>}</span>
-</pre>
+<div class='highlight'><pre><code class='javascript'><span class='p'>{</span> <span class='nx'>pathname</span><span class='o'>:</span> <span class='s1'>&#39;/about&#39;</span><span class='p'>,</span> <span class='nx'>href</span><span class='o'>:</span> <span class='s1'>&#39;/about&#39;</span> <span class='p'>}</span>
+</code></pre>
 </div>
 <p>Summing up, the code is unnecessarily (in my opinion) converting <code>/about</code> into a URL object, and extracting the <code>pathname</code> which would return the same <code>/about</code>. I&#8217;m not too sure why <a href='https://github.com/search?q=path+%3D+url.parse%28req.url%29.pathname&amp;type=Everything&amp;repo=&amp;langOverride=&amp;start_value=1' title='GitHub search for url.parse'>so many projects</a> use this. It&#8217;s almost like I&#8217;m missing out something. If you know why, do <a href='https://twitter.com/hardikr' title='My Twitter'>tweet</a> me !</p>
 
 <p>Alright, let&#8217;s get back to our own code. To recap, we just assigned <code>path</code> to the requested path by using <code>req.url</code>.</p>
 
 <p>After that, it&#8217;s pretty self explanatory. We use the <code>switch</code> method (which I presume you know). The first case, we test for the root of our homepage - for which the pathname would be <code>/</code>. We write the response headers and body just like last time, and end the output with <code>res.end()</code>. Don&#8217;t forget to put your <code>break</code> statement. Similarly, we test for <code>/about</code> and send my about page.</p>
-<div class='highlight'><pre><span class='nx'>fs</span><span class='p'>.</span><span class='nx'>readFile</span><span class='p'>(</span><span class='nx'>__dirname</span> <span class='o'>+</span> <span class='nx'>path</span><span class='p'>,</span> <span class='kd'>function</span><span class='p'>(</span><span class='nx'>err</span><span class='p'>,</span> <span class='nx'>data</span><span class='p'>)</span> <span class='p'>{</span>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>fs</span><span class='p'>.</span><span class='nx'>readFile</span><span class='p'>(</span><span class='nx'>__dirname</span> <span class='o'>+</span> <span class='nx'>path</span><span class='p'>,</span> <span class='kd'>function</span><span class='p'>(</span><span class='nx'>err</span><span class='p'>,</span> <span class='nx'>data</span><span class='p'>)</span> <span class='p'>{</span>
  <span class='k'>if</span><span class='p'>(</span><span class='nx'>err</span><span class='p'>)</span> <span class='k'>throw</span> <span class='nx'>err</span><span class='p'>;</span>
  <span class='nx'>res</span><span class='p'>.</span><span class='nx'>writeHead</span><span class='p'>(</span><span class='mi'>200</span><span class='p'>,</span> <span class='p'>{</span><span class='s1'>&#39;Content-Type&#39;</span> <span class='o'>:</span> <span class='s1'>&#39;image/png&#39;</span><span class='p'>});</span>
  <span class='nx'>res</span><span class='p'>.</span><span class='nx'>write</span><span class='p'>(</span><span class='nx'>data</span><span class='p'>,</span><span class='s1'>&#39;utf8&#39;</span><span class='p'>);</span>
  <span class='nx'>res</span><span class='p'>.</span><span class='nx'>end</span><span class='p'>();</span>
 <span class='p'>});</span>
-</pre>
+</code></pre>
 </div>
 <p>But now, I want to send over a PNG image as my favorite XKCD comic. I have a file named image.png lying in the same folder as my server.js file which I want to serve. Logically, I have to read the file from my Node.JS code first. I can do this with the <code>readFile</code> method.</p>
 
@@ -205,13 +205,13 @@
 <!--		<div class="meta-tags">
 			<ul>
 				
-				<li><a href="http://localhost:4000/tag/node/" title="Posts tagged node">node</a></li>
+				<li><a href="http://blog.hardikr.com/tag/node/" title="Posts tagged node">node</a></li>
 				
-				<li><a href="http://localhost:4000/tag/nodejs/" title="Posts tagged nodejs">nodejs</a></li>
+				<li><a href="http://blog.hardikr.com/tag/nodejs/" title="Posts tagged nodejs">nodejs</a></li>
 				
-				<li><a href="http://localhost:4000/tag/programming/" title="Posts tagged programming">programming</a></li>
+				<li><a href="http://blog.hardikr.com/tag/programming/" title="Posts tagged programming">programming</a></li>
 				
-				<li><a href="http://localhost:4000/tag/javascript/" title="Posts tagged javascript">javascript</a></li>
+				<li><a href="http://blog.hardikr.com/tag/javascript/" title="Posts tagged javascript">javascript</a></li>
 				
 			</ul>
 		</div> -->

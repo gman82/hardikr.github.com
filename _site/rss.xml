@@ -2,27 +2,25 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>A Day Without Chocolate</title>
-    <link>http://localhost:4000</link>
+    <link>http://blog.hardikr.com</link>
     <language>en</language>
     <webMaster>me@hardikr.com (Hardik Ruparel)</webMaster>
-    <pubDate>2011-04-23T09:53:00+04:00</pubDate>
+    <pubDate>2011-04-27T16:16:11+05:30</pubDate>
     <copyright>Copyright 2011</copyright>
     <ttl>60</ttl>
     <description>A Blog by Hardik Ruparel</description>
     
     <item>
       <title>A Gentle Introduction to Node - 2</title>
-      <link>http://localhost:4000/js/node-2</link>
-      <pubDate>Sat Apr 23 00:00:00 +0400 2011</pubDate>
-      <guid>http://localhost:4000/js/node-2/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Previously: &lt;a href='http://blog.hardikr.com/js/node-1/' title='The first post in the series'&gt;A Gentle Introduction to Node - 1&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;If you&amp;#8217;ve not read the first post, please read it ! (especially the &lt;a href='http://blog.hardikr.com/js/node-1/#resources' title='Resources in first post'&gt;resources&lt;/a&gt; section to get a good understanding of how Node works.&lt;/p&gt;
+      <link>http://blog.hardikr.com/js/node-2</link>
+      <pubDate>Sat Apr 23 00:00:00 +0530 2011</pubDate>
+      <guid>http://blog.hardikr.com/js/node-2/</guid>
+      <description>&lt;p&gt;If you&amp;#8217;ve not read the &lt;a href='http://blog.hardikr.com/js/node-1/' title='The first post in the series'&gt;first post&lt;/a&gt;, please read it ! (especially the &lt;a href='http://blog.hardikr.com/js/node-1/#resources' title='Resources in first post'&gt;resources&lt;/a&gt; section to get a good understanding of how Node works.&lt;/p&gt;
 
 &lt;p&gt;So let&amp;#8217;s dive in. We&amp;#8217;re going to be building a simple looking homepage for me using a static file server in Node.JS. I agree that&amp;#8217;s probably not what Node is best at, but at some point in your life you are going to want to serve static files to the browser.&lt;/p&gt;
 
 &lt;p&gt;Let&amp;#8217;s dive in. The code may look big and mean, but it&amp;#8217;s actually really easy to understand. And please, type out the code, especially if you&amp;#8217;re new to Javascript. If you want to view it in your code editor, grab the code &lt;a href='https://github.com/hardikr/hardikr.github.com/raw/master/static/node/post2/post2.js'&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;http&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;http&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;http&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;http&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
 &lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;fs&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;fs&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
 &lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;server&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;http&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;createServer&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;req&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
 	&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;path&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;req&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;url&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
@@ -68,65 +66,65 @@
 
 &lt;span class='p'&gt;}).&lt;/span&gt;&lt;span class='nx'&gt;listen&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='mi'&gt;8080&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
 &lt;span class='nx'&gt;console&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;log&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;Server started at http://localhost:8080&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;As discussed before, Node uses modules which you can include in your code to let you do awesome stuff. Just like Python, Node is an uber-cool Swiss Army Knife, only there&amp;#8217;s no limit to how far you can customize the modules you need to include. You can even use the hundreds of third party modules already available, and when you&amp;#8217;re confident enough, you can build your own modules to serve your needs.&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;http&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;http&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;http&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;http&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
 &lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;fs&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;fs&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;So, we start off with importing the &lt;code&gt;http&lt;/code&gt; module (which we used in the previous post), along with the &lt;code&gt;fs&lt;/code&gt; module. The &lt;code&gt;fs&lt;/code&gt; module is the File System module, which we&amp;#8217;ll use to read a local file and display it to the browser.&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;server&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;http&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;createServer&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;req&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;server&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;http&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;createServer&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;req&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
  &lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;path&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;req&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;url&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Next, we initialize our server object, with our &lt;code&gt;req&lt;/code&gt; (request) and &lt;code&gt;res&lt;/code&gt; (response) objects coming in as parameters to the callback function. If you read the last post carefully, you may have realized we never used the request object for anything. Well, we&amp;#8217;re gonna do that right now.&lt;/p&gt;
 
 &lt;p&gt;We obtain the requested URL by accessing &lt;code&gt;req.url&lt;/code&gt; value (from the &lt;code&gt;req&lt;/code&gt; object). To illustrate, if I accessed &lt;code&gt;http://example.com/about&lt;/code&gt;, then &lt;code&gt;req.url&lt;/code&gt; returns &lt;code&gt;/about&lt;/code&gt;. (Note, you can get a detailed look at the request object by simply doing &lt;code&gt;console.log(req)&lt;/code&gt;. Similarly, you can log pretty much anything if you&amp;#8217;re not sure about something. It&amp;#8217;s actually a good way of debugging Node.JS code. Note that the log will appear in your terminal and not in your browser since this is server-side Javascript.)&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/em&gt;: I&amp;#8217;m taking a little detour here. In several open-source projects, I&amp;#8217;ve seen the following code used to extract the pathname:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;url&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;url&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='c1'&gt;// Include the url module for url.parse&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;url&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;url&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='c1'&gt;// Include the url module for url.parse&lt;/span&gt;
 &lt;span class='cm'&gt;/** &lt;/span&gt;
 &lt;span class='cm'&gt; * similar code until we get to defining our path&lt;/span&gt;
 &lt;span class='cm'&gt;**/&lt;/span&gt;
 &lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;path&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;url&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;parse&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;req&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;url&lt;/span&gt;&lt;span class='p'&gt;).&lt;/span&gt;&lt;span class='nx'&gt;pathname&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;To make sure you&amp;#8217;re on track, if the browser requested &lt;code&gt;http://example.com/about&lt;/code&gt;, then req.url contains &lt;code&gt;/about&lt;/code&gt;. Coming to the above code, &lt;code&gt;url.parse&lt;/code&gt; is a method from the &lt;code&gt;url&lt;/code&gt; module that creates a &lt;code&gt;url&lt;/code&gt; object out of a URL string. Don&amp;#8217;t be confused, hang on! I&amp;#8217;m illustrating the use of url.parse() on a sample string:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;urlString&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;http://example.com/about&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt; 
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;urlString&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;http://example.com/about&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt; 
 &lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;urlObject&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;url&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;parse&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;urlString&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
 &lt;span class='nx'&gt;console&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;log&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;urlObject&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;This returns the &lt;code&gt;url&lt;/code&gt; object of the string we declared:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='nx'&gt;protocol&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;http:&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='nx'&gt;protocol&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;http:&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
   &lt;span class='nx'&gt;slashes&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='kc'&gt;true&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
   &lt;span class='nx'&gt;host&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;example.com&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
   &lt;span class='nx'&gt;hostname&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;example.com&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
   &lt;span class='nx'&gt;pathname&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;/about&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
   &lt;span class='nx'&gt;href&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;http://example.com/about&amp;#39;&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;So, going back to the code,&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;path&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;url&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;parse&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;req&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;url&lt;/span&gt;&lt;span class='p'&gt;).&lt;/span&gt;&lt;span class='nx'&gt;pathname&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
-&lt;/pre&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;path&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;url&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;parse&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;req&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;url&lt;/span&gt;&lt;span class='p'&gt;).&lt;/span&gt;&lt;span class='nx'&gt;pathname&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Since the requested URL is &lt;code&gt;http://example.com/about&lt;/code&gt;, &lt;code&gt;req.url&lt;/code&gt; already contains &lt;code&gt;/about&lt;/code&gt;. So, if we were to use &lt;code&gt;url.parse(req.url)&lt;/code&gt; , it would convert &lt;code&gt;/about&lt;/code&gt; into an object, like so:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='nx'&gt;pathname&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;/about&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;href&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;/about&amp;#39;&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
-&lt;/pre&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='nx'&gt;pathname&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;/about&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;href&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;/about&amp;#39;&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Summing up, the code is unnecessarily (in my opinion) converting &lt;code&gt;/about&lt;/code&gt; into a URL object, and extracting the &lt;code&gt;pathname&lt;/code&gt; which would return the same &lt;code&gt;/about&lt;/code&gt;. I&amp;#8217;m not too sure why &lt;a href='https://github.com/search?q=path+%3D+url.parse%28req.url%29.pathname&amp;amp;type=Everything&amp;amp;repo=&amp;amp;langOverride=&amp;amp;start_value=1' title='GitHub search for url.parse'&gt;so many projects&lt;/a&gt; use this. It&amp;#8217;s almost like I&amp;#8217;m missing out something. If you know why, do &lt;a href='https://twitter.com/hardikr' title='My Twitter'&gt;tweet&lt;/a&gt; me !&lt;/p&gt;
 
 &lt;p&gt;Alright, let&amp;#8217;s get back to our own code. To recap, we just assigned &lt;code&gt;path&lt;/code&gt; to the requested path by using &lt;code&gt;req.url&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;After that, it&amp;#8217;s pretty self explanatory. We use the &lt;code&gt;switch&lt;/code&gt; method (which I presume you know). The first case, we test for the root of our homepage - for which the pathname would be &lt;code&gt;/&lt;/code&gt;. We write the response headers and body just like last time, and end the output with &lt;code&gt;res.end()&lt;/code&gt;. Don&amp;#8217;t forget to put your &lt;code&gt;break&lt;/code&gt; statement. Similarly, we test for &lt;code&gt;/about&lt;/code&gt; and send my about page.&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='nx'&gt;fs&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;readFile&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;__dirname&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='nx'&gt;path&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;err&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;data&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='nx'&gt;fs&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;readFile&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;__dirname&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='nx'&gt;path&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;err&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;data&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
  &lt;span class='k'&gt;if&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;err&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='k'&gt;throw&lt;/span&gt; &lt;span class='nx'&gt;err&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
  &lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;writeHead&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='mi'&gt;200&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;image/png&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;});&lt;/span&gt;
  &lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;write&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;data&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;utf8&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
  &lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;end&lt;/span&gt;&lt;span class='p'&gt;();&lt;/span&gt;
 &lt;span class='p'&gt;});&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;But now, I want to send over a PNG image as my favorite XKCD comic. I have a file named image.png lying in the same folder as my server.js file which I want to serve. Logically, I have to read the file from my Node.JS code first. I can do this with the &lt;code&gt;readFile&lt;/code&gt; method.&lt;/p&gt;
 
@@ -170,9 +168,9 @@
     
     <item>
       <title>A Gentle Introduction to Node - 1</title>
-      <link>http://localhost:4000/js/node-1</link>
-      <pubDate>Sat Apr 09 00:00:00 +0400 2011</pubDate>
-      <guid>http://localhost:4000/js/node-1/</guid>
+      <link>http://blog.hardikr.com/js/node-1</link>
+      <pubDate>Sat Apr 09 00:00:00 +0530 2011</pubDate>
+      <guid>http://blog.hardikr.com/js/node-1/</guid>
       <description>&lt;p&gt;There are many great introductions to Node, and I&amp;#8217;m not going to waste my time reinventing the wheel. Instead, I&amp;#8217;m trying to fill a gap that exists, somewhere between the &lt;a href='http://nodejs.org' title='Node Home'&gt;hello world program&lt;/a&gt; and the &lt;a href='https://github.com/ry/node_chat' title='Node_Chat'&gt;node-chat example&lt;/a&gt;, all while linking to great resources already out there. At the end of the post series, you should be able to comfortably create real-time web applications using NodeJS + &lt;a href='http://socket.io' title='Socket.IO'&gt;Socket.IO&lt;/a&gt;. Now it&amp;#8217;s really easy to create real-time web applications :)&lt;/p&gt;
 
 &lt;p&gt;First off, a few points to note:&lt;/p&gt;
@@ -202,20 +200,20 @@
 &lt;p&gt;If you still don&amp;#8217;t understand, don&amp;#8217;t fret. Later on in the article I&amp;#8217;ll link you to a few articles that make things crystal clear.&lt;/p&gt;
 
 &lt;p&gt;Right, so let&amp;#8217;s dive into some code now. First, install Node using the instructions on the &lt;a href='https://github.com/joyent/node/wiki/Installation' title='Node GitHub Wiki - Install'&gt;Node Github Wiki&lt;/a&gt;. If you&amp;#8217;re on a Debian based system, just use:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;sudo apt-get install node
-&lt;/pre&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;sudo apt-get install node
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Node can run as an &lt;a href='http://en.wikipedia.org/wiki/REPL' title='REPL'&gt;REPL&lt;/a&gt;. So fire up your terminal.&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;hardik@voodoo:~&lt;span class='nv'&gt;$ &lt;/span&gt;node
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;hardik@voodoo:~&lt;span class='nv'&gt;$ &lt;/span&gt;node
 &amp;gt; console.log&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;Hello World!&amp;#39;&lt;/span&gt;&lt;span class='o'&gt;)&lt;/span&gt;;
 Hello World!
 &amp;gt; 
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;That was easy, wasn&amp;#8217;t it? You may remember console.log() from using client side Javascript. Yes, you can use it on Server-Side Javascript too. Although in real-world environments, we would use &lt;em&gt;sys.debug&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;So, you&amp;#8217;re probably not too excited about using Node in the terminal. Right, let&amp;#8217;s create our first server! Open up your favorite text editor, and &lt;strong&gt;type&lt;/strong&gt; in this code. That&amp;#8217;s right, type it. Not copy-paste. Trust me, it&amp;#8217;ll help.&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;http&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;http&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;),&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;http&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;http&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;),&lt;/span&gt;
 		   &lt;span class='nx'&gt;server&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
 &lt;span class='nx'&gt;server&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;http&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;createServer&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;req&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
 	&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;writeHead&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='mi'&gt;200&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;text/html&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;});&lt;/span&gt;
@@ -223,47 +221,47 @@ Hello World!
 	&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;end&lt;/span&gt;&lt;span class='p'&gt;();&lt;/span&gt;
 &lt;span class='p'&gt;}).&lt;/span&gt;&lt;span class='nx'&gt;listen&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='mi'&gt;8080&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt; &lt;span class='c1'&gt;// Defaults to localhost (127.0.0.1)&lt;/span&gt;
 &lt;span class='nx'&gt;console&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;log&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;Server started on http://localhost:8080&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Fine, if you really don&amp;#8217;t want to type it, grab it (right click, Save Link As) &lt;a href='https://github.com/hardikr/hardikr.github.com/raw/master/static/node/post1.js'&gt;here&lt;/a&gt;. But I warned you.&lt;/p&gt;
 
 &lt;p&gt;Let&amp;#8217;s break it down here. Natively, Node supports program components known as &lt;em&gt;modules&lt;/em&gt;. These modules have to be imported by Node whenever you want to use any of them, just like you would use require in Python, Javascript etc.&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;http&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;http&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;),&lt;/span&gt;
-&lt;/pre&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;http&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;http&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;),&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;First, we require the &lt;em&gt;http&lt;/em&gt; module, which comes packaged with Node. We create a HTTP server object. So, let&amp;#8217;s take a pause here and understand that HTTP !== Apache. Many people new to Node believe we&amp;#8217;re creating an Apache server. That&amp;#8217;s wrong. We&amp;#8217;re creating a simple HTTP server object. Next, we define a variable called server, which will act as the placeholder for the server we create in the next line.&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='nx'&gt;server&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;http&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;createServer&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;req&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
-&lt;/pre&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='nx'&gt;server&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;http&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;createServer&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;req&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;em&gt;function (req,res)&lt;/em&gt; is the callback function for &lt;em&gt;http.createServer&lt;/em&gt;. This is the crux of the event-driven programming style of Node. Because Javascript provides extensive capabilities for callbacks and anonymous functions, it seemed to be the perfect choice for implementing Node.&lt;/p&gt;
 
 &lt;p&gt;But, what&amp;#8217;s a callback function? A callback function is attached to a listener, and is fired on a particular event.&lt;/p&gt;
 
 &lt;p&gt;In the above example, the &lt;em&gt;addListener&lt;/em&gt; event is automatically added to the &lt;em&gt;http.createServer&lt;/em&gt; method. In essence, whenever a client connects to our server (aka the listener receives an event), the aforementioend anonymous function is called.&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;writeHead&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='mi'&gt;200&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;text/html&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;});&lt;/span&gt;
-&lt;/pre&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;writeHead&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='mi'&gt;200&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;text/html&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Now, we have an HTTP server setup, but we still have to output Hello World to the browser. So, let&amp;#8217;s set the HTTP headers for the output. (If you have no idea about the HTTP protocol, you should probably read &lt;a href='http://www.ietf.org/rfc/rfc2616.txt' title='RFC 2616'&gt;RFC 2616&lt;/a&gt;, which defines the HTTP/1.1 protocol. It&amp;#8217;s a very comprehensive document and it&amp;#8217;ll be worth the time you spend on it. If you&amp;#8217;re in a hurry, you always have Wikipedia.)&lt;/p&gt;
 
 &lt;p&gt;Right, so the 200 status code implies everything&amp;#8217;s okay (see the &lt;a href='http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html' title='HTTP status codes'&gt;complete list&lt;/a&gt; of HTTP status codes), and we set the Content-Type to text/html, since we&amp;#8217;re going to be sending a snippet of HTML code to our client. The headers are set so the browser knows how to render the incoming stream.&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;write&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;&amp;lt;b&amp;gt;Hello World&amp;lt;/b&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;write&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;&amp;lt;b&amp;gt;Hello World&amp;lt;/b&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
 &lt;span class='nx'&gt;res&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;end&lt;/span&gt;&lt;span class='p'&gt;();&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;We&amp;#8217;ve set the headers, and now we actualy have to send the output. We write to the output stream. It&amp;#8217;s important to understand that we&amp;#8217;re just writing the snippet &lt;em&gt;&lt;b&gt;Hello World&lt;/b&gt;&lt;/em&gt; to the stream that is being sent by the HTTP server object, and nothing else. This could be anything: a jpeg image, an ogg audio or even an mp4 video, as long as we set the headers correctly. Next, with &lt;em&gt;res.end()&lt;/em&gt;, we end the output stream, and that&amp;#8217;s an indication for the server to finally send it over to the client.&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='p'&gt;}).&lt;/span&gt;&lt;span class='nx'&gt;listen&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='mi'&gt;8080&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
-&lt;/pre&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='p'&gt;}).&lt;/span&gt;&lt;span class='nx'&gt;listen&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='mi'&gt;8080&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;But, how will the server know who&amp;#8217;s listening? That&amp;#8217;s the next part, we make the server listen on a particular port and host. If you don&amp;#8217;t specify the host, it defaults to localhost (127.0.0.1). I choose port 8080 because I usually have an Apache server running on 80.&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='nx'&gt;console&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;log&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;Server started on http://localhost:8080&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
-&lt;/pre&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='nx'&gt;console&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;log&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;Server started on http://localhost:8080&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Finally, we output to the terminal saying we&amp;#8217;ve started the server at a particular address. This line is not required. But if it appears once you&amp;#8217;ve run the code, it means the server has at least started listening.&lt;/p&gt;
 
 &lt;p&gt;Now, save the file as server.js, and run it in the terminal like:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;hardik@voodoo:~&lt;span class='nv'&gt;$ &lt;/span&gt;node server.js 
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;hardik@voodoo:~&lt;span class='nv'&gt;$ &lt;/span&gt;node server.js 
 Server started on http://localhost:8080
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;That&amp;#8217;s it, fire up your favorite browser, and navigate to http://locahost:8080 and you should see your Hello World, all bolded up, because remember, we sent an html output.&lt;/p&gt;
 
@@ -307,9 +305,9 @@ Server started on http://localhost:8080
     
     <item>
       <title>Twenty Minutes on a Mumbai local train</title>
-      <link>http://localhost:4000/india/mumbai-locals</link>
-      <pubDate>Sun Apr 03 00:00:00 +0400 2011</pubDate>
-      <guid>http://localhost:4000/india/mumbai-locals/</guid>
+      <link>http://blog.hardikr.com/india/mumbai-locals</link>
+      <pubDate>Sun Apr 03 00:00:00 +0530 2011</pubDate>
+      <guid>http://blog.hardikr.com/india/mumbai-locals/</guid>
       <description>&lt;p&gt;A big part of the excitement of being a resident of Mumbai involves travelling by local trains. It would be an educated guess when I say that Mumbai boasts of one of the most extensive intra-city rail transport in the world.&lt;/p&gt;
 
 &lt;p&gt;My commute to work involves a local train journey lasting approximately 15-20 minutes, enveloped between two bus rides. However, this 20 minute journey never ceases to be eventful. I arrive at Borivali Railway Station by bus at about 08:05, and my local train, which arrives at Platform #1, is not until 08:17. However, I&amp;#8217;m already all set for boarding. My wallet and mobile phone have been safely tucked into my backpack, which ironically, I wear on my front.&lt;/p&gt;
@@ -358,11 +356,10 @@ Server started on http://localhost:8080
     
     <item>
       <title>Apparently, Eightbit.me has hijacked my Twitter profile photo!</title>
-      <link>http://localhost:4000/tech/eightbit-hijack</link>
-      <pubDate>Sat Mar 26 00:00:00 +0400 2011</pubDate>
-      <guid>http://localhost:4000/tech/eightbit-hijack/</guid>
-      <description>
-&lt;p&gt;I logged into Twitter today and realized that my profile picture had got changed to an avatar I had created on &lt;a href=&quot;http://eightbit.me&quot;&gt;eightbit.me&lt;/a&gt; a few days ago. That's weird! I do not remember doing such a thing!&lt;/p&gt;
+      <link>http://blog.hardikr.com/tech/eightbit-hijack</link>
+      <pubDate>Sat Mar 26 00:00:00 +0530 2011</pubDate>
+      <guid>http://blog.hardikr.com/tech/eightbit-hijack/</guid>
+      <description>&lt;p&gt;I logged into Twitter today and realized that my profile picture had got changed to an avatar I had created on &lt;a href=&quot;http://eightbit.me&quot;&gt;eightbit.me&lt;/a&gt; a few days ago. That's weird! I do not remember doing such a thing!&lt;/p&gt;
 &lt;p&gt;My first instinct was to check whether other people who had used eightbit.me had suffered a similar fate, and around eight of the ten people I checked out on eightbit using their profile randomizer had their avatars set as their Twitter profile photo. I don't know if that proves anything or not, I'm just stating my observations.&lt;/p&gt;
 &lt;p&gt;I'll be the first one to admit it, I did not verify what sort of permissions eightbit demanded at the time I approved it, and I presumed it was just an interface for signing in.&lt;/p&gt;
 &lt;p&gt;But, it seems that they've hijacked my Twitter profile photo. What's next? It reminds me of that post on Hacker News whose title went something like 'oAuth will kill your kids'. I can't find it right now, but I really want to go back and read that article again.&amp;nbsp;&lt;/p&gt;
@@ -378,11 +375,10 @@ Server started on http://localhost:8080
     
     <item>
       <title>A Time for New Mistakes</title>
-      <link>http://localhost:4000/startups/mistakes</link>
-      <pubDate>Wed Mar 23 00:00:00 +0400 2011</pubDate>
-      <guid>http://localhost:4000/startups/mistakes/</guid>
-      <description>
-&lt;p&gt;Most startup people are ex-disgruntled folks, having grown beards of experience in their jobs which they held for years and they were so sick of, attempting to quit their jobs day-in and day-out like it was a terrible addiction, and finally picking up the courage to do so. Alas, all those hours of slogging away at work, coding into the night for your company's new projects, teaming up with brilliant and quirky programmers, getting admonished for making mistakes in the production release of the code-base; all these things come to an end. Time and experience has made them the wiser.&lt;/p&gt;
+      <link>http://blog.hardikr.com/startups/mistakes</link>
+      <pubDate>Wed Mar 23 00:00:00 +0530 2011</pubDate>
+      <guid>http://blog.hardikr.com/startups/mistakes/</guid>
+      <description>&lt;p&gt;Most startup people are ex-disgruntled folks, having grown beards of experience in their jobs which they held for years and they were so sick of, attempting to quit their jobs day-in and day-out like it was a terrible addiction, and finally picking up the courage to do so. Alas, all those hours of slogging away at work, coding into the night for your company's new projects, teaming up with brilliant and quirky programmers, getting admonished for making mistakes in the production release of the code-base; all these things come to an end. Time and experience has made them the wiser.&lt;/p&gt;
 
 &lt;p&gt;They've found a new life. They've rediscovered what's it like to be a workaholic, but only this time they enjoy doing it. They've discovered a new passion ( it's usually photography ) , and they've started to finally love what they do for a living.  They're ready to sacrifice anything and everything for their startup to succeed. Every minute spent not doing anything else counts to making the startup a success. Some founders even make corn-flakes to make their ends meet.&lt;/p&gt;
 
@@ -407,11 +403,10 @@ Server started on http://localhost:8080
     
     <item>
       <title>A Week with BlackBerry</title>
-      <link>http://localhost:4000/tech/testing-blackberry</link>
-      <pubDate>Tue Mar 15 00:00:00 +0400 2011</pubDate>
-      <guid>http://localhost:4000/tech/testing-blackberry/</guid>
-      <description>
-&lt;p&gt;I've now spent over a week with the Blackberry Curve 9300, which is the first in the Curve series to have 3G and GPS.. I guess at around 300$, that was a decent buy.&lt;/p&gt;
+      <link>http://blog.hardikr.com/tech/testing-blackberry</link>
+      <pubDate>Tue Mar 15 00:00:00 +0530 2011</pubDate>
+      <guid>http://blog.hardikr.com/tech/testing-blackberry/</guid>
+      <description>&lt;p&gt;I've now spent over a week with the Blackberry Curve 9300, which is the first in the Curve series to have 3G and GPS.. I guess at around 300$, that was a decent buy.&lt;/p&gt;
 &lt;p&gt;This is my first smartphone (I know!!), but I am in a position to compare BlackBerry with iOS, since I've owned an iPod touch for a good while now, and have extensively used the App Store and all the great apps that come with it. I'll be talking about BlackBerry iOS 5.0 and Apple iOS 4.2.1&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;First, the obvious and the ugly&lt;/strong&gt;. The BB App Store sucks. I'm thankful for my iPod touch without which apps like Instapaper, Angry Birds, TinyWings and $_your_favorite_app would only be a distant dream.&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;The prominent apps in the BB App Store are the social media giants: Facebook, Twitter, FourSquare and those apps are god-awful. The Facebook app is especially made to make sharing as difficult as possible. The Twitter app looks like it's doing a favor to me in terms of the UI/UX, and geotagging seems to be a feature missing (or very difficult to find, at best). The FourSquare just about passes the mark, but it often fails to connect to it's mother ship, even when the BB data services are working fine.&lt;br /&gt;&lt;br /&gt;Another thing worth mentioning here would be that BB allows access to the App Store, and usage of these mainstream apps only over it's data service, and they DO NOT work over a wireless connection. It's as blatant a way of saying, &quot;Either pay for our data connection every month, or get lost&quot;. They expect me, as a smartphone buyer, not to access the basic features of a smartphone, aka social media (which they actually use to sell this product) over Wi-Fi hotspots, which are fast becoming the major way of accessing the Internet at home and at work. This decision has really set a rebellious anti-BlackBerry sentiment inside me.&lt;/p&gt;
@@ -430,9 +425,9 @@ Server started on http://localhost:8080
     
     <item>
       <title>Egypt, India</title>
-      <link>http://localhost:4000/india/egypt-india</link>
-      <pubDate>Tue Mar 01 00:00:00 +0400 2011</pubDate>
-      <guid>http://localhost:4000/india/egypt-india/</guid>
+      <link>http://blog.hardikr.com/india/egypt-india</link>
+      <pubDate>Tue Mar 01 00:00:00 +0530 2011</pubDate>
+      <guid>http://blog.hardikr.com/india/egypt-india/</guid>
       <description>&lt;p&gt;Keeping in tune with my last post about &lt;a href='http://blog.hardikr.com/startups/call-me'&gt;verbs&lt;/a&gt;, &lt;em&gt;pulling off an ‘Egypt’&lt;/em&gt; seems like a acceptable phrase that India can aspire to. Let’s take a look at some of the causes of the Egyptian Revolution of 2011. Let’s stack up Egypt’s problems alongside India’s (with utmost respect towards Egypt, I know it was much worse off than India is now, but just for the sake or argument). According to Wikipedia,&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -477,9 +472,9 @@ Server started on http://localhost:8080
     
     <item>
       <title>Call Me, or How Becoiming a Verb is a Sign of Success</title>
-      <link>http://localhost:4000/startups/call-me</link>
-      <pubDate>Wed Feb 09 00:00:00 +0400 2011</pubDate>
-      <guid>http://localhost:4000/startups/call-me/</guid>
+      <link>http://blog.hardikr.com/startups/call-me</link>
+      <pubDate>Wed Feb 09 00:00:00 +0530 2011</pubDate>
+      <guid>http://blog.hardikr.com/startups/call-me/</guid>
       <description>&lt;p&gt;If you’ve ever noticed, many of the successful technologies that have emerged over the past century, have become verbs of their own right, or become the de-facto ‘direct object’ of an &lt;a href='http://en.wikipedia.org/wiki/Verb#Valency'&gt;intransitive verb&lt;/a&gt;. First we have some of the golden oldies,&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;&amp;#8220;Call me&amp;#8221;&lt;br /&gt;&amp;#8220;Fax me&amp;#8221;&lt;br /&gt;&amp;#8220;E-mail me&amp;#8221; / &amp;#8220;Check my e-mail&amp;#8221;&lt;br /&gt;&amp;#8220;Watching TV&amp;#8221;&lt;br /&gt;&amp;#8220;Digg it&amp;#8221;&lt;/em&gt;&lt;/p&gt;
@@ -502,9 +497,9 @@ Server started on http://localhost:8080
     
     <item>
       <title>Jo Jeeta Wohi Sikander to be Banned</title>
-      <link>http://localhost:4000/satire/jo-jeeta-banned</link>
-      <pubDate>Tue Jan 25 00:00:00 +0400 2011</pubDate>
-      <guid>http://localhost:4000/satire/jo-jeeta-banned/</guid>
+      <link>http://blog.hardikr.com/satire/jo-jeeta-banned</link>
+      <pubDate>Tue Jan 25 00:00:00 +0530 2011</pubDate>
+      <guid>http://blog.hardikr.com/satire/jo-jeeta-banned/</guid>
       <description>&lt;p&gt;The 1992 cult movie &lt;em&gt;&lt;a href='http://www.imdb.com/title/tt0104561/' title='Jo Jeeta Wohi Sikandar'&gt;Jo Jeeta Wohi Sikandar&lt;/a&gt;&lt;/em&gt; is all set to be banned in India, following repeated protests of parents, teachers and child-rights groups and activists.&lt;/p&gt;
 
 &lt;p&gt;The decision came after parents all over the country threatened to burn down the only movie theater in the country that still shows the movie, a 50 seater cinema at Baltana, Punjab.&lt;/p&gt;
@@ -543,11 +538,10 @@ Server started on http://localhost:8080
     
     <item>
       <title>Something's Wrong</title>
-      <link>http://localhost:4000/india/somethings-wrong</link>
-      <pubDate>Tue Jan 18 00:00:00 +0400 2011</pubDate>
-      <guid>http://localhost:4000/india/somethings-wrong/</guid>
-      <description>
-&lt;p&gt;The last few months have been really, really crazy. Just look around and you can see disruption everywhere! Firstly, there were news that a viral Facebook app called threewords.me is about to be acquired just after a couple of days of launch.&lt;/p&gt;
+      <link>http://blog.hardikr.com/india/somethings-wrong</link>
+      <pubDate>Tue Jan 18 00:00:00 +0530 2011</pubDate>
+      <guid>http://blog.hardikr.com/india/somethings-wrong/</guid>
+      <description>&lt;p&gt;The last few months have been really, really crazy. Just look around and you can see disruption everywhere! Firstly, there were news that a viral Facebook app called threewords.me is about to be acquired just after a couple of days of launch.&lt;/p&gt;
 &lt;p&gt;Cheezburger network just raised 30 million dollars.&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;WTF DO I DOEZ WIF 30 MILLION DOLLARS?&lt;/p&gt;
 &lt;p&gt;Something's not quite right. The Silicon Valley has gone crazy. I can accept that a &lt;a href=&quot;http://posterous.com&quot;&gt;Tumblr clone&lt;/a&gt; somehow managed to get accepted into &lt;a href=&quot;http://ycombinator.com&quot;&gt;YC&lt;/a&gt;&amp;nbsp;, but seriously, Cheezburger network raising 30 million dollars?&lt;/p&gt;
