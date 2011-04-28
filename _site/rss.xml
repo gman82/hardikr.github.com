@@ -5,7 +5,7 @@
     <link>http://blog.hardikr.com</link>
     <language>en</language>
     <webMaster>me@hardikr.com (Hardik Ruparel)</webMaster>
-    <pubDate>2011-04-23T18:04:57+04:00</pubDate>
+    <pubDate>2011-04-28T22:17:11+04:00</pubDate>
     <copyright>Copyright 2011</copyright>
     <ttl>60</ttl>
     <description>A Blog by Hardik Ruparel</description>
@@ -17,7 +17,7 @@
       <guid>http://blog.hardikr.com/js/node-2/</guid>
       <description>&lt;p&gt;&lt;em&gt;Previously: &lt;a href='http://blog.hardikr.com/js/node-1/' title='The first post in the series'&gt;A Gentle Introduction to Node - 1&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;If you&amp;#8217;ve not read the first post, please read it ! (especially the &lt;a href='http://blog.hardikr.com/js/node-1/#resources' title='Resources in first post'&gt;resources&lt;/a&gt; section to get a good understanding of how Node works.&lt;/p&gt;
+&lt;p&gt;If you&amp;#8217;ve not read the &lt;a href='http://blog.hardikr.com/js/node-1/' title='The first post in the series'&gt;first post&lt;/a&gt;, please read it ! (especially the &lt;a href='http://blog.hardikr.com/js/node-1/#resources' title='Resources in first post'&gt;resources&lt;/a&gt; section to get a good understanding of how Node works.&lt;/p&gt;
 
 &lt;p&gt;So let&amp;#8217;s dive in. We&amp;#8217;re going to be building a simple looking homepage for me using a static file server in Node.JS. I agree that&amp;#8217;s probably not what Node is best at, but at some point in your life you are going to want to serve static files to the browser.&lt;/p&gt;
 

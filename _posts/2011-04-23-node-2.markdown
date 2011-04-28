@@ -7,7 +7,7 @@ categories: [js]
 
 _Previously: [A Gentle Introduction to Node - 1][1]_
 
-If you've not read the first post, please read it ! (especially the [resources][2] section to get a good understanding of how Node works.
+If you've not read the [first post][1], please read it ! (especially the [resources][2] section to get a good understanding of how Node works.
 
 So let's dive in. We're going to be building a simple looking homepage for me using a static file server in Node.JS. I agree that's probably not what Node is best at, but at some point in your life you are going to want to serve static files to the browser.
 
